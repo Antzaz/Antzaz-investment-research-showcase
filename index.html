@@ -21,7 +21,7 @@
   <nav class="tabs" aria-label="Portfolio sections">
     <button class="tab active" data-target="portfolio">Portfolio Analytics</button>
     <button class="tab" data-target="philosophy">Portfolio Philosophy</button>
-    <a class="tab nav-link" href="company-theses.html">Company Theses</a>
+    <button class="tab" data-target="theses">Company Theses</button>
     <button class="tab" data-target="research">Equity Research</button>
     <button class="tab" data-target="methodology">Methodology</button>
   </nav>
@@ -38,7 +38,13 @@
         <article class="card"><h2>Sector allocation</h2><div id="sectorChart" class="chart"></div></article>
       </div>
       <article class="card">
-        <div class="section-head"><div><h2>Holdings</h2><p class="muted">Expected returns are base-case annualized scenario estimates from the thesis workbook.</p></div><a class="button-link" href="company-theses.html">Open Company Theses →</a></div>
+        <div class="section-head">
+          <div>
+            <h2>Holdings</h2>
+            <p class="muted">Expected returns are base-case annualized scenario estimates from the investment-thesis workbook.</p>
+          </div>
+          <button class="button-link primary" data-open-tab="theses">View Company Theses →</button>
+        </div>
         <div class="table-wrap"><table id="holdingsTable"></table></div>
       </article>
       <div class="grid two">
@@ -51,9 +57,45 @@
       <article id="philosophyCard" class="card"></article>
       <article class="card thesis-cta-card">
         <p class="eyebrow">SECURITY SELECTION</p>
-        <h2>Read the company-level investment cases</h2>
-        <p>Each portfolio holding has a separate recruiter-facing view of expected return, conviction, scorecard, investment thesis, moat, growth drivers, valuation, catalysts, risks, sell conditions and monitoring KPIs.</p>
-        <a class="button-link primary" href="company-theses.html">View Company Theses →</a>
+        <h2>How the philosophy translates into individual holdings</h2>
+        <p>The Company Theses tab connects portfolio construction to company-level expected returns, conviction, valuation, catalysts, risks, falsification conditions and monitoring KPIs.</p>
+        <button class="button-link primary" data-open-tab="theses">Open Company Theses →</button>
+      </article>
+    </section>
+
+    <section id="theses" class="panel">
+      <article class="card thesis-overview-card">
+        <div class="section-head thesis-controls">
+          <div>
+            <p class="eyebrow">SECURITY SELECTION</p>
+            <h2>Company Investment Theses</h2>
+            <p class="muted">Why each company is held, what the base case implies, what could go wrong and what would change the thesis.</p>
+          </div>
+          <label class="company-picker">Company
+            <select id="thesisCompanySelect" aria-label="Select portfolio company"></select>
+          </label>
+        </div>
+        <div id="returnOverviewChart" class="chart compact-chart"></div>
+      </article>
+
+      <section id="companyHeader" class="company-detail-header card"></section>
+
+      <section class="grid two thesis-detail-grid">
+        <article class="card">
+          <h2>Investment scorecard</h2>
+          <div id="companyScoreChart" class="chart compact-chart"></div>
+        </article>
+        <article class="card">
+          <h2>Decision frame</h2>
+          <div id="decisionFrame" class="decision-frame"></div>
+        </article>
+      </section>
+
+      <section id="companyThesisBody" class="thesis-grid thesis-body-grid"></section>
+
+      <article class="card thesis-method-note">
+        <h2>How to read this tab</h2>
+        <p>Expected return is a base-case annualized scenario estimate and should be considered together with conviction, business quality, valuation and downside risk. The thesis is separated into business case, valuation, catalysts, risks and explicit falsification conditions.</p>
       </article>
     </section>
 
