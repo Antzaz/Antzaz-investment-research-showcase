@@ -1,0 +1,3661 @@
+{
+  "snapshot_type": "sanitized_real_portfolio_analytics",
+  "generated_utc": "2026-08-19T17:09:56.560417+00:00",
+  "privacy_note": "Company names, portfolio weights and recruiter-safe investment theses are public. Tickers, shares, cost basis, market value, unrealized P&L, transactions, private notes, credentials and private workbooks are excluded.",
+  "data_note": "Company names, weights and analytics are generated from the latest production portfolio run. Investment-thesis text is user-authored and synced from the private portfolio thesis workbook.",
+  "metrics": {
+    "annualized_return": 0.29547637150841943,
+    "annualized_volatility": 0.2167118978285514,
+    "sharpe": 1.1788756135140122,
+    "sortino": 1.4923290417971617,
+    "tracking_error": 0.0789948620267949,
+    "information_ratio": 1.6705281801953542,
+    "max_drawdown": -0.3277199326163739,
+    "beta": 1.1277598959261934,
+    "daily_var_95": -0.020795339989404506,
+    "daily_expected_shortfall_95": -0.03216271359770268,
+    "active_annualized_return": 0.13196314310640478,
+    "daily_active_hit_rate": 0.5312107247591119,
+    "top_1_weight": 0.13570173877087033,
+    "top_5_weight": 0.5196146476695536,
+    "effective_number_of_holdings": 12.28948930829229,
+    "largest_risk_contribution": 0.21005223839728132,
+    "annualized_alpha": 0.09838169221943717,
+    "alpha_t_stat": 4.00187928304923,
+    "alpha_p_value": 6.475789941973672e-05,
+    "alpha_r_squared": 0.8784016405978152
+  },
+  "holdings": [
+    {
+      "company": "Amazon.com, Inc.",
+      "sector": "Consumer Cyclical",
+      "weight": 0.13570173877087033,
+      "risk_contribution": 0.14804904496999524
+    },
+    {
+      "company": "NVIDIA Corporation",
+      "sector": "Technology",
+      "weight": 0.11493196924249303,
+      "risk_contribution": 0.21005223839728132
+    },
+    {
+      "company": "JPM",
+      "sector": "Financial Services",
+      "weight": 0.09499644303193207,
+      "risk_contribution": 0.07938398341961651
+    },
+    {
+      "company": "Alphabet Inc.",
+      "sector": "Communication Services",
+      "weight": 0.09001452677554182,
+      "risk_contribution": 0.09080441805683682
+    },
+    {
+      "company": "Microsoft Corporation",
+      "sector": "Technology",
+      "weight": 0.08396996984871624,
+      "risk_contribution": 0.08232825086217546
+    },
+    {
+      "company": "Taiwan Semiconductor Manufacturing Company Limited",
+      "sector": "Technology",
+      "weight": 0.07207612729840496,
+      "risk_contribution": 0.08274163236970526
+    },
+    {
+      "company": "Chevron Corporation",
+      "sector": "Energy",
+      "weight": 0.07173964197741041,
+      "risk_contribution": 0.05238815841284872
+    },
+    {
+      "company": "Universal Health Services, Inc.",
+      "sector": "Healthcare",
+      "weight": 0.06035488497915946,
+      "risk_contribution": 0.046178980458486917
+    },
+    {
+      "company": "Schneider Electric S.E.",
+      "sector": "Industrials",
+      "weight": 0.052137986013442966,
+      "risk_contribution": 0.034462627804943885
+    },
+    {
+      "company": "TotalEnergies SE",
+      "sector": "Energy",
+      "weight": 0.0467018994372639,
+      "risk_contribution": 0.03258447719780813
+    },
+    {
+      "company": "Berkshire Hathaway Inc.",
+      "sector": "Financial Services",
+      "weight": 0.04384437731186361,
+      "risk_contribution": 0.025501615002680573
+    },
+    {
+      "company": "Cummins Inc.",
+      "sector": "Industrials",
+      "weight": 0.043294143843434794,
+      "risk_contribution": 0.03419802686184658
+    },
+    {
+      "company": "SNY",
+      "sector": "Healthcare",
+      "weight": 0.039201561450868914,
+      "risk_contribution": 0.014777120782641344
+    },
+    {
+      "company": "Lumentum Holdings Inc.",
+      "sector": "Technology",
+      "weight": 0.03045151399212358,
+      "risk_contribution": 0.04559015228501718
+    },
+    {
+      "company": "Medpace Holdings, Inc.",
+      "sector": "Healthcare",
+      "weight": 0.020583216026473942,
+      "risk_contribution": 0.020959273118115948
+    }
+  ],
+  "portfolio_philosophy": {
+    "investment_philosophy": "Fundamentals-driven GARP approach focused on high-quality businesses with durable competitive advantages, strong cash generation and credible reinvestment runways. AI, digitalization, electrification and other structural trends are treated as accelerants—not prerequisites: each holding should retain a viable long-term earnings case if the AI investment cycle slows materially.",
+    "portfolio_objective": "Outperform the S&P 500 over rolling multi-year periods through security selection and disciplined capital allocation, while avoiding permanent capital loss and excessive dependence on any single theme.",
+    "benchmark": "S&P 500",
+    "time_horizon": "Typically 3–5+ years; exceptional compounders may be held materially longer while the thesis, competitive advantage and reinvestment economics remain intact.",
+    "return_objective": "Target approximately 10–15% annualized total return at initiation, with flexibility by risk profile. New positions should generally offer a credible path to benchmark outperformance after accounting for valuation, downside risk and dividends/buybacks.",
+    "research_process": "Ideas are generated through fundamental screens, industry research, structural themes, valuation dislocations and company-specific events. Each candidate is reviewed using primary-source filings and earnings material, then assessed on business quality, moat, management, balance sheet, growth, valuation and downside scenarios. A bear/base/bull valuation and company-specific KPI set are established before purchase.",
+    "selection_criteria": "Preference for high or improving ROIC/ROE, sustainable free cash flow, resilient margins, prudent leverage, strong competitive positioning, rational capital allocation and a multi-year reinvestment runway. Valuation must provide an acceptable expected return; thematic exposure such as AI is additive rather than a substitute for financial quality.",
+    "position_sizing": "Position size reflects conviction, expected return, downside asymmetry, balance-sheet strength, business predictability and correlation with existing holdings. Highest-conviction compounders receive larger weights; cyclical, highly valued or directly AI-cycle-dependent names are sized more conservatively unless the margin of safety is unusually strong.",
+    "diversification": "Diversification is managed across sectors, end-markets, geographies and earnings drivers rather than by equal sector weights. Technology and AI-linked exposure is complemented by healthcare, financials, industrials and energy so that portfolio returns are not dependent on a single capex cycle, macro regime or technological outcome.",
+    "risk_management": "Risk control begins with avoiding weak balance sheets, fragile cash flows and thesis dependence on optimistic assumptions. Position limits, scenario analysis and exposure monitoring are used to control company, sector, valuation and factor concentration. Material thesis deterioration triggers a fresh underwriting review before additional capital is committed.",
+    "sell_discipline": "Trim or exit when the original thesis is materially impaired, the moat or management quality deteriorates, leverage or cash-flow risk rises, valuation moves materially above a reasonable base-case value, or a superior opportunity offers a meaningfully better risk-adjusted return. Price weakness alone is not a sell signal when fundamentals remain intact.",
+    "monitoring_and_review": "Company-specific KPIs established at underwriting are monitored on an event-driven and weekly basis, with a full thesis refresh after each earnings cycle. Reviews focus on revenue/volume drivers, margins, free cash flow, balance-sheet changes, capital allocation, competitive developments, guidance and valuation versus the original base case.",
+    "portfolio_edge": "Seek expectation gaps where short-term sentiment, temporary operational pressure or a misunderstood transition causes market pricing to diverge from long-term business fundamentals. The process emphasizes distinguishing temporary problems from permanent impairment and requiring evidence before taking a contrarian position.",
+    "what_i_avoid": "Businesses with weak governance, persistent dilution, poor cash conversion, excessive leverage, structurally declining economics, opaque accounting, undisciplined acquisitions or valuations that require near-perfect execution. I also avoid positions where the investment case rests primarily on one binary technological, regulatory or commodity outcome.",
+    "closing_summary": "A focused, benchmark-aware portfolio combining quality, sustainable growth and valuation discipline. Holdings are selected for standalone business economics first and structural tailwinds second, with the objective of compounding intrinsic value and generating attractive risk-adjusted returns across a full market cycle."
+  },
+  "theses": [
+    {
+      "company": "Amazon.com, Inc.",
+      "sector": "Consumer Cyclical",
+      "weight": 0.13570173877087033,
+      "status": "Active",
+      "time_horizon": "3–5+ years",
+      "conviction": 4.0,
+      "composite_score": 4.571428571428571,
+      "investment_thesis": "Amazon is a multi-engine compounder across cloud, advertising, logistics and commerce. AWS provides high-margin growth while retail scale and fulfillment density support improving unit economics; AI is an additional demand driver rather than the only source of value.",
+      "why_owned": "Own for AWS growth, advertising economics and the long runway to convert Amazon’s logistics scale into higher consolidated margins.",
+      "competitive_advantage": "AWS scale and ecosystem, Prime membership, logistics density, marketplace network effects, merchant relationships and a high-intent advertising platform.",
+      "growth_drivers": "AWS, advertising, retail margin expansion, faster delivery density, custom silicon, international profitability and operating leverage.",
+      "valuation_rationale": "Use normalized operating earnings rather than GAAP EPS because investment gains distort the denominator. A ~30x normalized multiple requires sustained mid-teens earnings compounding.",
+      "catalysts": "AWS growth above expectations; retail margin expansion; capex efficiency; advertising mix; improved FCF as infrastructure intensity normalizes.",
+      "key_risks": "Capex returns disappoint; cloud competition; retail wage/logistics inflation; regulatory action; consumer slowdown; overinvestment in infrastructure.",
+      "sell_condition": "Re-underwrite if AWS growth/margins structurally weaken, retail margins reverse, or capex remains elevated without corresponding growth in operating profit and cash flow.",
+      "monitoring_kpi": "AWS growth and margin; consolidated operating margin; advertising growth; OCF; capex; FCF.",
+      "review_date": "46253",
+      "public_notes": "Public-data refresh: 19 Aug 2026.",
+      "scores": {
+        "business_quality": 5.0,
+        "moat_score": 5.0,
+        "management_capital_allocation": 5.0,
+        "balance_sheet": 4.5,
+        "growth": 5.0,
+        "valuation": 3.5,
+        "risk_resilience": 4.0
+      }
+    },
+    {
+      "company": "NVIDIA Corporation",
+      "sector": "Technology",
+      "weight": 0.11493196924249303,
+      "status": "Active",
+      "time_horizon": "3–5+ years",
+      "conviction": 3.5,
+      "composite_score": 4.428571428571429,
+      "investment_thesis": "NVIDIA remains the dominant accelerated-computing platform through its GPU architecture, CUDA ecosystem and integrated systems. The upside extends from training into inference, networking, robotics and accelerated computing, but this is the portfolio’s most direct AI-cycle exposure and must be sized accordingly.",
+      "why_owned": "Own for platform economics, software lock-in and the ability to capture value across compute, networking and systems rather than a single chip product.",
+      "competitive_advantage": "CUDA software ecosystem, developer adoption, hardware/software co-design, scale, networking portfolio and rapid product cadence.",
+      "growth_drivers": "Inference growth, sovereign/enterprise AI, networking, next-generation architectures, software/services and expansion beyond hyperscalers.",
+      "valuation_rationale": "~33x trailing earnings is not extreme relative to current growth, but the underwriting assumes growth slows materially and the exit multiple compresses toward the high-20s.",
+      "catalysts": "Successful architecture ramps; inference mix growth; supply expansion; software revenue growth; broader enterprise adoption.",
+      "key_risks": "Hyperscaler capex slowdown; custom ASIC competition; export restrictions; customer concentration; gross-margin normalization; faster-than-expected commoditization.",
+      "sell_condition": "Re-underwrite if Data Center growth decelerates below long-term assumptions while gross margin falls structurally, or if CUDA/platform switching costs materially erode.",
+      "monitoring_kpi": "Data Center growth; gross margin; operating margin; hyperscaler capex; networking growth; software revenue; inventory.",
+      "review_date": "46253",
+      "public_notes": "Public-data refresh: 19 Aug 2026.",
+      "scores": {
+        "business_quality": 5.0,
+        "moat_score": 5.0,
+        "management_capital_allocation": 5.0,
+        "balance_sheet": 5.0,
+        "growth": 5.0,
+        "valuation": 3.0,
+        "risk_resilience": 3.0
+      }
+    },
+    {
+      "company": "JPM",
+      "sector": "Financial Services",
+      "weight": 0.09499644303193207,
+      "status": "Active",
+      "time_horizon": "3–5+ years",
+      "conviction": 3.5,
+      "composite_score": 4.428571428571429,
+      "investment_thesis": "JPMorgan is a high-quality financial compounder with leading positions in consumer banking, payments, investment banking, markets and asset management. Scale, technology spending and a low-cost deposit base support structurally superior returns through cycles.",
+      "why_owned": "Own for durable ROTCE, diversified earnings, strong risk management and the ability to gain share during periods when weaker competitors retrench.",
+      "competitive_advantage": "Scale, deposit franchise, payments network, client relationships, balance-sheet capacity, brand and technology investment.",
+      "growth_drivers": "Loan/deposit growth, capital-markets activity, payments, wealth/asset management, efficiency gains and disciplined reinvestment.",
+      "valuation_rationale": "~14.4x 2026E earnings reflects a quality premium. Expected return is respectable but less asymmetric unless earnings estimates rise or the stock derates.",
+      "catalysts": "Higher investment-banking activity; resilient credit; operating leverage; market-share gains; capital return.",
+      "key_risks": "Credit deterioration, regulatory capital requirements, succession, lower rates, trading normalization and macro recession.",
+      "sell_condition": "Re-underwrite if through-cycle ROTCE falls toward the cost of equity, credit discipline deteriorates or franchise share losses become persistent.",
+      "monitoring_kpi": "ROTCE; CET1; NII; net charge-offs; deposit growth; investment-banking fees; expense growth.",
+      "review_date": "46253",
+      "public_notes": "Public-data refresh: 19 Aug 2026.",
+      "scores": {
+        "business_quality": 5.0,
+        "moat_score": 5.0,
+        "management_capital_allocation": 5.0,
+        "balance_sheet": 5.0,
+        "growth": 4.0,
+        "valuation": 2.5,
+        "risk_resilience": 4.5
+      }
+    },
+    {
+      "company": "Alphabet Inc.",
+      "sector": "Communication Services",
+      "weight": 0.09001452677554182,
+      "status": "Active",
+      "time_horizon": "3–5+ years",
+      "conviction": 4.5,
+      "composite_score": 4.428571428571429,
+      "investment_thesis": "Alphabet combines one of the world’s strongest advertising franchises with rapidly scaling cloud economics and optionality in subscriptions and Waymo. AI should improve product utility and monetization, but the thesis remains anchored in Search, YouTube, distribution and cash generation rather than AI alone.",
+      "why_owned": "Own for the durability of Search/YouTube economics, improving Cloud profitability and a balance sheet capable of funding infrastructure while preserving strategic optionality.",
+      "competitive_advantage": "Global Search distribution, advertiser network effects, proprietary data, YouTube scale, Android/Chrome distribution and a hyperscale cloud platform.",
+      "growth_drivers": "Search monetization, Google Cloud backlog conversion, AI-enhanced advertising, subscriptions, enterprise AI demand and optionality from Waymo.",
+      "valuation_rationale": "Valuation should be based on normalized operating earnings because 2026 GAAP EPS is inflated by investment gains. A ~29x normalized core multiple is acceptable if low-teens earnings growth persists.",
+      "catalysts": "Cloud margin expansion; continued Search resilience; AI monetization beyond infrastructure; moderation in capex intensity; greater capital returns.",
+      "key_risks": "Antitrust remedies; search share loss; AI-driven changes in user behavior; sustained capex ahead of monetization; advertising cyclicality.",
+      "sell_condition": "Re-underwrite if Search revenue/share weakens structurally, Cloud returns deteriorate, or capex remains materially above operating cash generation without visible monetization.",
+      "monitoring_kpi": "Search revenue growth; Cloud revenue growth and operating margin; capex/revenue; TTM FCF; Cloud backlog.",
+      "review_date": "46253",
+      "public_notes": "Public-data refresh: 19 Aug 2026.",
+      "scores": {
+        "business_quality": 5.0,
+        "moat_score": 5.0,
+        "management_capital_allocation": 4.0,
+        "balance_sheet": 5.0,
+        "growth": 4.5,
+        "valuation": 3.5,
+        "risk_resilience": 4.0
+      }
+    },
+    {
+      "company": "Microsoft Corporation",
+      "sector": "Technology",
+      "weight": 0.08396996984871624,
+      "status": "Active",
+      "time_horizon": "3–5+ years",
+      "conviction": 4.5,
+      "composite_score": 4.785714285714286,
+      "investment_thesis": "Microsoft combines recurring enterprise software, cloud infrastructure and a deeply embedded distribution ecosystem. AI expands Azure and application monetization, but the core thesis remains Office, cloud, security, developer tooling and high switching costs.",
+      "why_owned": "Own for one of the portfolio’s strongest combinations of recurring revenue, balance-sheet quality, pricing power and multi-product cross-selling.",
+      "competitive_advantage": "Enterprise installed base, Microsoft 365, Azure scale, Windows identity/distribution, developer ecosystem, security suite and high switching costs.",
+      "growth_drivers": "Azure, Microsoft 365 ARPU, security, Dynamics, GitHub, AI services and operating leverage across the installed base.",
+      "valuation_rationale": "~27x FY26 EPS is not cheap but appears reasonable relative to mid-teens earnings growth and franchise durability. Base case assumes roughly stable terminal multiple.",
+      "catalysts": "Azure growth; AI monetization in M365; capex productivity; security share gains; margin resilience.",
+      "key_risks": "Capex intensity, cloud competition, regulation, AI monetization lag, OpenAI-related economics and enterprise IT slowdown.",
+      "sell_condition": "Re-underwrite if Azure growth structurally falls below the mid-teens, cloud margins deteriorate without offsetting growth, or capex returns remain below expectations for multiple years.",
+      "monitoring_kpi": "Azure growth; Microsoft Cloud growth/margin; commercial RPO; capex; FCF; M365 growth; operating margin.",
+      "review_date": "46253",
+      "public_notes": "Public-data refresh: 19 Aug 2026.",
+      "scores": {
+        "business_quality": 5.0,
+        "moat_score": 5.0,
+        "management_capital_allocation": 5.0,
+        "balance_sheet": 5.0,
+        "growth": 5.0,
+        "valuation": 3.5,
+        "risk_resilience": 5.0
+      }
+    },
+    {
+      "company": "Taiwan Semiconductor Manufacturing Company Limited",
+      "sector": "Technology",
+      "weight": 0.07207612729840496,
+      "status": "Active",
+      "time_horizon": "3–5+ years",
+      "conviction": 4.5,
+      "composite_score": 4.571428571428571,
+      "investment_thesis": "TSMC is the critical manufacturing platform for leading-edge semiconductors. AI is a powerful demand driver, but the moat rests on process leadership, yield, customer trust and scale across advanced compute, smartphones and specialized silicon.",
+      "why_owned": "Own for unmatched leading-edge foundry economics, high returns on capital and the ability to capture increasing semiconductor complexity independent of which chip designer wins.",
+      "competitive_advantage": "Process technology, yields, manufacturing scale, ecosystem depth, customer trust, advanced packaging and enormous barriers to entry.",
+      "growth_drivers": "2nm/advanced nodes, HPC, advanced packaging, geographic capacity expansion, content growth per device and long-term semiconductor intensity.",
+      "valuation_rationale": "~22x 2026E earnings with high-teens growth is compelling on fundamentals; a geopolitical risk discount is appropriate and prevents a higher position-size ceiling.",
+      "catalysts": "2nm ramp; advanced-packaging capacity; margin resilience; higher HPC mix; overseas-fab execution.",
+      "key_risks": "Taiwan geopolitics, customer concentration, capex intensity, semiconductor cycle, overseas-fab dilution and export restrictions.",
+      "sell_condition": "Re-underwrite if technology leadership/yields are lost, long-run gross margin falls materially below management’s framework, or geopolitical risk changes the investability of the ADR.",
+      "monitoring_kpi": "Revenue growth; gross/operating margin; advanced-node mix; capex; HPC share; 2nm ramp; overseas-fab economics.",
+      "review_date": "46253",
+      "public_notes": "Public-data refresh: 19 Aug 2026.",
+      "scores": {
+        "business_quality": 5.0,
+        "moat_score": 5.0,
+        "management_capital_allocation": 5.0,
+        "balance_sheet": 5.0,
+        "growth": 5.0,
+        "valuation": 4.0,
+        "risk_resilience": 3.0
+      }
+    },
+    {
+      "company": "Chevron Corporation",
+      "sector": "Energy",
+      "weight": 0.07173964197741041,
+      "status": "Active",
+      "time_horizon": "3–5+ years",
+      "conviction": 3.0,
+      "composite_score": 4.0,
+      "investment_thesis": "Chevron offers high-quality integrated energy exposure with a growing low-cost production base, LNG and Guyana/Hess optionality. The thesis is built on capital discipline and cash returns rather than a requirement for permanently high oil prices.",
+      "why_owned": "Own for balance-sheet strength, long-life resource quality, dividend durability and the ability to return cash while funding advantaged growth projects.",
+      "competitive_advantage": "Scale, reserve base, project execution capabilities, integrated assets, low-cost resources and access to capital.",
+      "growth_drivers": "Guyana/Hess integration, Permian growth, LNG, Tengiz ramp, cost savings, buybacks and disciplined capex.",
+      "valuation_rationale": "~13.4x 2026E earnings plus a ~3.5% yield is acceptable, but upside is constrained if commodity prices normalize and the multiple returns toward ~12x.",
+      "catalysts": "Hess synergies; Guyana volume growth; higher utilization; cost reductions; stronger commodity realizations.",
+      "key_risks": "Oil/gas price declines, project overruns, geopolitical exposure, regulatory costs, capital-intensity and integration risk.",
+      "sell_condition": "Re-underwrite if balance-sheet discipline weakens, sustaining capex rises materially without volume/cash-flow growth, or shareholder returns become debt-funded.",
+      "monitoring_kpi": "CFO ex-WC; adjusted FCF; production growth; capex; net debt; shareholder distributions; project milestones.",
+      "review_date": "46253",
+      "public_notes": "Public-data refresh: 19 Aug 2026.",
+      "scores": {
+        "business_quality": 4.5,
+        "moat_score": 4.0,
+        "management_capital_allocation": 4.5,
+        "balance_sheet": 5.0,
+        "growth": 3.5,
+        "valuation": 2.5,
+        "risk_resilience": 4.0
+      }
+    },
+    {
+      "company": "Universal Health Services, Inc.",
+      "sector": "Healthcare",
+      "weight": 0.06035488497915946,
+      "status": "Active",
+      "time_horizon": "3–5+ years",
+      "conviction": 4.0,
+      "composite_score": 4.0,
+      "investment_thesis": "UHS provides defensive healthcare exposure through acute-care and behavioral-health facilities. Demand is less cyclical than the portfolio’s technology holdings, and current valuation offers a substantial expectations gap if volumes, pricing and labor productivity remain stable.",
+      "why_owned": "Own for diversification, essential-service demand and a low earnings multiple that does not require aggressive growth assumptions.",
+      "competitive_advantage": "Facility networks, licenses, local market positions, payer relationships, clinical infrastructure and behavioral-health capacity.",
+      "growth_drivers": "Admissions/patient days, reimbursement/pricing, behavioral-health demand, labor normalization, capacity additions and operating leverage.",
+      "valuation_rationale": "~7.5x midpoint 2026 guidance is one of the portfolio’s cheapest valuations. Base case allows for a rerating toward ~10x while assuming only high-single-digit earnings growth.",
+      "catalysts": "Better labor productivity; capacity utilization; stable reimbursement; behavioral-health growth; buybacks/deleveraging.",
+      "key_risks": "Labor inflation, reimbursement pressure, regulation, litigation, payer mix, capex intensity and volume weakness.",
+      "sell_condition": "Re-underwrite if same-facility volumes decline persistently, reimbursement fails to offset cost inflation, or leverage/capex materially reduces cash conversion.",
+      "monitoring_kpi": "Same-facility revenue; admissions/patient days; revenue per admission; adjusted EBITDA margin; labor cost; EPS guidance.",
+      "review_date": "46253",
+      "public_notes": "Public-data refresh: 19 Aug 2026.",
+      "scores": {
+        "business_quality": 4.0,
+        "moat_score": 4.0,
+        "management_capital_allocation": 4.0,
+        "balance_sheet": 4.0,
+        "growth": 3.5,
+        "valuation": 5.0,
+        "risk_resilience": 3.5
+      }
+    },
+    {
+      "company": "Schneider Electric S.E.",
+      "sector": "Industrials",
+      "weight": 0.052137986013442966,
+      "status": "Active",
+      "time_horizon": "3–5+ years",
+      "conviction": 3.0,
+      "composite_score": 4.214285714285714,
+      "investment_thesis": "Schneider is a structural beneficiary of electrification, energy efficiency and industrial automation across data centers, buildings, infrastructure and industry. Data-center demand is important, but the franchise is diversified enough to compound even if AI infrastructure growth normalizes.",
+      "why_owned": "Own for category leadership in electrical distribution and automation, pricing power, high switching costs and exposure to long-duration electrification capex.",
+      "competitive_advantage": "Installed base, engineering know-how, channel relationships, EcoStruxure architecture, certification and a broad integrated product portfolio.",
+      "growth_drivers": "Electrification, grid modernization, industrial automation, data-center power management, energy-efficiency regulation and mix/margin improvement.",
+      "valuation_rationale": "~31x 2026E earnings prices in high-quality execution. The model assumes multiple normalization toward ~26x, making current expected return more modest.",
+      "catalysts": "Sustained double-digit organic growth; margin expansion; data-center backlog; higher software/service mix; cash conversion.",
+      "key_risks": "Premium valuation, data-center capex normalization, China/industrial cycle, FX and execution on capacity expansion.",
+      "sell_condition": "Re-underwrite if organic growth falls structurally below mid-single digits, margins reverse materially or valuation remains elevated while growth normalizes.",
+      "monitoring_kpi": "Organic revenue growth; adjusted EBITA margin; FCF conversion; data-center growth; orders/backlog; China growth.",
+      "review_date": "46253",
+      "public_notes": "Public-data refresh: 19 Aug 2026.",
+      "scores": {
+        "business_quality": 5.0,
+        "moat_score": 5.0,
+        "management_capital_allocation": 4.5,
+        "balance_sheet": 4.5,
+        "growth": 4.5,
+        "valuation": 2.0,
+        "risk_resilience": 4.0
+      }
+    },
+    {
+      "company": "TotalEnergies SE",
+      "sector": "Energy",
+      "weight": 0.0467018994372639,
+      "status": "Active",
+      "time_horizon": "3–5+ years",
+      "conviction": 3.5,
+      "composite_score": 4.285714285714286,
+      "investment_thesis": "TotalEnergies combines low-cost hydrocarbons, LNG and a growing power business within a disciplined capital-return framework. The investment case relies on resilient integrated cash flow and valuation rather than a permanently bullish commodity forecast.",
+      "why_owned": "Own for diversified energy cash flows, strong balance sheet, shareholder distributions and exposure to LNG/electricity growth at a low earnings multiple.",
+      "competitive_advantage": "Integrated asset base, LNG portfolio, scale, low-cost resources, trading capabilities and project-development expertise.",
+      "growth_drivers": "LNG volumes, upstream growth, power generation, cost discipline, buybacks/dividends and selective transition investments.",
+      "valuation_rationale": "~8.3x 2026E earnings plus ~4.6% yield offers an attractive starting yield. Base case assumes only modest earnings growth and a small rerating.",
+      "catalysts": "Higher LNG contribution; production growth; deleveraging; buybacks; stronger refining/power margins.",
+      "key_risks": "Commodity-price decline, windfall taxes/regulation, project execution, transition capex, geopolitical exposure and FX.",
+      "sell_condition": "Re-underwrite if gearing rises structurally, shareholder returns become debt-funded, or new investments dilute returns on capital without strategic benefit.",
+      "monitoring_kpi": "Cash flow; gearing; production; LNG volumes; net investment; shareholder distributions; breakeven economics.",
+      "review_date": "46253",
+      "public_notes": "Public-data refresh: 19 Aug 2026.",
+      "scores": {
+        "business_quality": 4.5,
+        "moat_score": 4.0,
+        "management_capital_allocation": 4.5,
+        "balance_sheet": 5.0,
+        "growth": 3.5,
+        "valuation": 4.5,
+        "risk_resilience": 4.0
+      }
+    },
+    {
+      "company": "Berkshire Hathaway Inc.",
+      "sector": "Financial Services",
+      "weight": 0.04384437731186361,
+      "status": "Active",
+      "time_horizon": "3–5+ years",
+      "conviction": 4.0,
+      "composite_score": 4.5,
+      "investment_thesis": "Berkshire provides diversified exposure to insurance, rail, utilities, industrials and a concentrated equity portfolio, supported by unusually strong liquidity and decentralized operating discipline. The investment case is capital-allocation compounding rather than dependence on any single growth theme.",
+      "why_owned": "Own for resilience, insurance float, tax-efficient capital allocation and the ability to deploy large amounts of capital during dislocations.",
+      "competitive_advantage": "Insurance scale and float, reputation, permanent capital, decentralized culture, access to large private transactions and strong subsidiary franchises.",
+      "growth_drivers": "Operating earnings growth, productive deployment of cash, insurance underwriting, equity portfolio compounding, bolt-on acquisitions and buybacks.",
+      "valuation_rationale": "At roughly 1.43x book, valuation appears fair rather than distressed. Return should primarily come from growth in intrinsic/book value and opportunistic capital deployment.",
+      "catalysts": "Large acquisitions; disciplined buybacks; stronger insurance/rail earnings; deployment of excess liquidity during market weakness.",
+      "key_risks": "Size constrains future returns; succession/capital-allocation risk; catastrophe losses; lower reinvestment rates; conglomerate complexity.",
+      "sell_condition": "Re-underwrite if capital allocation deteriorates materially, insurance underwriting becomes persistently unprofitable, or valuation disconnects from underlying intrinsic-value growth.",
+      "monitoring_kpi": "Operating earnings; insurance combined ratio/underwriting; float and cost of float; cash/T-bills; book value per share; buybacks and acquisitions.",
+      "review_date": "46253",
+      "public_notes": "Public-data refresh: 19 Aug 2026.",
+      "scores": {
+        "business_quality": 5.0,
+        "moat_score": 5.0,
+        "management_capital_allocation": 5.0,
+        "balance_sheet": 5.0,
+        "growth": 3.5,
+        "valuation": 3.0,
+        "risk_resilience": 5.0
+      }
+    },
+    {
+      "company": "Cummins Inc.",
+      "sector": "Industrials",
+      "weight": 0.043294143843434794,
+      "status": "Active",
+      "time_horizon": "3–5+ years",
+      "conviction": 3.0,
+      "composite_score": 4.0,
+      "investment_thesis": "Cummins is a high-quality powertrain and power-generation franchise with resilient aftermarket economics and exposure to electricity/backup-power investment. The business fits the portfolio well, but current valuation reduces the attractiveness of adding capital.",
+      "why_owned": "Own for installed-base economics, distribution, power-generation growth and disciplined capital returns; treat as a hold/watch at the current valuation rather than a high-conviction add.",
+      "competitive_advantage": "Global distribution/service network, installed base, engineering capability, regulatory know-how, brand and customer relationships.",
+      "growth_drivers": "Power generation, aftermarket/service, North American truck recovery, international growth, margin improvement and capital returns.",
+      "valuation_rationale": "~22.6x Q2 annualized EPS is demanding for an industrial business. Base case assumes earnings compound but the multiple normalizes toward ~20x, limiting prospective return.",
+      "catalysts": "Power-generation strength; improved full-year margin; cost execution; truck-cycle recovery; stronger FCF.",
+      "key_risks": "Industrial/truck cyclicality, emissions transition, Accelera losses, valuation, input costs and regulatory changes.",
+      "sell_condition": "Reduce if power-generation growth fades, EBITDA margins fall below the revised framework, or valuation remains elevated while earnings growth returns to mid-single digits.",
+      "monitoring_kpi": "Revenue growth; EBITDA margin; Power Systems sales; North America truck demand; FCF; Accelera losses; capital returns.",
+      "review_date": "46253",
+      "public_notes": "Public-data refresh: 19 Aug 2026.",
+      "scores": {
+        "business_quality": 4.5,
+        "moat_score": 4.5,
+        "management_capital_allocation": 5.0,
+        "balance_sheet": 4.5,
+        "growth": 4.0,
+        "valuation": 1.5,
+        "risk_resilience": 4.0
+      }
+    },
+    {
+      "company": "SNY",
+      "sector": "Healthcare",
+      "weight": 0.039201561450868914,
+      "status": "Active",
+      "time_horizon": "3–5+ years",
+      "conviction": 4.0,
+      "composite_score": 3.857142857142857,
+      "investment_thesis": "Sanofi offers strong near-term growth and income at a discounted valuation, led by Dupixent and newer launches. The investment case is a value-plus-growth rerating opportunity, but success depends on converting current cash flows into a broader post-Dupixent pipeline.",
+      "why_owned": "Own for discounted earnings, dividend support, strong immunology growth and potential upside from a cleaner pipeline and disciplined business development.",
+      "competitive_advantage": "Dupixent franchise, global commercial infrastructure, biologics expertise, manufacturing scale and established specialty-care relationships.",
+      "growth_drivers": "Dupixent indications, newer launches, pipeline prioritization, business development, margin discipline and share buybacks.",
+      "valuation_rationale": "~12.3x 2026E earnings with a ~5.5% yield is attractive versus market and pharma peers. Valuation provides support while management rebuilds the medium-term pipeline.",
+      "catalysts": "Pipeline wins; successful acquisitions; Dupixent upside; margin expansion; clearer post-2030 growth bridge.",
+      "key_risks": "Dupixent concentration/patent expiry, failed trials, expensive M&A, vaccine weakness, regulation and pipeline write-downs.",
+      "sell_condition": "Re-underwrite if pipeline replacement probability falls further, business development destroys value, or Dupixent growth slows without credible replacement assets.",
+      "monitoring_kpi": "Dupixent sales; launch-product growth; business EPS; R&D productivity; pipeline milestones; FCF/capital deployment.",
+      "review_date": "46253",
+      "public_notes": "Public-data refresh: 19 Aug 2026.",
+      "scores": {
+        "business_quality": 4.0,
+        "moat_score": 4.0,
+        "management_capital_allocation": 3.5,
+        "balance_sheet": 4.0,
+        "growth": 4.0,
+        "valuation": 4.5,
+        "risk_resilience": 3.0
+      }
+    },
+    {
+      "company": "Lumentum Holdings Inc.",
+      "sector": "Technology",
+      "weight": 0.03045151399212358,
+      "status": "Active",
+      "time_horizon": "3–5+ years",
+      "conviction": 3.0,
+      "composite_score": 3.5714285714285716,
+      "investment_thesis": "Lumentum is leveraged to rising optical bandwidth requirements through lasers and photonic components used in cloud and network infrastructure. The growth opportunity is substantial, but unlike diversified platform holdings the thesis remains highly sensitive to the AI/network capex cycle.",
+      "why_owned": "Own selectively for scarce optical technology, rapid margin expansion and strong demand visibility, while keeping position size below core holdings because valuation and end-market concentration are high.",
+      "competitive_advantage": "Specialized photonics IP, qualification cycles, manufacturing know-how, customer relationships and scarce high-performance laser capacity.",
+      "growth_drivers": "High-speed optical connectivity, cloud network upgrades, laser demand, new capacity, higher-value product mix and future co-packaged/near-packaged optics.",
+      "valuation_rationale": "Run-rate adjusted earnings imply roughly a ~50x multiple. Even with strong growth, the base case assumes substantial multiple compression; this is a high-expectation holding rather than a value position.",
+      "catalysts": "Capacity ramp; Q1 FY27 guidance delivery; higher operating margin; additional design wins; sustained sold-out demand.",
+      "key_risks": "Hyperscaler capex slowdown, customer concentration, CPO timing delays, supply execution, high valuation and rapid technology transitions.",
+      "sell_condition": "Reduce if bookings/order visibility deteriorates, gross/operating margins miss the new run-rate structurally, or valuation remains extreme as growth normalizes.",
+      "monitoring_kpi": "Revenue growth; non-GAAP operating margin; customer concentration; capacity utilization; bookings; optical datacom mix.",
+      "review_date": "46253",
+      "public_notes": "Public-data refresh: 19 Aug 2026.",
+      "scores": {
+        "business_quality": 4.5,
+        "moat_score": 4.0,
+        "management_capital_allocation": 4.0,
+        "balance_sheet": 3.5,
+        "growth": 5.0,
+        "valuation": 1.5,
+        "risk_resilience": 2.5
+      }
+    },
+    {
+      "company": "Medpace Holdings, Inc.",
+      "sector": "Healthcare",
+      "weight": 0.020583216026473942,
+      "status": "Active",
+      "time_horizon": "3–5+ years",
+      "conviction": 4.0,
+      "composite_score": 4.428571428571429,
+      "investment_thesis": "Medpace is a high-quality CRO compounder benefiting from long-term biopharma R&D outsourcing without requiring investors to select individual drug winners. Scientific specialization, customer execution and a cash-rich balance sheet support durable growth.",
+      "why_owned": "Own for strong organic growth, high cash conversion, net-cash economics and a long runway in outsourced clinical development.",
+      "competitive_advantage": "Scientific/therapeutic expertise, investigator network, execution track record, regulatory capabilities and embedded customer relationships.",
+      "growth_drivers": "Biotech/pharma R&D, outsourcing penetration, net new awards, backlog conversion, market-share gains and disciplined buybacks.",
+      "valuation_rationale": "~34.5x midpoint 2026 EPS guidance is a premium valuation. Base case requires continued low/mid-teens EPS growth and assumes modest multiple compression.",
+      "catalysts": "Awards/book-to-bill strength; faster backlog conversion; margin expansion; biotech funding recovery; accretive buybacks.",
+      "key_risks": "Biotech funding cycles, cancellations, customer concentration, hiring costs, pricing pressure and slower backlog conversion.",
+      "sell_condition": "Re-underwrite if book-to-bill remains below 1x, backlog declines materially, margins compress structurally or the premium valuation persists despite slower growth.",
+      "monitoring_kpi": "Revenue growth; net new awards; book-to-bill; backlog; EBITDA margin; OCF; share count.",
+      "review_date": "46253",
+      "public_notes": "Public-data refresh: 19 Aug 2026.",
+      "scores": {
+        "business_quality": 5.0,
+        "moat_score": 4.5,
+        "management_capital_allocation": 5.0,
+        "balance_sheet": 5.0,
+        "growth": 4.5,
+        "valuation": 3.0,
+        "risk_resilience": 4.0
+      }
+    }
+  ],
+  "alpha": [
+    {
+      "model": "CAPM / Jensen",
+      "annualized_alpha": 0.09838169221943717,
+      "t_stat": 4.00187928304923,
+      "p_value": 6.475789941973672e-05,
+      "r2": 0.8784016405978152,
+      "significant_5pct": true,
+      "interpretation": "Statistically significant positive alpha"
+    },
+    {
+      "model": "Fama-French 3",
+      "annualized_alpha": 0.09720115271870822,
+      "t_stat": 4.130578411737517,
+      "p_value": 3.744699747450397e-05,
+      "r2": 0.8907154760677019,
+      "significant_5pct": true,
+      "interpretation": "Statistically significant positive alpha"
+    },
+    {
+      "model": "Carhart 4",
+      "annualized_alpha": 0.09672037544962844,
+      "t_stat": 4.109097281743863,
+      "p_value": 4.1079052429274996e-05,
+      "r2": 0.8907569744407834,
+      "significant_5pct": true,
+      "interpretation": "Statistically significant positive alpha"
+    },
+    {
+      "model": "Fama-French 5",
+      "annualized_alpha": 0.09849915766984665,
+      "t_stat": 4.2543607135849175,
+      "p_value": 2.1784774538255364e-05,
+      "r2": 0.894330123654871,
+      "significant_5pct": true,
+      "interpretation": "Statistically significant positive alpha"
+    },
+    {
+      "model": "Style Proxy",
+      "annualized_alpha": 0.09216152749414962,
+      "t_stat": 4.342175383941581,
+      "p_value": 1.4698841941054524e-05,
+      "r2": 0.9096357898988914,
+      "significant_5pct": true,
+      "interpretation": "Statistically significant positive alpha"
+    }
+  ],
+  "factors": [
+    {
+      "factor": "Market_SPY",
+      "exposure": 1.1277598959261934
+    },
+    {
+      "factor": "SmallCap_IWM",
+      "exposure": 0.7639242212016761
+    },
+    {
+      "factor": "Value_IWD",
+      "exposure": 1.0374339325650133
+    },
+    {
+      "factor": "Growth_IWF",
+      "exposure": 0.9516222779490988
+    },
+    {
+      "factor": "Momentum_MTUM",
+      "exposure": 0.8333802425388099
+    },
+    {
+      "factor": "Quality_QUAL",
+      "exposure": 1.093778436227842
+    },
+    {
+      "factor": "LowVol_USMV",
+      "exposure": 1.1239083103015541
+    }
+  ],
+  "stress": [
+    {
+      "scenario": "Market -10%",
+      "estimated_return": -0.11282887269228599
+    },
+    {
+      "scenario": "Market -20%",
+      "estimated_return": -0.25565774538457203
+    },
+    {
+      "scenario": "Severe risk-off",
+      "estimated_return": -0.3884866180768579
+    },
+    {
+      "scenario": "Market +10%",
+      "estimated_return": 0.11282887269228599
+    }
+  ],
+  "timeseries": [
+    {
+      "date": "2016-08-22",
+      "portfolio_growth": 0.997948531823009,
+      "benchmark_growth": 0.9999543437795367
+    },
+    {
+      "date": "2016-08-26",
+      "portfolio_growth": 0.9976731157386591,
+      "benchmark_growth": 0.9942804313258722
+    },
+    {
+      "date": "2016-09-01",
+      "portfolio_growth": 1.0019345805905766,
+      "benchmark_growth": 0.9947378132113035
+    },
+    {
+      "date": "2016-09-09",
+      "portfolio_growth": 0.984881559070914,
+      "benchmark_growth": 0.9729901541978209
+    },
+    {
+      "date": "2016-09-15",
+      "portfolio_growth": 0.9981684863053077,
+      "benchmark_growth": 0.9821139829843131
+    },
+    {
+      "date": "2016-09-21",
+      "portfolio_growth": 1.0133649931835582,
+      "benchmark_growth": 0.9895514161020125
+    },
+    {
+      "date": "2016-09-27",
+      "portfolio_growth": 1.0201887262253684,
+      "benchmark_growth": 0.9884047879943932
+    },
+    {
+      "date": "2016-10-03",
+      "portfolio_growth": 1.0327086275964463,
+      "benchmark_growth": 0.9893676254517357
+    },
+    {
+      "date": "2016-10-07",
+      "portfolio_growth": 1.0378504210838526,
+      "benchmark_growth": 0.9859752210612079
+    },
+    {
+      "date": "2016-10-13",
+      "portfolio_growth": 1.025874537895808,
+      "benchmark_growth": 0.9766670295770612
+    },
+    {
+      "date": "2016-10-19",
+      "portfolio_growth": 1.0358801129790896,
+      "benchmark_growth": 0.9824900632744754
+    },
+    {
+      "date": "2016-10-25",
+      "portfolio_growth": 1.0514925575675458,
+      "benchmark_growth": 0.9819857626507054
+    },
+    {
+      "date": "2016-10-31",
+      "portfolio_growth": 1.0352504037542902,
+      "benchmark_growth": 0.9745578908963152
+    },
+    {
+      "date": "2016-11-04",
+      "portfolio_growth": 1.0125400298488787,
+      "benchmark_growth": 0.9562176433692339
+    },
+    {
+      "date": "2016-11-10",
+      "portfolio_growth": 1.0416690376688809,
+      "benchmark_growth": 0.9945946675028758
+    },
+    {
+      "date": "2016-11-16",
+      "portfolio_growth": 1.0914235011156346,
+      "benchmark_growth": 0.9989504813981236
+    },
+    {
+      "date": "2016-11-22",
+      "portfolio_growth": 1.1108030309768555,
+      "benchmark_growth": 1.011376004205287
+    },
+    {
+      "date": "2016-11-30",
+      "portfolio_growth": 1.1022360301424163,
+      "benchmark_growth": 1.006718457945567
+    },
+    {
+      "date": "2016-12-06",
+      "portfolio_growth": 1.1186749249281895,
+      "benchmark_growth": 1.0127483961346004
+    },
+    {
+      "date": "2016-12-12",
+      "portfolio_growth": 1.1207824589812987,
+      "benchmark_growth": 1.033533408496379
+    },
+    {
+      "date": "2016-12-16",
+      "portfolio_growth": 1.1271140816260241,
+      "benchmark_growth": 1.034064908698888
+    },
+    {
+      "date": "2016-12-22",
+      "portfolio_growth": 1.144024085118536,
+      "benchmark_growth": 1.0356271675661888
+    },
+    {
+      "date": "2016-12-29",
+      "portfolio_growth": 1.1454446650089394,
+      "benchmark_growth": 1.030894308072953
+    },
+    {
+      "date": "2017-01-06",
+      "portfolio_growth": 1.147478700301556,
+      "benchmark_growth": 1.036110055114642
+    },
+    {
+      "date": "2017-01-12",
+      "portfolio_growth": 1.1533016443760917,
+      "benchmark_growth": 1.0330088542933296
+    },
+    {
+      "date": "2017-01-20",
+      "portfolio_growth": 1.1625396620855795,
+      "benchmark_growth": 1.037622864062845
+    },
+    {
+      "date": "2017-01-26",
+      "portfolio_growth": 1.1954018847035182,
+      "benchmark_growth": 1.04947562801845
+    },
+    {
+      "date": "2017-02-01",
+      "portfolio_growth": 1.1879512191675958,
+      "benchmark_growth": 1.0416496819920353
+    },
+    {
+      "date": "2017-02-07",
+      "portfolio_growth": 1.1905401872620642,
+      "benchmark_growth": 1.0476905170317385
+    },
+    {
+      "date": "2017-02-13",
+      "portfolio_growth": 1.2130322212710538,
+      "benchmark_growth": 1.06521785001174
+    },
+    {
+      "date": "2017-02-17",
+      "portfolio_growth": 1.220226799094505,
+      "benchmark_growth": 1.0758344560299191
+    },
+    {
+      "date": "2017-02-27",
+      "portfolio_growth": 1.200845288173201,
+      "benchmark_growth": 1.0786550246634923
+    },
+    {
+      "date": "2017-03-03",
+      "portfolio_growth": 1.1956839724838704,
+      "benchmark_growth": 1.0846143142053504
+    },
+    {
+      "date": "2017-03-09",
+      "portfolio_growth": 1.1893455789322909,
+      "benchmark_growth": 1.0775179144178983
+    },
+    {
+      "date": "2017-03-15",
+      "portfolio_growth": 1.2002807791341092,
+      "benchmark_growth": 1.08702580688398
+    },
+    {
+      "date": "2017-03-21",
+      "portfolio_growth": 1.1923969625373347,
+      "benchmark_growth": 1.0679043473553769
+    },
+    {
+      "date": "2017-03-27",
+      "portfolio_growth": 1.2054066726717605,
+      "benchmark_growth": 1.0674017683250174
+    },
+    {
+      "date": "2017-03-31",
+      "portfolio_growth": 1.2208868441908283,
+      "benchmark_growth": 1.0770882033014832
+    },
+    {
+      "date": "2017-04-06",
+      "portfolio_growth": 1.2110038918159436,
+      "benchmark_growth": 1.0757175771856486
+    },
+    {
+      "date": "2017-04-12",
+      "portfolio_growth": 1.1942720658066484,
+      "benchmark_growth": 1.0692753765017085
+    },
+    {
+      "date": "2017-04-21",
+      "portfolio_growth": 1.1864902050717367,
+      "benchmark_growth": 1.065600841053921
+    },
+    {
+      "date": "2017-04-27",
+      "portfolio_growth": 1.2187906734197151,
+      "benchmark_growth": 1.0838159818259279
+    },
+    {
+      "date": "2017-05-05",
+      "portfolio_growth": 1.232588226594945,
+      "benchmark_growth": 1.0856657651375428
+    },
+    {
+      "date": "2017-05-11",
+      "portfolio_growth": 1.2714185884362792,
+      "benchmark_growth": 1.0842166743562596
+    },
+    {
+      "date": "2017-05-17",
+      "portfolio_growth": 1.2603495529517785,
+      "benchmark_growth": 1.0680923331962555
+    },
+    {
+      "date": "2017-05-23",
+      "portfolio_growth": 1.2942721959822783,
+      "benchmark_growth": 1.087251095223049
+    },
+    {
+      "date": "2017-05-31",
+      "portfolio_growth": 1.2977179247473758,
+      "benchmark_growth": 1.0944975113605848
+    },
+    {
+      "date": "2017-06-06",
+      "portfolio_growth": 1.3150630798267506,
+      "benchmark_growth": 1.1025210258714448
+    },
+    {
+      "date": "2017-06-12",
+      "portfolio_growth": 1.3096037513877488,
+      "benchmark_growth": 1.1032012151653883
+    },
+    {
+      "date": "2017-06-16",
+      "portfolio_growth": 1.317147387597307,
+      "benchmark_growth": 1.1053016844912116
+    },
+    {
+      "date": "2017-06-22",
+      "portfolio_growth": 1.3312234162708276,
+      "benchmark_growth": 1.1062126023110839
+    },
+    {
+      "date": "2017-06-28",
+      "portfolio_growth": 1.327515217020925,
+      "benchmark_growth": 1.1091733651389588
+    },
+    {
+      "date": "2017-07-06",
+      "portfolio_growth": 1.2953099973708448,
+      "benchmark_growth": 1.0932529133589173
+    },
+    {
+      "date": "2017-07-12",
+      "portfolio_growth": 1.3393742925024423,
+      "benchmark_growth": 1.1089781511772008
+    },
+    {
+      "date": "2017-07-18",
+      "portfolio_growth": 1.3496017857314715,
+      "benchmark_growth": 1.1164769642307173
+    },
+    {
+      "date": "2017-07-24",
+      "portfolio_growth": 1.3594128488967931,
+      "benchmark_growth": 1.1217488976648364
+    },
+    {
+      "date": "2017-07-28",
+      "portfolio_growth": 1.3426807477348288,
+      "benchmark_growth": 1.1221581443439683
+    },
+    {
+      "date": "2017-08-03",
+      "portfolio_growth": 1.3398099824841825,
+      "benchmark_growth": 1.1223853085661342
+    },
+    {
+      "date": "2017-08-09",
+      "portfolio_growth": 1.3461861899743033,
+      "benchmark_growth": 1.1237032121339292
+    },
+    {
+      "date": "2017-08-15",
+      "portfolio_growth": 1.3346991642400425,
+      "benchmark_growth": 1.1203401922407634
+    },
+    {
+      "date": "2017-08-21",
+      "portfolio_growth": 1.3101396850438012,
+      "benchmark_growth": 1.103933302174513
+    },
+    {
+      "date": "2017-08-25",
+      "portfolio_growth": 1.330204011602306,
+      "benchmark_growth": 1.1114776757376386
+    },
+    {
+      "date": "2017-08-31",
+      "portfolio_growth": 1.3509938541310378,
+      "benchmark_growth": 1.1247939514795586
+    },
+    {
+      "date": "2017-09-08",
+      "portfolio_growth": 1.3585220223906151,
+      "benchmark_growth": 1.1287649182706818
+    },
+    {
+      "date": "2017-09-14",
+      "portfolio_growth": 1.381907734681884,
+      "benchmark_growth": 1.144832396216365
+    },
+    {
+      "date": "2017-09-20",
+      "portfolio_growth": 1.4057396740412065,
+      "benchmark_growth": 1.15037569378857
+    },
+    {
+      "date": "2017-09-26",
+      "portfolio_growth": 1.3747317062295266,
+      "benchmark_growth": 1.1458676155167908
+    },
+    {
+      "date": "2017-10-02",
+      "portfolio_growth": 1.4098445457781035,
+      "benchmark_growth": 1.1607731339371612
+    },
+    {
+      "date": "2017-10-06",
+      "portfolio_growth": 1.4290407752553376,
+      "benchmark_growth": 1.1702037478933662
+    },
+    {
+      "date": "2017-10-12",
+      "portfolio_growth": 1.4457436187717114,
+      "benchmark_growth": 1.1714459146123621
+    },
+    {
+      "date": "2017-10-18",
+      "portfolio_growth": 1.4580601664563788,
+      "benchmark_growth": 1.1764141796486969
+    },
+    {
+      "date": "2017-10-24",
+      "portfolio_growth": 1.4675216260315571,
+      "benchmark_growth": 1.1802785108048475
+    },
+    {
+      "date": "2017-10-30",
+      "portfolio_growth": 1.5081498280103913,
+      "benchmark_growth": 1.181152672774472
+    },
+    {
+      "date": "2017-11-03",
+      "portfolio_growth": 1.5090094984417002,
+      "benchmark_growth": 1.1889731956302396
+    },
+    {
+      "date": "2017-11-09",
+      "portfolio_growth": 1.4919475300292813,
+      "benchmark_growth": 1.187685379927264
+    },
+    {
+      "date": "2017-11-15",
+      "portfolio_growth": 1.4828816759241432,
+      "benchmark_growth": 1.1797266242326847
+    },
+    {
+      "date": "2017-11-21",
+      "portfolio_growth": 1.5028475891426407,
+      "benchmark_growth": 1.1960577893551942
+    },
+    {
+      "date": "2017-11-29",
+      "portfolio_growth": 1.4898299460286708,
+      "benchmark_growth": 1.2057857629412265
+    },
+    {
+      "date": "2017-12-05",
+      "portfolio_growth": 1.468746910016934,
+      "benchmark_growth": 1.2079884620470343
+    },
+    {
+      "date": "2017-12-11",
+      "portfolio_growth": 1.5036019224908341,
+      "benchmark_growth": 1.2223092536343627
+    },
+    {
+      "date": "2017-12-15",
+      "portfolio_growth": 1.5084883253827974,
+      "benchmark_growth": 1.2294797524489334
+    },
+    {
+      "date": "2017-12-21",
+      "portfolio_growth": 1.5237278621146324,
+      "benchmark_growth": 1.2344157196235694
+    },
+    {
+      "date": "2018-01-02",
+      "portfolio_growth": 1.5351058491195628,
+      "benchmark_growth": 1.2407869808863428
+    },
+    {
+      "date": "2018-01-08",
+      "portfolio_growth": 1.5884582714794298,
+      "benchmark_growth": 1.264561921811748
+    },
+    {
+      "date": "2018-01-12",
+      "portfolio_growth": 1.6248151299190114,
+      "benchmark_growth": 1.2830282848591181
+    },
+    {
+      "date": "2018-01-22",
+      "portfolio_growth": 1.6628478491284318,
+      "benchmark_growth": 1.3095255941307822
+    },
+    {
+      "date": "2018-01-26",
+      "portfolio_growth": 1.697485545577682,
+      "benchmark_growth": 1.3275458062946655
+    },
+    {
+      "date": "2018-02-01",
+      "portfolio_growth": 1.6860064067416392,
+      "benchmark_growth": 1.3043836678291443
+    },
+    {
+      "date": "2018-02-07",
+      "portfolio_growth": 1.6080287293741375,
+      "benchmark_growth": 1.239947150145478
+    },
+    {
+      "date": "2018-02-13",
+      "portfolio_growth": 1.60768405193429,
+      "benchmark_growth": 1.232211354189525
+    },
+    {
+      "date": "2018-02-21",
+      "portfolio_growth": 1.6384813504082332,
+      "benchmark_growth": 1.2588544467263418
+    },
+    {
+      "date": "2018-02-27",
+      "portfolio_growth": 1.6654165356550972,
+      "benchmark_growth": 1.2792717270132086
+    },
+    {
+      "date": "2018-03-05",
+      "portfolio_growth": 1.6519565484335177,
+      "benchmark_growth": 1.268829661797526
+    },
+    {
+      "date": "2018-03-09",
+      "portfolio_growth": 1.7089526723263926,
+      "benchmark_growth": 1.2999691011823264
+    },
+    {
+      "date": "2018-03-15",
+      "portfolio_growth": 1.7015143839571194,
+      "benchmark_growth": 1.2819290134049308
+    },
+    {
+      "date": "2018-03-21",
+      "portfolio_growth": 1.6902204506390974,
+      "benchmark_growth": 1.2656742506768264
+    },
+    {
+      "date": "2018-03-27",
+      "portfolio_growth": 1.6129035392775282,
+      "benchmark_growth": 1.2196679595280402
+    },
+    {
+      "date": "2018-04-05",
+      "portfolio_growth": 1.6518748271614034,
+      "benchmark_growth": 1.2546036644285299
+    },
+    {
+      "date": "2018-04-11",
+      "portfolio_growth": 1.6499110915108348,
+      "benchmark_growth": 1.2457245028749695
+    },
+    {
+      "date": "2018-04-17",
+      "portfolio_growth": 1.6936617210460483,
+      "benchmark_growth": 1.2760926940176065
+    },
+    {
+      "date": "2018-04-23",
+      "portfolio_growth": 1.6747121978968975,
+      "benchmark_growth": 1.2589958233955068
+    },
+    {
+      "date": "2018-04-27",
+      "portfolio_growth": 1.6647197784649492,
+      "benchmark_growth": 1.2589489739178903
+    },
+    {
+      "date": "2018-05-07",
+      "portfolio_growth": 1.695570741282131,
+      "benchmark_growth": 1.2669238171292856
+    },
+    {
+      "date": "2018-05-11",
+      "portfolio_growth": 1.7354317564041222,
+      "benchmark_growth": 1.2950704616676232
+    },
+    {
+      "date": "2018-05-17",
+      "portfolio_growth": 1.72172256276858,
+      "benchmark_growth": 1.2910833072637653
+    },
+    {
+      "date": "2018-05-23",
+      "portfolio_growth": 1.7255148496220403,
+      "benchmark_growth": 1.2974910696468345
+    },
+    {
+      "date": "2018-05-31",
+      "portfolio_growth": 1.7278493819910365,
+      "benchmark_growth": 1.3009671661227227
+    },
+    {
+      "date": "2018-06-06",
+      "portfolio_growth": 1.7752612573464628,
+      "benchmark_growth": 1.3319855701105177
+    },
+    {
+      "date": "2018-06-12",
+      "portfolio_growth": 1.7724439863273787,
+      "benchmark_growth": 1.3392844190621658
+    },
+    {
+      "date": "2018-06-18",
+      "portfolio_growth": 1.7741955172035653,
+      "benchmark_growth": 1.3339153935538073
+    },
+    {
+      "date": "2018-06-22",
+      "portfolio_growth": 1.7479194801809002,
+      "benchmark_growth": 1.3251370908787068
+    },
+    {
+      "date": "2018-06-28",
+      "portfolio_growth": 1.7151971402870592,
+      "benchmark_growth": 1.306567777094254
+    },
+    {
+      "date": "2018-07-06",
+      "portfolio_growth": 1.7255426169529413,
+      "benchmark_growth": 1.3176677042812204
+    },
+    {
+      "date": "2018-07-12",
+      "portfolio_growth": 1.759998787291571,
+      "benchmark_growth": 1.336564900393444
+    },
+    {
+      "date": "2018-07-18",
+      "portfolio_growth": 1.7867593660143815,
+      "benchmark_growth": 1.34465081264238
+    },
+    {
+      "date": "2018-07-24",
+      "portfolio_growth": 1.7999661650175403,
+      "benchmark_growth": 1.3472817766056628
+    },
+    {
+      "date": "2018-07-30",
+      "portfolio_growth": 1.8036777125562624,
+      "benchmark_growth": 1.3393399906222896
+    },
+    {
+      "date": "2018-08-03",
+      "portfolio_growth": 1.8342544631649524,
+      "benchmark_growth": 1.3568028500550413
+    },
+    {
+      "date": "2018-08-09",
+      "portfolio_growth": 1.8585512928616188,
+      "benchmark_growth": 1.3638351894084668
+    },
+    {
+      "date": "2018-08-15",
+      "portfolio_growth": 1.822473631085502,
+      "benchmark_growth": 1.3480950016384086
+    },
+    {
+      "date": "2018-08-21",
+      "portfolio_growth": 1.8414887123214572,
+      "benchmark_growth": 1.3699115791492344
+    },
+    {
+      "date": "2018-08-27",
+      "portfolio_growth": 1.8944006097215051,
+      "benchmark_growth": 1.386368852806932
+    },
+    {
+      "date": "2018-08-31",
+      "portfolio_growth": 1.9107494801812037,
+      "benchmark_growth": 1.3889047495023703
+    },
+    {
+      "date": "2018-09-10",
+      "portfolio_growth": 1.8681738272613937,
+      "benchmark_growth": 1.3807099014706044
+    },
+    {
+      "date": "2018-09-14",
+      "portfolio_growth": 1.8905878605961133,
+      "benchmark_growth": 1.3940328686399894
+    },
+    {
+      "date": "2018-09-20",
+      "portfolio_growth": 1.902767140610519,
+      "benchmark_growth": 1.4069717719968835
+    },
+    {
+      "date": "2018-09-26",
+      "portfolio_growth": 1.9011986952179694,
+      "benchmark_growth": 1.3955293134044426
+    },
+    {
+      "date": "2018-10-02",
+      "portfolio_growth": 1.9184526849664933,
+      "benchmark_growth": 1.4036167887574476
+    },
+    {
+      "date": "2018-10-08",
+      "portfolio_growth": 1.8600941374148223,
+      "benchmark_growth": 1.3856120424166156
+    },
+    {
+      "date": "2018-10-12",
+      "portfolio_growth": 1.7838095467374917,
+      "benchmark_growth": 1.328467807213873
+    },
+    {
+      "date": "2018-10-18",
+      "portfolio_growth": 1.7747639329050175,
+      "benchmark_growth": 1.3306343400881624
+    },
+    {
+      "date": "2018-10-24",
+      "portfolio_growth": 1.6491337105811985,
+      "benchmark_growth": 1.277293740733339
+    },
+    {
+      "date": "2018-10-30",
+      "portfolio_growth": 1.6612116645811212,
+      "benchmark_growth": 1.2890882165233788
+    },
+    {
+      "date": "2018-11-05",
+      "portfolio_growth": 1.7263784739627117,
+      "benchmark_growth": 1.3161434885513323
+    },
+    {
+      "date": "2018-11-09",
+      "portfolio_growth": 1.7525826646212441,
+      "benchmark_growth": 1.3371816782558952
+    },
+    {
+      "date": "2018-11-15",
+      "portfolio_growth": 1.7148956116651974,
+      "benchmark_growth": 1.3143624235937943
+    },
+    {
+      "date": "2018-11-21",
+      "portfolio_growth": 1.615398578020821,
+      "benchmark_growth": 1.2758492478265324
+    },
+    {
+      "date": "2018-11-29",
+      "portfolio_growth": 1.7144341352627366,
+      "benchmark_growth": 1.3278529131209686
+    },
+    {
+      "date": "2018-12-07",
+      "portfolio_growth": 1.6460972704905674,
+      "benchmark_growth": 1.2793408476088803
+    },
+    {
+      "date": "2018-12-13",
+      "portfolio_growth": 1.670185138702038,
+      "benchmark_growth": 1.2880779217754894
+    },
+    {
+      "date": "2018-12-19",
+      "portfolio_growth": 1.5727872371642837,
+      "benchmark_growth": 1.2195898596859245
+    },
+    {
+      "date": "2018-12-28",
+      "portfolio_growth": 1.4828356792730264,
+      "benchmark_growth": 1.1426286419437064
+    },
+    {
+      "date": "2019-01-04",
+      "portfolio_growth": 1.5134287102678297,
+      "benchmark_growth": 1.164028418318371
+    },
+    {
+      "date": "2019-01-10",
+      "portfolio_growth": 1.5607243722472932,
+      "benchmark_growth": 1.1939604931357535
+    },
+    {
+      "date": "2019-01-16",
+      "portfolio_growth": 1.5721375048020414,
+      "benchmark_growth": 1.2036455773851629
+    },
+    {
+      "date": "2019-01-24",
+      "portfolio_growth": 1.632293167997454,
+      "benchmark_growth": 1.232145445617594
+    },
+    {
+      "date": "2019-01-30",
+      "portfolio_growth": 1.626550489952942,
+      "benchmark_growth": 1.250986645988159
+    },
+    {
+      "date": "2019-02-05",
+      "portfolio_growth": 1.6703413405005347,
+      "benchmark_growth": 1.2767936758536647
+    },
+    {
+      "date": "2019-02-11",
+      "portfolio_growth": 1.6278012466970653,
+      "benchmark_growth": 1.2651990848760581
+    },
+    {
+      "date": "2019-02-15",
+      "portfolio_growth": 1.6822848204096466,
+      "benchmark_growth": 1.2967560022072562
+    },
+    {
+      "date": "2019-02-25",
+      "portfolio_growth": 1.6989900075511593,
+      "benchmark_growth": 1.3045498820305577
+    },
+    {
+      "date": "2019-03-01",
+      "portfolio_growth": 1.704888763256722,
+      "benchmark_growth": 1.308750560754994
+    },
+    {
+      "date": "2019-03-07",
+      "portfolio_growth": 1.6679665192939028,
+      "benchmark_growth": 1.2835012718848082
+    },
+    {
+      "date": "2019-03-13",
+      "portfolio_growth": 1.735259623925887,
+      "benchmark_growth": 1.31304366269045
+    },
+    {
+      "date": "2019-03-19",
+      "portfolio_growth": 1.7747042050446569,
+      "benchmark_growth": 1.3237968366105946
+    },
+    {
+      "date": "2019-03-25",
+      "portfolio_growth": 1.7470718899507516,
+      "benchmark_growth": 1.308046042738179
+    },
+    {
+      "date": "2019-03-29",
+      "portfolio_growth": 1.7688408625673566,
+      "benchmark_growth": 1.3241716242742285
+    },
+    {
+      "date": "2019-04-04",
+      "portfolio_growth": 1.8163962259823132,
+      "benchmark_growth": 1.3462035345944061
+    },
+    {
+      "date": "2019-04-10",
+      "portfolio_growth": 1.8271525760206655,
+      "benchmark_growth": 1.3514067782797197
+    },
+    {
+      "date": "2019-04-16",
+      "portfolio_growth": 1.8290576929292957,
+      "benchmark_growth": 1.3601730521793365
+    },
+    {
+      "date": "2019-04-25",
+      "portfolio_growth": 1.8292759670452883,
+      "benchmark_growth": 1.3556636015356784
+    },
+    {
+      "date": "2019-05-03",
+      "portfolio_growth": 1.8509205981454864,
+      "benchmark_growth": 1.3781668801885452
+    },
+    {
+      "date": "2019-05-09",
+      "portfolio_growth": 1.7960761613397465,
+      "benchmark_growth": 1.3436222887976033
+    },
+    {
+      "date": "2019-05-15",
+      "portfolio_growth": 1.7685607255146478,
+      "benchmark_growth": 1.3361228804672138
+    },
+    {
+      "date": "2019-05-21",
+      "portfolio_growth": 1.7531984187312406,
+      "benchmark_growth": 1.3429194381612215
+    },
+    {
+      "date": "2019-05-29",
+      "portfolio_growth": 1.6962051159720166,
+      "benchmark_growth": 1.3165418209254858
+    },
+    {
+      "date": "2019-06-04",
+      "portfolio_growth": 1.6927621627837892,
+      "benchmark_growth": 1.327233773346684
+    },
+    {
+      "date": "2019-06-10",
+      "portfolio_growth": 1.7577687756693945,
+      "benchmark_growth": 1.3671657952373286
+    },
+    {
+      "date": "2019-06-14",
+      "portfolio_growth": 1.743499349363656,
+      "benchmark_growth": 1.3685377717884792
+    },
+    {
+      "date": "2019-06-20",
+      "portfolio_growth": 1.8074027862848596,
+      "benchmark_growth": 1.3997623704693
+    },
+    {
+      "date": "2019-06-26",
+      "portfolio_growth": 1.8042771413615317,
+      "benchmark_growth": 1.3809463018048598
+    },
+    {
+      "date": "2019-07-02",
+      "portfolio_growth": 1.8469860115604717,
+      "benchmark_growth": 1.4092805582245485
+    },
+    {
+      "date": "2019-07-10",
+      "portfolio_growth": 1.861836078039052,
+      "benchmark_growth": 1.4212614984462815
+    },
+    {
+      "date": "2019-07-16",
+      "portfolio_growth": 1.8832623644818944,
+      "benchmark_growth": 1.4268302997350049
+    },
+    {
+      "date": "2019-07-22",
+      "portfolio_growth": 1.8853234414169595,
+      "benchmark_growth": 1.417882508896121
+    },
+    {
+      "date": "2019-07-26",
+      "portfolio_growth": 1.9296829189966713,
+      "benchmark_growth": 1.4374447412946878
+    },
+    {
+      "date": "2019-08-01",
+      "portfolio_growth": 1.8685597189414451,
+      "benchmark_growth": 1.4033179764292476
+    },
+    {
+      "date": "2019-08-07",
+      "portfolio_growth": 1.80560169555656,
+      "benchmark_growth": 1.3706199301981132
+    },
+    {
+      "date": "2019-08-13",
+      "portfolio_growth": 1.839982910811243,
+      "benchmark_growth": 1.3924184668119142
+    },
+    {
+      "date": "2019-08-19",
+      "portfolio_growth": 1.8533774074804423,
+      "benchmark_growth": 1.391371501281899
+    },
+    {
+      "date": "2019-08-23",
+      "portfolio_growth": 1.797538798411585,
+      "benchmark_growth": 1.3557700079263466
+    },
+    {
+      "date": "2019-08-29",
+      "portfolio_growth": 1.8450523880233727,
+      "benchmark_growth": 1.3925618052088486
+    },
+    {
+      "date": "2019-09-06",
+      "portfolio_growth": 1.9156727466860355,
+      "benchmark_growth": 1.4269396942087251
+    },
+    {
+      "date": "2019-09-12",
+      "portfolio_growth": 1.958753765483419,
+      "benchmark_growth": 1.442451415662735
+    },
+    {
+      "date": "2019-09-18",
+      "portfolio_growth": 1.9598076785809502,
+      "benchmark_growth": 1.4415421502613073
+    },
+    {
+      "date": "2019-09-24",
+      "portfolio_growth": 1.9199835404770846,
+      "benchmark_growth": 1.423043882758399
+    },
+    {
+      "date": "2019-09-30",
+      "portfolio_growth": 1.929994547251516,
+      "benchmark_growth": 1.427373209426811
+    },
+    {
+      "date": "2019-10-04",
+      "portfolio_growth": 1.912187072608515,
+      "benchmark_growth": 1.4157335119139591
+    },
+    {
+      "date": "2019-10-10",
+      "portfolio_growth": 1.916905270021451,
+      "benchmark_growth": 1.4103949152137436
+    },
+    {
+      "date": "2019-10-16",
+      "portfolio_growth": 1.972322034528272,
+      "benchmark_growth": 1.4352127309853773
+    },
+    {
+      "date": "2019-10-22",
+      "portfolio_growth": 1.9912954753455614,
+      "benchmark_growth": 1.4381463619628623
+    },
+    {
+      "date": "2019-10-28",
+      "portfolio_growth": 2.0318340270041295,
+      "benchmark_growth": 1.4587804888773113
+    },
+    {
+      "date": "2019-11-01",
+      "portfolio_growth": 2.03360373415052,
+      "benchmark_growth": 1.4724401828318834
+    },
+    {
+      "date": "2019-11-07",
+      "portfolio_growth": 2.0713038414081195,
+      "benchmark_growth": 1.4822518021742546
+    },
+    {
+      "date": "2019-11-13",
+      "portfolio_growth": 2.0662401247465376,
+      "benchmark_growth": 1.4866766025189146
+    },
+    {
+      "date": "2019-11-19",
+      "portfolio_growth": 2.0750303034547546,
+      "benchmark_growth": 1.500288074175992
+    },
+    {
+      "date": "2019-11-25",
+      "portfolio_growth": 2.1035155617129355,
+      "benchmark_growth": 1.5072139611987927
+    },
+    {
+      "date": "2019-12-03",
+      "portfolio_growth": 2.0793188303310712,
+      "benchmark_growth": 1.4943834806446266
+    },
+    {
+      "date": "2019-12-09",
+      "portfolio_growth": 2.11666105024768,
+      "benchmark_growth": 1.5152872200661391
+    },
+    {
+      "date": "2019-12-13",
+      "portfolio_growth": 2.1698591177947932,
+      "benchmark_growth": 1.5318935924510209
+    },
+    {
+      "date": "2019-12-19",
+      "portfolio_growth": 2.19846902704827,
+      "benchmark_growth": 1.5491766157949551
+    },
+    {
+      "date": "2019-12-30",
+      "portfolio_growth": 2.1883438160201867,
+      "benchmark_growth": 1.5498031397916348
+    },
+    {
+      "date": "2020-01-06",
+      "portfolio_growth": 2.2184707523521556,
+      "benchmark_growth": 1.5621602192913158
+    },
+    {
+      "date": "2020-01-10",
+      "portfolio_growth": 2.2258146625191695,
+      "benchmark_growth": 1.572151441496574
+    },
+    {
+      "date": "2020-01-16",
+      "portfolio_growth": 2.241729123516295,
+      "benchmark_growth": 1.597299340999914
+    },
+    {
+      "date": "2020-01-24",
+      "portfolio_growth": 2.225693408693709,
+      "benchmark_growth": 1.5900351162450552
+    },
+    {
+      "date": "2020-01-30",
+      "portfolio_growth": 2.212084570417602,
+      "benchmark_growth": 1.5847631850270858
+    },
+    {
+      "date": "2020-02-05",
+      "portfolio_growth": 2.2790784525041294,
+      "benchmark_growth": 1.6098155045078877
+    },
+    {
+      "date": "2020-02-11",
+      "portfolio_growth": 2.3360260742227816,
+      "benchmark_growth": 1.6214226911340166
+    },
+    {
+      "date": "2020-02-19",
+      "portfolio_growth": 2.3848861425529115,
+      "benchmark_growth": 1.6405465377439992
+    },
+    {
+      "date": "2020-02-25",
+      "portfolio_growth": 2.1889148027488052,
+      "benchmark_growth": 1.5159807580489248
+    },
+    {
+      "date": "2020-03-02",
+      "portfolio_growth": 2.1866726515514885,
+      "benchmark_growth": 1.498718740496915
+    },
+    {
+      "date": "2020-03-06",
+      "portfolio_growth": 2.0956604996708728,
+      "benchmark_growth": 1.4423271671424205
+    },
+    {
+      "date": "2020-03-12",
+      "portfolio_growth": 1.7387982553251484,
+      "benchmark_growth": 1.2030383051604001
+    },
+    {
+      "date": "2020-03-18",
+      "portfolio_growth": 1.628873458484613,
+      "benchmark_growth": 1.1637142687870041
+    },
+    {
+      "date": "2020-03-24",
+      "portfolio_growth": 1.8095479679779747,
+      "benchmark_growth": 1.1859209305037846
+    },
+    {
+      "date": "2020-03-30",
+      "portfolio_growth": 1.9262811095428825,
+      "benchmark_growth": 1.2761514738460662
+    },
+    {
+      "date": "2020-04-03",
+      "portfolio_growth": 1.8347209205090917,
+      "benchmark_growth": 1.2105028363551995
+    },
+    {
+      "date": "2020-04-09",
+      "portfolio_growth": 2.0275116712188983,
+      "benchmark_growth": 1.3568713815563467
+    },
+    {
+      "date": "2020-04-20",
+      "portfolio_growth": 2.032732590786665,
+      "benchmark_growth": 1.3463519106802413
+    },
+    {
+      "date": "2020-04-24",
+      "portfolio_growth": 2.0423776420087583,
+      "benchmark_growth": 1.3529501724796587
+    },
+    {
+      "date": "2020-04-30",
+      "portfolio_growth": 2.1079268668061477,
+      "benchmark_growth": 1.3888577215875537
+    },
+    {
+      "date": "2020-05-08",
+      "portfolio_growth": 2.1825327182653282,
+      "benchmark_growth": 1.4323010134423442
+    },
+    {
+      "date": "2020-05-14",
+      "portfolio_growth": 2.1203198123488534,
+      "benchmark_growth": 1.3957145804361435
+    },
+    {
+      "date": "2020-05-20",
+      "portfolio_growth": 2.2368922107384286,
+      "benchmark_growth": 1.4542911498486426
+    },
+    {
+      "date": "2020-05-28",
+      "portfolio_growth": 2.2157633211676186,
+      "benchmark_growth": 1.4658138344254468
+    },
+    {
+      "date": "2020-06-03",
+      "portfolio_growth": 2.2962154541790967,
+      "benchmark_growth": 1.5103723689577984
+    },
+    {
+      "date": "2020-06-09",
+      "portfolio_growth": 2.3791283086637027,
+      "benchmark_growth": 1.5520298796501473
+    },
+    {
+      "date": "2020-06-15",
+      "portfolio_growth": 2.291867697004467,
+      "benchmark_growth": 1.4855531961397803
+    },
+    {
+      "date": "2020-06-19",
+      "portfolio_growth": 2.3099071289801834,
+      "benchmark_growth": 1.499817247746762
+    },
+    {
+      "date": "2020-06-25",
+      "portfolio_growth": 2.3264233109946164,
+      "benchmark_growth": 1.4935483630913373
+    },
+    {
+      "date": "2020-07-01",
+      "portfolio_growth": 2.340596994533787,
+      "benchmark_growth": 1.5089530170773777
+    },
+    {
+      "date": "2020-07-09",
+      "portfolio_growth": 2.363956232128523,
+      "benchmark_growth": 1.5044857550037778
+    },
+    {
+      "date": "2020-07-15",
+      "portfolio_growth": 2.4154134844068804,
+      "benchmark_growth": 1.540233985605616
+    },
+    {
+      "date": "2020-07-21",
+      "portfolio_growth": 2.4583362590955677,
+      "benchmark_growth": 1.5553564010796004
+    },
+    {
+      "date": "2020-07-27",
+      "portfolio_growth": 2.492746892658546,
+      "benchmark_growth": 1.546790235742211
+    },
+    {
+      "date": "2020-07-31",
+      "portfolio_growth": 2.488594040784442,
+      "benchmark_growth": 1.5625825172259913
+    },
+    {
+      "date": "2020-08-06",
+      "portfolio_growth": 2.555641030745785,
+      "benchmark_growth": 1.59995751996999
+    },
+    {
+      "date": "2020-08-12",
+      "portfolio_growth": 2.595754840649418,
+      "benchmark_growth": 1.6148406296180322
+    },
+    {
+      "date": "2020-08-18",
+      "portfolio_growth": 2.611074178778651,
+      "benchmark_growth": 1.6205831765121412
+    },
+    {
+      "date": "2020-08-24",
+      "portfolio_growth": 2.633744464961679,
+      "benchmark_growth": 1.6410656301644142
+    },
+    {
+      "date": "2020-08-28",
+      "portfolio_growth": 2.6903710494063886,
+      "benchmark_growth": 1.6777228740162875
+    },
+    {
+      "date": "2020-09-03",
+      "portfolio_growth": 2.6455994554935365,
+      "benchmark_growth": 1.6528861327146387
+    },
+    {
+      "date": "2020-09-11",
+      "portfolio_growth": 2.634342861033415,
+      "benchmark_growth": 1.6435721415345648
+    },
+    {
+      "date": "2020-09-17",
+      "portfolio_growth": 2.641606218277414,
+      "benchmark_growth": 1.6523298584677784
+    },
+    {
+      "date": "2020-09-23",
+      "portfolio_growth": 2.522097384698069,
+      "benchmark_growth": 1.5937406262082978
+    },
+    {
+      "date": "2020-09-29",
+      "portfolio_growth": 2.610208387789324,
+      "benchmark_growth": 1.6418033158618768
+    },
+    {
+      "date": "2020-10-05",
+      "portfolio_growth": 2.6865137618331154,
+      "benchmark_growth": 1.6783082321620435
+    },
+    {
+      "date": "2020-10-09",
+      "portfolio_growth": 2.742375336730417,
+      "benchmark_growth": 1.7133309478731782
+    },
+    {
+      "date": "2020-10-15",
+      "portfolio_growth": 2.7554385902181346,
+      "benchmark_growth": 1.7165412140263006
+    },
+    {
+      "date": "2020-10-21",
+      "portfolio_growth": 2.6989316143549056,
+      "benchmark_growth": 1.6929786104483797
+    },
+    {
+      "date": "2020-10-27",
+      "portfolio_growth": 2.685886904848863,
+      "benchmark_growth": 1.6707006024530109
+    },
+    {
+      "date": "2020-11-02",
+      "portfolio_growth": 2.6448660340623458,
+      "benchmark_growth": 1.6310848746646995
+    },
+    {
+      "date": "2020-11-06",
+      "portfolio_growth": 2.822182836808383,
+      "benchmark_growth": 1.7296809687145915
+    },
+    {
+      "date": "2020-11-12",
+      "portfolio_growth": 2.864142516601799,
+      "benchmark_growth": 1.7447465570138874
+    },
+    {
+      "date": "2020-11-18",
+      "portfolio_growth": 2.914871092720666,
+      "benchmark_growth": 1.75991159997816
+    },
+    {
+      "date": "2020-11-24",
+      "portfolio_growth": 2.9820906944978764,
+      "benchmark_growth": 1.7941931338745614
+    },
+    {
+      "date": "2020-12-02",
+      "portfolio_growth": 2.9932445626813275,
+      "benchmark_growth": 1.806795092812585
+    },
+    {
+      "date": "2020-12-08",
+      "portfolio_growth": 3.0055534092586194,
+      "benchmark_growth": 1.823445362864104
+    },
+    {
+      "date": "2020-12-14",
+      "portfolio_growth": 2.961827553101104,
+      "benchmark_growth": 1.7963029903697612
+    },
+    {
+      "date": "2020-12-18",
+      "portfolio_growth": 2.98203982558527,
+      "benchmark_growth": 1.8263197488909844
+    },
+    {
+      "date": "2020-12-24",
+      "portfolio_growth": 2.996349345058249,
+      "benchmark_growth": 1.8254299070037097
+    },
+    {
+      "date": "2020-12-31",
+      "portfolio_growth": 3.024754643717954,
+      "benchmark_growth": 1.8495710751499448
+    },
+    {
+      "date": "2021-01-07",
+      "portfolio_growth": 3.1290679792218152,
+      "benchmark_growth": 1.8753942119283467
+    },
+    {
+      "date": "2021-01-13",
+      "portfolio_growth": 3.1350464834248455,
+      "benchmark_growth": 1.878807900995624
+    },
+    {
+      "date": "2021-01-21",
+      "portfolio_growth": 3.1692824433843234,
+      "benchmark_growth": 1.886012964091042
+    },
+    {
+      "date": "2021-01-27",
+      "portfolio_growth": 3.055461728192541,
+      "benchmark_growth": 1.8377636409828697
+    },
+    {
+      "date": "2021-02-02",
+      "portfolio_growth": 3.1343696169240403,
+      "benchmark_growth": 1.8728098118505208
+    },
+    {
+      "date": "2021-02-08",
+      "portfolio_growth": 3.23425166757921,
+      "benchmark_growth": 1.916788969280004
+    },
+    {
+      "date": "2021-02-12",
+      "portfolio_growth": 3.2775747192769034,
+      "benchmark_growth": 1.927244180373159
+    },
+    {
+      "date": "2021-02-22",
+      "portfolio_growth": 3.234845767521403,
+      "benchmark_growth": 1.901354266771424
+    },
+    {
+      "date": "2021-02-26",
+      "portfolio_growth": 3.176452250262451,
+      "benchmark_growth": 1.8685867696651894
+    },
+    {
+      "date": "2021-03-04",
+      "portfolio_growth": 3.125465403669027,
+      "benchmark_growth": 1.8506068198132297
+    },
+    {
+      "date": "2021-03-10",
+      "portfolio_growth": 3.2108913393406886,
+      "benchmark_growth": 1.9138818474487318
+    },
+    {
+      "date": "2021-03-16",
+      "portfolio_growth": 3.256952549938089,
+      "benchmark_growth": 1.944978871296032
+    },
+    {
+      "date": "2021-03-22",
+      "portfolio_growth": 3.2197552601908517,
+      "benchmark_growth": 1.9349857405264645
+    },
+    {
+      "date": "2021-03-26",
+      "portfolio_growth": 3.226391603303795,
+      "benchmark_growth": 1.9516945096353748
+    },
+    {
+      "date": "2021-04-01",
+      "portfolio_growth": 3.3076487195816004,
+      "benchmark_growth": 1.974514569373577
+    },
+    {
+      "date": "2021-04-12",
+      "portfolio_growth": 3.387118649299924,
+      "benchmark_growth": 2.0013523924216545
+    },
+    {
+      "date": "2021-04-16",
+      "portfolio_growth": 3.4392244863130195,
+      "benchmark_growth": 2.0286761488136658
+    },
+    {
+      "date": "2021-04-22",
+      "portfolio_growth": 3.363551878975938,
+      "benchmark_growth": 2.0044154766794544
+    },
+    {
+      "date": "2021-04-28",
+      "portfolio_growth": 3.4395525240365727,
+      "benchmark_growth": 2.029356710327475
+    },
+    {
+      "date": "2021-05-04",
+      "portfolio_growth": 3.3708544086941985,
+      "benchmark_growth": 2.020703242466889
+    },
+    {
+      "date": "2021-05-10",
+      "portfolio_growth": 3.3900478166532384,
+      "benchmark_growth": 2.0319825979189043
+    },
+    {
+      "date": "2021-05-14",
+      "portfolio_growth": 3.3953828780201842,
+      "benchmark_growth": 2.0253700182488057
+    },
+    {
+      "date": "2021-05-20",
+      "portfolio_growth": 3.3952724499984663,
+      "benchmark_growth": 2.019049699373895
+    },
+    {
+      "date": "2021-05-26",
+      "portfolio_growth": 3.4554870403215854,
+      "benchmark_growth": 2.037476145247318
+    },
+    {
+      "date": "2021-06-03",
+      "portfolio_growth": 3.474379833541699,
+      "benchmark_growth": 2.037812647490355
+    },
+    {
+      "date": "2021-06-09",
+      "portfolio_growth": 3.5110809002530305,
+      "benchmark_growth": 2.0518273908635294
+    },
+    {
+      "date": "2021-06-15",
+      "portfolio_growth": 3.5442353886203217,
+      "benchmark_growth": 2.0655985548214186
+    },
+    {
+      "date": "2021-06-21",
+      "portfolio_growth": 3.5179994190817077,
+      "benchmark_growth": 2.0546833913898697
+    },
+    {
+      "date": "2021-06-25",
+      "portfolio_growth": 3.554340058363297,
+      "benchmark_growth": 2.082755440769649
+    },
+    {
+      "date": "2021-07-01",
+      "portfolio_growth": 3.5884556424184346,
+      "benchmark_growth": 2.101405047689562
+    },
+    {
+      "date": "2021-07-09",
+      "portfolio_growth": 3.6317869516749965,
+      "benchmark_growth": 2.130135104807899
+    },
+    {
+      "date": "2021-07-15",
+      "portfolio_growth": 3.578276582152365,
+      "benchmark_growth": 2.126369183302254
+    },
+    {
+      "date": "2021-07-21",
+      "portfolio_growth": 3.5741556417791696,
+      "benchmark_growth": 2.125390212994396
+    },
+    {
+      "date": "2021-07-27",
+      "portfolio_growth": 3.58722645868503,
+      "benchmark_growth": 2.147204801603237
+    },
+    {
+      "date": "2021-08-02",
+      "portfolio_growth": 3.5813576277562666,
+      "benchmark_growth": 2.1402595422690704
+    },
+    {
+      "date": "2021-08-06",
+      "portfolio_growth": 3.6231725575518965,
+      "benchmark_growth": 2.164225310330905
+    },
+    {
+      "date": "2021-08-12",
+      "portfolio_growth": 3.6241330663296876,
+      "benchmark_growth": 2.177040239272743
+    },
+    {
+      "date": "2021-08-18",
+      "portfolio_growth": 3.553024275166614,
+      "benchmark_growth": 2.1480366868126395
+    },
+    {
+      "date": "2021-08-24",
+      "portfolio_growth": 3.6798426753634725,
+      "benchmark_growth": 2.191028495270345
+    },
+    {
+      "date": "2021-08-30",
+      "portfolio_growth": 3.7546398662121216,
+      "benchmark_growth": 2.2118637941682913
+    },
+    {
+      "date": "2021-09-03",
+      "portfolio_growth": 3.776586842194096,
+      "benchmark_growth": 2.216021303797079
+    },
+    {
+      "date": "2021-09-13",
+      "portfolio_growth": 3.7330175501877383,
+      "benchmark_growth": 2.192067307365881
+    },
+    {
+      "date": "2021-09-17",
+      "portfolio_growth": 3.695309799150206,
+      "benchmark_growth": 2.1735821998800935
+    },
+    {
+      "date": "2021-09-23",
+      "portfolio_growth": 3.724856245155329,
+      "benchmark_growth": 2.182347616222176
+    },
+    {
+      "date": "2021-09-29",
+      "portfolio_growth": 3.6329196422789276,
+      "benchmark_growth": 2.1393581294249806
+    },
+    {
+      "date": "2021-10-05",
+      "portfolio_growth": 3.632151003244721,
+      "benchmark_growth": 2.132710260728018
+    },
+    {
+      "date": "2021-10-11",
+      "portfolio_growth": 3.6474026578232412,
+      "benchmark_growth": 2.1405403146679722
+    },
+    {
+      "date": "2021-10-15",
+      "portfolio_growth": 3.7519346657605777,
+      "benchmark_growth": 2.195593828773357
+    },
+    {
+      "date": "2021-10-21",
+      "portfolio_growth": 3.8010805803255012,
+      "benchmark_growth": 2.233609194228872
+    },
+    {
+      "date": "2021-10-27",
+      "portfolio_growth": 3.828329664128667,
+      "benchmark_growth": 2.2353326267014704
+    },
+    {
+      "date": "2021-11-02",
+      "portfolio_growth": 3.8987719270912424,
+      "benchmark_growth": 2.274530337674549
+    },
+    {
+      "date": "2021-11-08",
+      "portfolio_growth": 4.046999662119679,
+      "benchmark_growth": 2.309148042478468
+    },
+    {
+      "date": "2021-11-12",
+      "portfolio_growth": 4.0319906609546265,
+      "benchmark_growth": 2.3009735584833093
+    },
+    {
+      "date": "2021-11-18",
+      "portfolio_growth": 4.075947304565117,
+      "benchmark_growth": 2.3130874311833876
+    },
+    {
+      "date": "2021-11-24",
+      "portfolio_growth": 4.065318679378378,
+      "benchmark_growth": 2.311659545021537
+    },
+    {
+      "date": "2021-12-02",
+      "portfolio_growth": 4.083840124397856,
+      "benchmark_growth": 2.3037513631411746
+    },
+    {
+      "date": "2021-12-08",
+      "portfolio_growth": 4.17272736935291,
+      "benchmark_growth": 2.3647949012004625
+    },
+    {
+      "date": "2021-12-14",
+      "portfolio_growth": 4.055580574610871,
+      "benchmark_growth": 2.333769536997906
+    },
+    {
+      "date": "2021-12-20",
+      "portfolio_growth": 3.9987366754851807,
+      "benchmark_growth": 2.299613423898121
+    },
+    {
+      "date": "2021-12-28",
+      "portfolio_growth": 4.130947995068621,
+      "benchmark_growth": 2.3766178855320095
+    },
+    {
+      "date": "2022-01-03",
+      "portfolio_growth": 4.153287636094806,
+      "benchmark_growth": 2.3808042800290163
+    },
+    {
+      "date": "2022-01-07",
+      "portfolio_growth": 4.064733871999171,
+      "benchmark_growth": 2.322892893594821
+    },
+    {
+      "date": "2022-01-13",
+      "portfolio_growth": 4.095845417654715,
+      "benchmark_growth": 2.315118184049393
+    },
+    {
+      "date": "2022-01-21",
+      "portfolio_growth": 3.89188512451906,
+      "benchmark_growth": 2.2221522016070936
+    },
+    {
+      "date": "2022-01-27",
+      "portfolio_growth": 3.8571160068951125,
+      "benchmark_growth": 2.1879558648895383
+    },
+    {
+      "date": "2022-02-02",
+      "portfolio_growth": 4.09115693003182,
+      "benchmark_growth": 2.3204286569189576
+    },
+    {
+      "date": "2022-02-08",
+      "portfolio_growth": 4.107020560781184,
+      "benchmark_growth": 2.287906526823691
+    },
+    {
+      "date": "2022-02-14",
+      "portfolio_growth": 4.008791384896071,
+      "benchmark_growth": 2.2274287334867533
+    },
+    {
+      "date": "2022-02-18",
+      "portfolio_growth": 3.964240623500211,
+      "benchmark_growth": 2.2031262437279597
+    },
+    {
+      "date": "2022-02-28",
+      "portfolio_growth": 4.003795522552999,
+      "benchmark_growth": 2.239334179448276
+    },
+    {
+      "date": "2022-03-04",
+      "portfolio_growth": 3.902136072514078,
+      "benchmark_growth": 2.2164605902564913
+    },
+    {
+      "date": "2022-03-10",
+      "portfolio_growth": 3.939361087862245,
+      "benchmark_growth": 2.182149790612594
+    },
+    {
+      "date": "2022-03-16",
+      "portfolio_growth": 4.046668803756088,
+      "benchmark_growth": 2.234154440712317
+    },
+    {
+      "date": "2022-03-22",
+      "portfolio_growth": 4.2040129955578145,
+      "benchmark_growth": 2.312965681791712
+    },
+    {
+      "date": "2022-03-28",
+      "portfolio_growth": 4.265276641311845,
+      "benchmark_growth": 2.345479649879495
+    },
+    {
+      "date": "2022-04-01",
+      "portfolio_growth": 4.1821058567279765,
+      "benchmark_growth": 2.3300969619528904
+    },
+    {
+      "date": "2022-04-07",
+      "portfolio_growth": 4.055923477182029,
+      "benchmark_growth": 2.308747069951811
+    },
+    {
+      "date": "2022-04-13",
+      "portfolio_growth": 3.9875275685143934,
+      "benchmark_growth": 2.2806573130191796
+    },
+    {
+      "date": "2022-04-22",
+      "portfolio_growth": 3.6830187233542446,
+      "benchmark_growth": 2.156103686722785
+    },
+    {
+      "date": "2022-04-28",
+      "portfolio_growth": 3.6611054339465747,
+      "benchmark_growth": 2.165061594030238
+    },
+    {
+      "date": "2022-05-04",
+      "portfolio_growth": 3.6724595775194238,
+      "benchmark_growth": 2.171387796982405
+    },
+    {
+      "date": "2022-05-10",
+      "portfolio_growth": 3.409329330689165,
+      "benchmark_growth": 2.0197153589702643
+    },
+    {
+      "date": "2022-05-16",
+      "portfolio_growth": 3.442035796959221,
+      "benchmark_growth": 2.0247761904258557
+    },
+    {
+      "date": "2022-05-20",
+      "portfolio_growth": 3.3779944882878468,
+      "benchmark_growth": 1.971840201029802
+    },
+    {
+      "date": "2022-05-26",
+      "portfolio_growth": 3.505696476069214,
+      "benchmark_growth": 2.051193868075493
+    },
+    {
+      "date": "2022-06-03",
+      "portfolio_growth": 3.601213774949511,
+      "benchmark_growth": 2.08938572195483
+    },
+    {
+      "date": "2022-06-09",
+      "portfolio_growth": 3.5186931023974966,
+      "benchmark_growth": 2.043072417475058
+    },
+    {
+      "date": "2022-06-15",
+      "portfolio_growth": 3.293365054027676,
+      "benchmark_growth": 1.9298850274903927
+    },
+    {
+      "date": "2022-06-23",
+      "portfolio_growth": 3.158722597493774,
+      "benchmark_growth": 1.8849438577849016
+    },
+    {
+      "date": "2022-06-29",
+      "portfolio_growth": 3.173590893619916,
+      "benchmark_growth": 1.8963112274516218
+    },
+    {
+      "date": "2022-07-07",
+      "portfolio_growth": 3.192854930213572,
+      "benchmark_growth": 1.935782954687616
+    },
+    {
+      "date": "2022-07-13",
+      "portfolio_growth": 3.0879561508420217,
+      "benchmark_growth": 1.8852222331667445
+    },
+    {
+      "date": "2022-07-19",
+      "portfolio_growth": 3.2493736620927423,
+      "benchmark_growth": 1.9521055836759005
+    },
+    {
+      "date": "2022-07-25",
+      "portfolio_growth": 3.267284924731277,
+      "benchmark_growth": 1.9685277047441778
+    },
+    {
+      "date": "2022-07-29",
+      "portfolio_growth": 3.465820032032108,
+      "benchmark_growth": 2.050240822403662
+    },
+    {
+      "date": "2022-08-04",
+      "portfolio_growth": 3.4764191928923993,
+      "benchmark_growth": 2.0610896246527735
+    },
+    {
+      "date": "2022-08-10",
+      "portfolio_growth": 3.5027438661211665,
+      "benchmark_growth": 2.090052554180793
+    },
+    {
+      "date": "2022-08-16",
+      "portfolio_growth": 3.5625896489879914,
+      "benchmark_growth": 2.138373342093973
+    },
+    {
+      "date": "2022-08-22",
+      "portfolio_growth": 3.374549997606017,
+      "benchmark_growth": 2.057008687033496
+    },
+    {
+      "date": "2022-08-26",
+      "portfolio_growth": 3.3121636987334306,
+      "benchmark_growth": 2.0169984517344477
+    },
+    {
+      "date": "2022-09-01",
+      "portfolio_growth": 3.1652407796898965,
+      "benchmark_growth": 1.9727578003770991
+    },
+    {
+      "date": "2022-09-09",
+      "portfolio_growth": 3.287466948259851,
+      "benchmark_growth": 2.0310812186800042
+    },
+    {
+      "date": "2022-09-15",
+      "portfolio_growth": 3.1413807490502874,
+      "benchmark_growth": 1.9487591735535876
+    },
+    {
+      "date": "2022-09-21",
+      "portfolio_growth": 3.050330290968077,
+      "benchmark_growth": 1.8929131612803611
+    },
+    {
+      "date": "2022-09-27",
+      "portfolio_growth": 2.91264860978267,
+      "benchmark_growth": 1.8226418023497515
+    },
+    {
+      "date": "2022-10-03",
+      "portfolio_growth": 2.9826141605965533,
+      "benchmark_growth": 1.8388430785396537
+    },
+    {
+      "date": "2022-10-07",
+      "portfolio_growth": 2.9805784714983443,
+      "benchmark_growth": 1.819682563073477
+    },
+    {
+      "date": "2022-10-13",
+      "portfolio_growth": 2.9922908187703032,
+      "benchmark_growth": 1.8356329608724777
+    },
+    {
+      "date": "2022-10-19",
+      "portfolio_growth": 3.0331730866420976,
+      "benchmark_growth": 1.8483227436871594
+    },
+    {
+      "date": "2022-10-25",
+      "portfolio_growth": 3.189975522151683,
+      "benchmark_growth": 1.930682420572211
+    },
+    {
+      "date": "2022-10-31",
+      "portfolio_growth": 3.1531165324077013,
+      "benchmark_growth": 1.9371523491262999
+    },
+    {
+      "date": "2022-11-04",
+      "portfolio_growth": 3.093736901624829,
+      "benchmark_growth": 1.8876966597638944
+    },
+    {
+      "date": "2022-11-10",
+      "portfolio_growth": 3.2658494388402963,
+      "benchmark_growth": 1.9796863680115113
+    },
+    {
+      "date": "2022-11-16",
+      "portfolio_growth": 3.335756170612742,
+      "benchmark_growth": 1.983498432997371
+    },
+    {
+      "date": "2022-11-22",
+      "portfolio_growth": 3.3480993478576697,
+      "benchmark_growth": 2.005818729633062
+    },
+    {
+      "date": "2022-11-30",
+      "portfolio_growth": 3.428619576172104,
+      "benchmark_growth": 2.0452993257546175
+    },
+    {
+      "date": "2022-12-06",
+      "portfolio_growth": 3.2883801594574966,
+      "benchmark_growth": 1.9758147441939566
+    },
+    {
+      "date": "2022-12-12",
+      "portfolio_growth": 3.3375947476148586,
+      "benchmark_growth": 2.001502077772489
+    },
+    {
+      "date": "2022-12-16",
+      "portfolio_growth": 3.248784354092215,
+      "benchmark_growth": 1.9316663486953467
+    },
+    {
+      "date": "2022-12-22",
+      "portfolio_growth": 3.2098532154611084,
+      "benchmark_growth": 1.9188139957100705
+    },
+    {
+      "date": "2022-12-29",
+      "portfolio_growth": 3.2292274633809286,
+      "benchmark_growth": 1.932522904135229
+    },
+    {
+      "date": "2023-01-06",
+      "portfolio_growth": 3.2721169962719006,
+      "benchmark_growth": 1.9641774435945454
+    },
+    {
+      "date": "2023-01-12",
+      "portfolio_growth": 3.4418197379128372,
+      "benchmark_growth": 2.0091214754476683
+    },
+    {
+      "date": "2023-01-20",
+      "portfolio_growth": 3.49555060511178,
+      "benchmark_growth": 2.0073321991046744
+    },
+    {
+      "date": "2023-01-26",
+      "portfolio_growth": 3.5949964340557248,
+      "benchmark_growth": 2.052307569225535
+    },
+    {
+      "date": "2023-02-01",
+      "portfolio_growth": 3.6512776620173804,
+      "benchmark_growth": 2.0829847611296874
+    },
+    {
+      "date": "2023-02-07",
+      "portfolio_growth": 3.710600138112937,
+      "benchmark_growth": 2.105244748608275
+    },
+    {
+      "date": "2023-02-13",
+      "portfolio_growth": 3.6607077444095117,
+      "benchmark_growth": 2.09327824541586
+    },
+    {
+      "date": "2023-02-17",
+      "portfolio_growth": 3.5959046138649207,
+      "benchmark_growth": 2.065035491836974
+    },
+    {
+      "date": "2023-02-27",
+      "portfolio_growth": 3.628703832483119,
+      "benchmark_growth": 2.057998170247339
+    },
+    {
+      "date": "2023-03-03",
+      "portfolio_growth": 3.669678564328016,
+      "benchmark_growth": 2.091424828504559
+    },
+    {
+      "date": "2023-03-09",
+      "portfolio_growth": 3.564452005137527,
+      "benchmark_growth": 2.026072679550482
+    },
+    {
+      "date": "2023-03-15",
+      "portfolio_growth": 3.5524144432759988,
+      "benchmark_growth": 2.014275054888516
+    },
+    {
+      "date": "2023-03-21",
+      "portfolio_growth": 3.723428718116975,
+      "benchmark_growth": 2.0719814882713976
+    },
+    {
+      "date": "2023-03-27",
+      "portfolio_growth": 3.689404845991627,
+      "benchmark_growth": 2.059411810986252
+    },
+    {
+      "date": "2023-03-31",
+      "portfolio_growth": 3.8218891039200527,
+      "benchmark_growth": 2.1264160699814596
+    },
+    {
+      "date": "2023-04-06",
+      "portfolio_growth": 3.7931740044211026,
+      "benchmark_growth": 2.1253769779803804
+    },
+    {
+      "date": "2023-04-17",
+      "portfolio_growth": 3.8706461068169906,
+      "benchmark_growth": 2.147268146261447
+    },
+    {
+      "date": "2023-04-21",
+      "portfolio_growth": 3.8863992951969415,
+      "benchmark_growth": 2.1382417853479603
+    },
+    {
+      "date": "2023-04-27",
+      "portfolio_growth": 3.934502074417611,
+      "benchmark_growth": 2.139331156672211
+    },
+    {
+      "date": "2023-05-05",
+      "portfolio_growth": 3.9813274834943657,
+      "benchmark_growth": 2.166991878592313
+    },
+    {
+      "date": "2023-05-11",
+      "portfolio_growth": 4.003168111238333,
+      "benchmark_growth": 2.1643658670006154
+    },
+    {
+      "date": "2023-05-17",
+      "portfolio_growth": 4.095593432926978,
+      "benchmark_growth": 2.1806462372055937
+    },
+    {
+      "date": "2023-05-23",
+      "portfolio_growth": 4.104876181262639,
+      "benchmark_growth": 2.174659358231834
+    },
+    {
+      "date": "2023-05-31",
+      "portfolio_growth": 4.2479060280919425,
+      "benchmark_growth": 2.1935700651122927
+    },
+    {
+      "date": "2023-06-06",
+      "portfolio_growth": 4.374195472164397,
+      "benchmark_growth": 2.2470113440383255
+    },
+    {
+      "date": "2023-06-12",
+      "portfolio_growth": 4.415085183916329,
+      "benchmark_growth": 2.277301879227063
+    },
+    {
+      "date": "2023-06-16",
+      "portfolio_growth": 4.512614340676206,
+      "benchmark_growth": 2.3155844542109656
+    },
+    {
+      "date": "2023-06-26",
+      "portfolio_growth": 4.425523926082288,
+      "benchmark_growth": 2.285181917597507
+    },
+    {
+      "date": "2023-06-30",
+      "portfolio_growth": 4.551765530765692,
+      "benchmark_growth": 2.347894500295891
+    },
+    {
+      "date": "2023-07-10",
+      "portfolio_growth": 4.509054447490188,
+      "benchmark_growth": 2.3321884334436365
+    },
+    {
+      "date": "2023-07-14",
+      "portfolio_growth": 4.665214489320852,
+      "benchmark_growth": 2.3832184370372755
+    },
+    {
+      "date": "2023-07-20",
+      "portfolio_growth": 4.647524737256544,
+      "benchmark_growth": 2.3986013887977395
+    },
+    {
+      "date": "2023-07-26",
+      "portfolio_growth": 4.664377565562884,
+      "benchmark_growth": 2.4162655367951507
+    },
+    {
+      "date": "2023-08-01",
+      "portfolio_growth": 4.699196152615825,
+      "benchmark_growth": 2.4214115028202325
+    },
+    {
+      "date": "2023-08-07",
+      "portfolio_growth": 4.699575573197023,
+      "benchmark_growth": 2.390804053044992
+    },
+    {
+      "date": "2023-08-11",
+      "portfolio_growth": 4.5879673445648,
+      "benchmark_growth": 2.363963030321252
+    },
+    {
+      "date": "2023-08-17",
+      "portfolio_growth": 4.530663810430933,
+      "benchmark_growth": 2.3143127337327383
+    },
+    {
+      "date": "2023-08-23",
+      "portfolio_growth": 4.642997213295403,
+      "benchmark_growth": 2.350064973312255
+    },
+    {
+      "date": "2023-08-29",
+      "portfolio_growth": 4.703391968683263,
+      "benchmark_growth": 2.3825819335498317
+    },
+    {
+      "date": "2023-09-06",
+      "portfolio_growth": 4.686080267319609,
+      "benchmark_growth": 2.3772605709510923
+    },
+    {
+      "date": "2023-09-12",
+      "portfolio_growth": 4.692657314972477,
+      "benchmark_growth": 2.3760355354768836
+    },
+    {
+      "date": "2023-09-18",
+      "portfolio_growth": 4.691794561397075,
+      "benchmark_growth": 2.3717994677763583
+    },
+    {
+      "date": "2023-09-22",
+      "portfolio_growth": 4.516497834193927,
+      "benchmark_growth": 2.301174037862665
+    },
+    {
+      "date": "2023-09-28",
+      "portfolio_growth": 4.538777405015666,
+      "benchmark_growth": 2.2910161496923798
+    },
+    {
+      "date": "2023-10-04",
+      "portfolio_growth": 4.507229851120429,
+      "benchmark_growth": 2.270378883810776
+    },
+    {
+      "date": "2023-10-10",
+      "portfolio_growth": 4.626368512637892,
+      "benchmark_growth": 2.3232008811095572
+    },
+    {
+      "date": "2023-10-16",
+      "portfolio_growth": 4.640293423547519,
+      "benchmark_growth": 2.3312203997394505
+    },
+    {
+      "date": "2023-10-20",
+      "portfolio_growth": 4.460702894937379,
+      "benchmark_growth": 2.251827165303504
+    },
+    {
+      "date": "2023-10-26",
+      "portfolio_growth": 4.342937105142455,
+      "benchmark_growth": 2.2056346029865854
+    },
+    {
+      "date": "2023-11-01",
+      "portfolio_growth": 4.465589607107322,
+      "benchmark_growth": 2.2596865298260793
+    },
+    {
+      "date": "2023-11-07",
+      "portfolio_growth": 4.628629038025296,
+      "benchmark_growth": 2.3359786137076717
+    },
+    {
+      "date": "2023-11-13",
+      "portfolio_growth": 4.709363659312014,
+      "benchmark_growth": 2.3534079033764037
+    },
+    {
+      "date": "2023-11-17",
+      "portfolio_growth": 4.833917416112725,
+      "benchmark_growth": 2.4100791683609852
+    },
+    {
+      "date": "2023-11-27",
+      "portfolio_growth": 4.855600592134792,
+      "benchmark_growth": 2.42831260020848
+    },
+    {
+      "date": "2023-12-01",
+      "portfolio_growth": 4.836274088988643,
+      "benchmark_growth": 2.4529977609117863
+    },
+    {
+      "date": "2023-12-07",
+      "portfolio_growth": 4.834244938440146,
+      "benchmark_growth": 2.4483490649676938
+    },
+    {
+      "date": "2023-12-13",
+      "portfolio_growth": 4.959143504511494,
+      "benchmark_growth": 2.513908107808464
+    },
+    {
+      "date": "2023-12-19",
+      "portfolio_growth": 5.095352843041874,
+      "benchmark_growth": 2.547383508467877
+    },
+    {
+      "date": "2023-12-28",
+      "portfolio_growth": 5.0937890460743125,
+      "benchmark_growth": 2.5419592660760153
+    },
+    {
+      "date": "2024-01-04",
+      "portfolio_growth": 4.988408827967358,
+      "benchmark_growth": 2.491779987744916
+    },
+    {
+      "date": "2024-01-10",
+      "portfolio_growth": 5.142431971831217,
+      "benchmark_growth": 2.541265887121865
+    },
+    {
+      "date": "2024-01-18",
+      "portfolio_growth": 5.218626414892404,
+      "benchmark_growth": 2.5502553108768318
+    },
+    {
+      "date": "2024-01-24",
+      "portfolio_growth": 5.345861175271357,
+      "benchmark_growth": 2.5978899331862317
+    },
+    {
+      "date": "2024-01-30",
+      "portfolio_growth": 5.457593764168494,
+      "benchmark_growth": 2.6273264562341474
+    },
+    {
+      "date": "2024-02-05",
+      "portfolio_growth": 5.544000306590232,
+      "benchmark_growth": 2.6362110552485523
+    },
+    {
+      "date": "2024-02-09",
+      "portfolio_growth": 5.697266982197847,
+      "benchmark_growth": 2.6825076537830475
+    },
+    {
+      "date": "2024-02-15",
+      "portfolio_growth": 5.703974468858482,
+      "benchmark_growth": 2.686842770047717
+    },
+    {
+      "date": "2024-02-23",
+      "portfolio_growth": 5.906721500861473,
+      "benchmark_growth": 2.733145888060146
+    },
+    {
+      "date": "2024-02-29",
+      "portfolio_growth": 5.894327586867484,
+      "benchmark_growth": 2.7343838805831315
+    },
+    {
+      "date": "2024-03-06",
+      "portfolio_growth": 5.992700949808725,
+      "benchmark_growth": 2.7433712968505217
+    },
+    {
+      "date": "2024-03-12",
+      "portfolio_growth": 6.0854259716460595,
+      "benchmark_growth": 2.7812056139241186
+    },
+    {
+      "date": "2024-03-18",
+      "portfolio_growth": 6.124753111054274,
+      "benchmark_growth": 2.768684242507404
+    },
+    {
+      "date": "2024-03-22",
+      "portfolio_growth": 6.2800866519255765,
+      "benchmark_growth": 2.8137622624491985
+    },
+    {
+      "date": "2024-03-28",
+      "portfolio_growth": 6.2471347299603615,
+      "benchmark_growth": 2.823803080581849
+    },
+    {
+      "date": "2024-04-08",
+      "portfolio_growth": 6.282648409483639,
+      "benchmark_growth": 2.823149102359921
+    },
+    {
+      "date": "2024-04-12",
+      "portfolio_growth": 6.201652507343129,
+      "benchmark_growth": 2.780316428570621
+    },
+    {
+      "date": "2024-04-18",
+      "portfolio_growth": 6.024004190013203,
+      "benchmark_growth": 2.7186524569981234
+    },
+    {
+      "date": "2024-04-24",
+      "portfolio_growth": 6.095819512495296,
+      "benchmark_growth": 2.7507091594336774
+    },
+    {
+      "date": "2024-04-30",
+      "portfolio_growth": 6.156510925550259,
+      "benchmark_growth": 2.7320412709192867
+    },
+    {
+      "date": "2024-05-08",
+      "portfolio_growth": 6.30539222145614,
+      "benchmark_growth": 2.797822166002161
+    },
+    {
+      "date": "2024-05-14",
+      "portfolio_growth": 6.435633924905893,
+      "benchmark_growth": 2.8308752902401846
+    },
+    {
+      "date": "2024-05-20",
+      "portfolio_growth": 6.461013707963211,
+      "benchmark_growth": 2.867445079450177
+    },
+    {
+      "date": "2024-05-24",
+      "portfolio_growth": 6.5501848285557545,
+      "benchmark_growth": 2.8640911759463936
+    },
+    {
+      "date": "2024-06-03",
+      "portfolio_growth": 6.519048046423189,
+      "benchmark_growth": 2.853224610041496
+    },
+    {
+      "date": "2024-06-07",
+      "portfolio_growth": 6.626520413407479,
+      "benchmark_growth": 2.886795450538422
+    },
+    {
+      "date": "2024-06-13",
+      "portfolio_growth": 6.687250839353267,
+      "benchmark_growth": 2.9324205245786708
+    },
+    {
+      "date": "2024-06-21",
+      "portfolio_growth": 6.762647661828277,
+      "benchmark_growth": 2.9610970667174037
+    },
+    {
+      "date": "2024-06-27",
+      "portfolio_growth": 6.848917958590299,
+      "benchmark_growth": 2.971212434209692
+    },
+    {
+      "date": "2024-07-03",
+      "portfolio_growth": 6.966233971864891,
+      "benchmark_growth": 2.9988916622299735
+    },
+    {
+      "date": "2024-07-11",
+      "portfolio_growth": 6.982122284793029,
+      "benchmark_growth": 3.0088399156258387
+    },
+    {
+      "date": "2024-07-17",
+      "portfolio_growth": 6.898673589592323,
+      "benchmark_growth": 3.011327654623637
+    },
+    {
+      "date": "2024-07-23",
+      "portfolio_growth": 6.828302694074793,
+      "benchmark_growth": 2.9942415091467716
+    },
+    {
+      "date": "2024-07-29",
+      "portfolio_growth": 6.726998348336707,
+      "benchmark_growth": 2.945470811713975
+    },
+    {
+      "date": "2024-08-02",
+      "portfolio_growth": 6.434608516865834,
+      "benchmark_growth": 2.8813453189351814
+    },
+    {
+      "date": "2024-08-08",
+      "portfolio_growth": 6.45505269928253,
+      "benchmark_growth": 2.8691792482497247
+    },
+    {
+      "date": "2024-08-14",
+      "portfolio_growth": 6.659463459289483,
+      "benchmark_growth": 2.9400102178573198
+    },
+    {
+      "date": "2024-08-20",
+      "portfolio_growth": 6.918854612621334,
+      "benchmark_growth": 3.0208434927673062
+    },
+    {
+      "date": "2024-08-26",
+      "portfolio_growth": 6.940347292237843,
+      "benchmark_growth": 3.0321437194751213
+    },
+    {
+      "date": "2024-08-30",
+      "portfolio_growth": 6.948048205158999,
+      "benchmark_growth": 3.047769450002573
+    },
+    {
+      "date": "2024-09-09",
+      "portfolio_growth": 6.8236888447023585,
+      "benchmark_growth": 3.016468073555833
+    },
+    {
+      "date": "2024-09-13",
+      "portfolio_growth": 7.078299678509609,
+      "benchmark_growth": 3.102588335720947
+    },
+    {
+      "date": "2024-09-19",
+      "portfolio_growth": 7.249147150062875,
+      "benchmark_growth": 3.152107141543338
+    },
+    {
+      "date": "2024-09-25",
+      "portfolio_growth": 7.282323811389697,
+      "benchmark_growth": 3.1565704393341765
+    },
+    {
+      "date": "2024-10-01",
+      "portfolio_growth": 7.16639535326917,
+      "benchmark_growth": 3.148707239972681
+    },
+    {
+      "date": "2024-10-07",
+      "portfolio_growth": 7.249959687013534,
+      "benchmark_growth": 3.1441663346082005
+    },
+    {
+      "date": "2024-10-11",
+      "portfolio_growth": 7.433230029001659,
+      "benchmark_growth": 3.209397397329052
+    },
+    {
+      "date": "2024-10-17",
+      "portfolio_growth": 7.526483172312119,
+      "benchmark_growth": 3.2247361031063777
+    },
+    {
+      "date": "2024-10-23",
+      "portfolio_growth": 7.471929057804472,
+      "benchmark_growth": 3.2005932492524556
+    },
+    {
+      "date": "2024-10-29",
+      "portfolio_growth": 7.482031448236621,
+      "benchmark_growth": 3.22152487417031
+    },
+    {
+      "date": "2024-11-04",
+      "portfolio_growth": 7.396700441937129,
+      "benchmark_growth": 3.1552966403587854
+    },
+    {
+      "date": "2024-11-08",
+      "portfolio_growth": 7.808462824326057,
+      "benchmark_growth": 3.312449907450291
+    },
+    {
+      "date": "2024-11-14",
+      "portfolio_growth": 7.782644564586678,
+      "benchmark_growth": 3.2856483905846385
+    },
+    {
+      "date": "2024-11-20",
+      "portfolio_growth": 7.685684540295737,
+      "benchmark_growth": 3.2698664593311753
+    },
+    {
+      "date": "2024-11-26",
+      "portfolio_growth": 7.719637718771584,
+      "benchmark_growth": 3.3260722786211847
+    },
+    {
+      "date": "2024-12-04",
+      "portfolio_growth": 7.820107077711105,
+      "benchmark_growth": 3.344115702185408
+    },
+    {
+      "date": "2024-12-10",
+      "portfolio_growth": 7.757949311825225,
+      "benchmark_growth": 3.317369270440439
+    },
+    {
+      "date": "2024-12-16",
+      "portfolio_growth": 7.7833794051005984,
+      "benchmark_growth": 3.339327225350477
+    },
+    {
+      "date": "2024-12-20",
+      "portfolio_growth": 7.63243473347656,
+      "benchmark_growth": 3.264206173914151
+    },
+    {
+      "date": "2024-12-31",
+      "portfolio_growth": 7.679116085596965,
+      "benchmark_growth": 3.270421144461809
+    },
+    {
+      "date": "2025-01-07",
+      "portfolio_growth": 7.9186714171742105,
+      "benchmark_growth": 3.2846502141028244
+    },
+    {
+      "date": "2025-01-15",
+      "portfolio_growth": 8.049334425285362,
+      "benchmark_growth": 3.3590925334794433
+    },
+    {
+      "date": "2025-01-23",
+      "portfolio_growth": 8.318025643034872,
+      "benchmark_growth": 3.4239157791097496
+    },
+    {
+      "date": "2025-01-29",
+      "portfolio_growth": 7.980586070845614,
+      "benchmark_growth": 3.3793302379946537
+    },
+    {
+      "date": "2025-02-04",
+      "portfolio_growth": 8.027775564241045,
+      "benchmark_growth": 3.37916256289476
+    },
+    {
+      "date": "2025-02-10",
+      "portfolio_growth": 8.055669400323628,
+      "benchmark_growth": 3.396401027270699
+    },
+    {
+      "date": "2025-02-14",
+      "portfolio_growth": 8.06878946164359,
+      "benchmark_growth": 3.4236348100234406
+    },
+    {
+      "date": "2025-02-24",
+      "portfolio_growth": 7.781458570163659,
+      "benchmark_growth": 3.343682862256698
+    },
+    {
+      "date": "2025-02-28",
+      "portfolio_growth": 7.660299992334846,
+      "benchmark_growth": 3.32671870276824
+    },
+    {
+      "date": "2025-03-06",
+      "portfolio_growth": 7.376870386924688,
+      "benchmark_growth": 3.206511503511452
+    },
+    {
+      "date": "2025-03-12",
+      "portfolio_growth": 7.294911989068803,
+      "benchmark_growth": 3.129023524573231
+    },
+    {
+      "date": "2025-03-18",
+      "portfolio_growth": 7.346924786362556,
+      "benchmark_growth": 3.141061136710091
+    },
+    {
+      "date": "2025-03-24",
+      "portfolio_growth": 7.596772127856146,
+      "benchmark_growth": 3.2238513930469717
+    },
+    {
+      "date": "2025-03-28",
+      "portfolio_growth": 7.255284938792018,
+      "benchmark_growth": 3.120409192023352
+    },
+    {
+      "date": "2025-04-03",
+      "portfolio_growth": 6.916911593154075,
+      "benchmark_growth": 3.0139364727015403
+    },
+    {
+      "date": "2025-04-09",
+      "portfolio_growth": 7.068140277866142,
+      "benchmark_growth": 3.080875856636683
+    },
+    {
+      "date": "2025-04-15",
+      "portfolio_growth": 6.919566759378149,
+      "benchmark_growth": 3.019046887948508
+    },
+    {
+      "date": "2025-04-24",
+      "portfolio_growth": 7.1219764170844035,
+      "benchmark_growth": 3.065145786463968
+    },
+    {
+      "date": "2025-04-30",
+      "portfolio_growth": 7.129308783433234,
+      "benchmark_growth": 3.109158310263482
+    },
+    {
+      "date": "2025-05-08",
+      "portfolio_growth": 7.105176845668503,
+      "benchmark_growth": 3.0998324953454026
+    },
+    {
+      "date": "2025-05-14",
+      "portfolio_growth": 7.580150418275508,
+      "benchmark_growth": 3.2234289132491685
+    },
+    {
+      "date": "2025-05-20",
+      "portfolio_growth": 7.5832525189606415,
+      "benchmark_growth": 3.2522840697766244
+    },
+    {
+      "date": "2025-05-28",
+      "portfolio_growth": 7.410867774821143,
+      "benchmark_growth": 3.158529309079818
+    },
+    {
+      "date": "2025-06-03",
+      "portfolio_growth": 7.460358341074634,
+      "benchmark_growth": 3.2034569556745707
+    },
+    {
+      "date": "2025-06-09",
+      "portfolio_growth": 7.597359549443402,
+      "benchmark_growth": 3.222749865704843
+    },
+    {
+      "date": "2025-06-13",
+      "portfolio_growth": 7.582747085395831,
+      "benchmark_growth": 3.208347207101505
+    },
+    {
+      "date": "2025-06-23",
+      "portfolio_growth": 7.642534729394354,
+      "benchmark_growth": 3.2424255979764385
+    },
+    {
+      "date": "2025-06-27",
+      "portfolio_growth": 7.993099579208006,
+      "benchmark_growth": 3.3221691016425914
+    },
+    {
+      "date": "2025-07-03",
+      "portfolio_growth": 8.100349404039985,
+      "benchmark_growth": 3.3785193727185208
+    },
+    {
+      "date": "2025-07-11",
+      "portfolio_growth": 8.23128700235383,
+      "benchmark_growth": 3.394522176410699
+    },
+    {
+      "date": "2025-07-17",
+      "portfolio_growth": 8.348615654657896,
+      "benchmark_growth": 3.4185811354544624
+    },
+    {
+      "date": "2025-07-23",
+      "portfolio_growth": 8.476211907961394,
+      "benchmark_growth": 3.452166196721284
+    },
+    {
+      "date": "2025-07-29",
+      "portfolio_growth": 8.578275289930618,
+      "benchmark_growth": 3.457882059601765
+    },
+    {
+      "date": "2025-08-04",
+      "portfolio_growth": 8.427512000244057,
+      "benchmark_growth": 3.435618545262761
+    },
+    {
+      "date": "2025-08-08",
+      "portfolio_growth": 8.595682377570492,
+      "benchmark_growth": 3.468332589107797
+    },
+    {
+      "date": "2025-08-14",
+      "portfolio_growth": 8.724993021798433,
+      "benchmark_growth": 3.510626816859234
+    },
+    {
+      "date": "2025-08-20",
+      "portfolio_growth": 8.606073627566056,
+      "benchmark_growth": 3.4733947690330944
+    },
+    {
+      "date": "2025-08-26",
+      "portfolio_growth": 8.754697174402512,
+      "benchmark_growth": 3.511769586342039
+    },
+    {
+      "date": "2025-09-03",
+      "portfolio_growth": 8.850763761039314,
+      "benchmark_growth": 3.5302006222355797
+    },
+    {
+      "date": "2025-09-09",
+      "portfolio_growth": 9.017242880334681,
+      "benchmark_growth": 3.566339697400591
+    },
+    {
+      "date": "2025-09-15",
+      "portfolio_growth": 9.241198425021135,
+      "benchmark_growth": 3.6243585682977404
+    },
+    {
+      "date": "2025-09-19",
+      "portfolio_growth": 9.275626941877668,
+      "benchmark_growth": 3.6497497983100606
+    },
+    {
+      "date": "2025-09-25",
+      "portfolio_growth": 9.201181949587635,
+      "benchmark_growth": 3.618679899521577
+    },
+    {
+      "date": "2025-10-01",
+      "portfolio_growth": 9.414212808574478,
+      "benchmark_growth": 3.675870321004899
+    },
+    {
+      "date": "2025-10-07",
+      "portfolio_growth": 9.420216738898135,
+      "benchmark_growth": 3.679555025750719
+    },
+    {
+      "date": "2025-10-13",
+      "portfolio_growth": 9.346048299849475,
+      "benchmark_growth": 3.6461202558413865
+    },
+    {
+      "date": "2025-10-17",
+      "portfolio_growth": 9.337650904592168,
+      "benchmark_growth": 3.6535441507724165
+    },
+    {
+      "date": "2025-10-23",
+      "portfolio_growth": 9.438092596687582,
+      "benchmark_growth": 3.6940725187876566
+    },
+    {
+      "date": "2025-10-29",
+      "portfolio_growth": 9.949307165518407,
+      "benchmark_growth": 3.780023130215761
+    },
+    {
+      "date": "2025-11-04",
+      "portfolio_growth": 9.866788768963717,
+      "benchmark_growth": 3.7132090910931224
+    },
+    {
+      "date": "2025-11-10",
+      "portfolio_growth": 10.108576257995852,
+      "benchmark_growth": 3.7473034393960623
+    },
+    {
+      "date": "2025-11-14",
+      "portfolio_growth": 9.883801296738133,
+      "benchmark_growth": 3.695006893310363
+    },
+    {
+      "date": "2025-11-20",
+      "portfolio_growth": 9.603358971010922,
+      "benchmark_growth": 3.5883250798227255
+    },
+    {
+      "date": "2025-11-26",
+      "portfolio_growth": 10.03587980689877,
+      "benchmark_growth": 3.7376253363173544
+    },
+    {
+      "date": "2025-12-04",
+      "portfolio_growth": 10.017184551645958,
+      "benchmark_growth": 3.743094788443372
+    },
+    {
+      "date": "2025-12-10",
+      "portfolio_growth": 10.06078312370701,
+      "benchmark_growth": 3.7604866364591003
+    },
+    {
+      "date": "2025-12-16",
+      "portfolio_growth": 9.818227440452628,
+      "benchmark_growth": 3.712904422452761
+    },
+    {
+      "date": "2025-12-22",
+      "portfolio_growth": 10.069473258265907,
+      "benchmark_growth": 3.756568489246856
+    },
+    {
+      "date": "2025-12-31",
+      "portfolio_growth": 10.135803395007512,
+      "benchmark_growth": 3.754364730707165
+    },
+    {
+      "date": "2026-01-07",
+      "portfolio_growth": 10.348532929623163,
+      "benchmark_growth": 3.796537463627987
+    },
+    {
+      "date": "2026-01-13",
+      "portfolio_growth": 10.350493480092362,
+      "benchmark_growth": 3.8196058181372803
+    },
+    {
+      "date": "2026-01-21",
+      "portfolio_growth": 10.37523078656118,
+      "benchmark_growth": 3.85193729081204
+    },
+    {
+      "date": "2026-01-27",
+      "portfolio_growth": 10.65587066218726,
+      "benchmark_growth": 3.9086426992674004
+    },
+    {
+      "date": "2026-02-02",
+      "portfolio_growth": 10.692236080867408,
+      "benchmark_growth": 3.9081930285508726
+    },
+    {
+      "date": "2026-02-06",
+      "portfolio_growth": 10.644551430082396,
+      "benchmark_growth": 3.8812734773123707
+    },
+    {
+      "date": "2026-02-12",
+      "portfolio_growth": 10.57360276396074,
+      "benchmark_growth": 3.8287268333058777
+    },
+    {
+      "date": "2026-02-20",
+      "portfolio_growth": 10.76302504269182,
+      "benchmark_growth": 3.868344496604934
+    },
+    {
+      "date": "2026-02-26",
+      "portfolio_growth": 10.677549136496928,
+      "benchmark_growth": 3.867614614503447
+    },
+    {
+      "date": "2026-03-04",
+      "portfolio_growth": 10.59350968771202,
+      "benchmark_growth": 3.8442174174586516
+    },
+    {
+      "date": "2026-03-10",
+      "portfolio_growth": 10.486945798627717,
+      "benchmark_growth": 3.7996102596854535
+    },
+    {
+      "date": "2026-03-16",
+      "portfolio_growth": 10.448237929823808,
+      "benchmark_growth": 3.753881424607233
+    },
+    {
+      "date": "2026-03-20",
+      "portfolio_growth": 10.290097932359417,
+      "benchmark_growth": 3.6490200893681997
+    },
+    {
+      "date": "2026-03-26",
+      "portfolio_growth": 10.248603320617905,
+      "benchmark_growth": 3.629440657711797
+    },
+    {
+      "date": "2026-04-01",
+      "portfolio_growth": 10.43532740452841,
+      "benchmark_growth": 3.6865470464729633
+    },
+    {
+      "date": "2026-04-10",
+      "portfolio_growth": 10.932171661679389,
+      "benchmark_growth": 3.803156768110507
+    },
+    {
+      "date": "2026-04-16",
+      "portfolio_growth": 11.234827014780503,
+      "benchmark_growth": 3.9274172708707953
+    },
+    {
+      "date": "2026-04-22",
+      "portfolio_growth": 11.404350759831376,
+      "benchmark_growth": 3.980871995708268
+    },
+    {
+      "date": "2026-04-28",
+      "portfolio_growth": 11.403748595065279,
+      "benchmark_growth": 3.983558329739385
+    },
+    {
+      "date": "2026-05-06",
+      "portfolio_growth": 11.792241529861862,
+      "benchmark_growth": 4.111201508952913
+    },
+    {
+      "date": "2026-05-12",
+      "portfolio_growth": 11.706803234468033,
+      "benchmark_growth": 4.135571813530409
+    },
+    {
+      "date": "2026-05-18",
+      "portfolio_growth": 11.758253529237198,
+      "benchmark_growth": 4.1382050419612
+    },
+    {
+      "date": "2026-05-22",
+      "portfolio_growth": 11.676201495306103,
+      "benchmark_growth": 4.177365787131026
+    },
+    {
+      "date": "2026-06-01",
+      "portfolio_growth": 11.706767957805507,
+      "benchmark_growth": 4.22161068086646
+    },
+    {
+      "date": "2026-06-05",
+      "portfolio_growth": 11.432931978839743,
+      "benchmark_growth": 4.1047922008403415
+    },
+    {
+      "date": "2026-06-11",
+      "portfolio_growth": 11.33007442295473,
+      "benchmark_growth": 4.105961012276103
+    },
+    {
+      "date": "2026-06-17",
+      "portfolio_growth": 11.351442933314196,
+      "benchmark_growth": 4.12377040190949
+    },
+    {
+      "date": "2026-06-25",
+      "portfolio_growth": 11.210515966468197,
+      "benchmark_growth": 4.110167342140151
+    },
+    {
+      "date": "2026-07-01",
+      "portfolio_growth": 11.408446096172982,
+      "benchmark_growth": 4.174313615918247
+    },
+    {
+      "date": "2026-07-09",
+      "portfolio_growth": 11.472893862121781,
+      "benchmark_growth": 4.171214293068197
+    },
+    {
+      "date": "2026-07-15",
+      "portfolio_growth": 11.643525359179055,
+      "benchmark_growth": 4.1884159560689005
+    },
+    {
+      "date": "2026-07-27",
+      "portfolio_growth": 11.324867412393269,
+      "benchmark_growth": 4.129576451279424
+    },
+    {
+      "date": "2026-08-04",
+      "portfolio_growth": 11.643293388968644,
+      "benchmark_growth": 4.218817554805702
+    },
+    {
+      "date": "2026-08-10",
+      "portfolio_growth": 11.747025971813617,
+      "benchmark_growth": 4.228115833342128
+    },
+    {
+      "date": "2026-08-14",
+      "portfolio_growth": 11.711242976405192,
+      "benchmark_growth": 4.246219985257861
+    },
+    {
+      "date": "2026-08-18",
+      "portfolio_growth": 11.613340839328139,
+      "benchmark_growth": 4.197595727118897
+    }
+  ]
+}
