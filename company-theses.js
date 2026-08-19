@@ -10,7 +10,7 @@ function applyOverrides(snapshot, overrides){
   const map = new Map((overrides?.companies||[]).map(x=>[x.match_company,x]));
   const merge = x => {
     const o = map.get(x.company);
-    return o ? {...x, company:o.display_company||x.company, expected_annual_return:o.expected_annual_return ?? x.expected_annual_return} : x;
+    return o ? {...x, company:o.display_company||x.company, expected_annual_return:x.expected_annual_return ?? o.expected_annual_return} : x;
   };
   snapshot.holdings = (snapshot.holdings||[]).map(merge);
   snapshot.theses = (snapshot.theses||[]).map(merge);
@@ -77,7 +77,7 @@ async function init(){
     const overrides=overRes.ok?await overRes.json():{companies:[]};
     const data=applyOverrides(snapshot,overrides);
     const items=(data.theses||[]).filter(x=>x.company);
-    $('#thesisFreshness').textContent=`Portfolio analytics: ${data.generated_utc||'available'} · Expected-return assumptions: ${overrides.generated_utc||'available'}`;
+    $('#thesisFreshness').textContent=`Portfolio analytics: ${data.generated_utc||'available'} · Expected-return fallback: ${overrides.generated_utc||'available'}`;
     if(!items.length)throw new Error('no company theses published');
     renderOverview(items);
     const sel=$('#thesisCompanySelect');
