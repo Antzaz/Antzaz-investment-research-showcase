@@ -1,6 +1,6 @@
 {
   "snapshot_type": "sanitized_real_portfolio_analytics",
-  "generated_utc": "2026-08-19T17:09:56.560417+00:00",
+  "generated_utc": "2026-08-19T17:18:02.070353+00:00",
   "privacy_note": "Company names, portfolio weights and recruiter-safe investment theses are public. Tickers, shares, cost basis, market value, unrealized P&L, transactions, private notes, credentials and private workbooks are excluded.",
   "data_note": "Company names, weights and analytics are generated from the latest production portfolio run. Investment-thesis text is user-authored and synced from the private portfolio thesis workbook.",
   "metrics": {
