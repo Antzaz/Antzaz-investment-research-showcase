@@ -97,4 +97,9 @@
       return response;
     }
   };
+
+  const helper = document.createElement('script');
+  helper.src = `research-display-fix.js?v=${Date.now()}`;
+  helper.async = true;
+  document.head.appendChild(helper);
 })();
