@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Interactive equity research and portfolio analytics showcase." />
+  <meta name="description" content="Independent model portfolio, equity research, benchmark-relative performance and risk analytics." />
   <title>Investment Research & Portfolio Analytics</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
@@ -11,119 +11,142 @@
 <body>
   <header class="hero">
     <div>
-      <p class="eyebrow">RECRUITER PORTFOLIO</p>
+      <p class="eyebrow">INDEPENDENT MODEL PORTFOLIO & RESEARCH SHOWCASE</p>
       <h1>Investment Research & Portfolio Analytics</h1>
-      <p class="lede">Real portfolio analytics, documented investment theses, risk analysis and research methodology.</p>
+      <p class="lede">A fundamentals-driven equity portfolio presented with benchmark-relative performance, portfolio construction, risk attribution and company-level underwriting.</p>
+      <div id="heroFacts" class="hero-facts"></div>
       <p id="freshness" class="muted">Loading latest validated portfolio snapshot…</p>
     </div>
   </header>
 
   <nav class="tabs" aria-label="Portfolio sections">
-    <button class="tab active" data-target="portfolio">Portfolio Analytics</button>
-    <button class="tab" data-target="philosophy">Portfolio Philosophy</button>
+    <button class="tab active" data-target="overview">Overview</button>
+    <button class="tab" data-target="performance">Performance</button>
+    <button class="tab" data-target="portfolio">Portfolio</button>
     <button class="tab" data-target="theses">Company Theses</button>
+    <button class="tab" data-target="risk">Risk & Attribution</button>
     <button class="tab" data-target="research">Equity Research</button>
-    <button class="tab" data-target="methodology">Methodology</button>
+    <button class="tab" data-target="philosophy">Philosophy & Methodology</button>
   </nav>
 
   <main>
-    <section id="portfolio" class="panel active-panel">
-      <div id="metrics" class="metric-grid"></div>
+    <section id="overview" class="panel active-panel">
+      <article class="notice-card">
+        <strong>Research model, not an investment product.</strong>
+        <span id="trackRecordNotice">Historical analytics are presented for research and portfolio-management demonstration.</span>
+      </article>
+      <div id="overviewMetrics" class="metric-grid overview-metrics"></div>
       <div class="grid two">
-        <article class="card"><h2>Portfolio vs benchmark</h2><div id="growthChart" class="chart"></div></article>
-        <article class="card"><h2>Portfolio weights</h2><div id="weightsChart" class="chart"></div></article>
+        <article class="card">
+          <div class="section-head"><div><p class="eyebrow">MODEL HISTORY</p><h2>Portfolio vs benchmark</h2></div><button class="text-button" data-open-tab="performance">Full performance →</button></div>
+          <div id="overviewGrowthChart" class="chart"></div>
+        </article>
+        <article class="card">
+          <p class="eyebrow">PORTFOLIO CONSTRUCTION</p>
+          <h2>Concentration & risk budget</h2>
+          <div id="constructionMetrics" class="metric-grid compact"></div>
+          <div id="overviewWeightsChart" class="chart compact-chart"></div>
+        </article>
       </div>
       <div class="grid two">
-        <article class="card"><h2>Capital weight vs risk contribution</h2><div id="riskChart" class="chart"></div></article>
-        <article class="card"><h2>Sector allocation</h2><div id="sectorChart" class="chart"></div></article>
+        <article class="card"><p class="eyebrow">ACTIVE POSITIONING</p><h2>Sector weights vs S&P 500</h2><div id="overviewSectorChart" class="chart"></div></article>
+        <article class="card"><p class="eyebrow">PORTFOLIO PROFILE</p><h2>Weighted fundamentals</h2><div id="characteristicMetrics" class="metric-grid compact"></div><p class="footnote">Weighted only across holdings for which the public market field is available.</p></article>
+      </div>
+    </section>
+
+    <section id="performance" class="panel">
+      <article class="card">
+        <div class="section-head">
+          <div><p class="eyebrow">STANDARDIZED VIEW</p><h2>Model performance vs benchmark</h2><p class="muted">Period returns are calculated from the published research series.</p></div>
+          <div id="performanceAsOf" class="asof-chip"></div>
+        </div>
+        <div class="table-wrap"><table id="performanceTable"></table></div>
+      </article>
+      <div class="grid two">
+        <article class="card"><h2>Cumulative growth</h2><div id="performanceGrowthChart" class="chart"></div></article>
+        <article class="card"><h2>Drawdown</h2><div id="drawdownChart" class="chart"></div></article>
+      </div>
+      <div class="grid two">
+        <article class="card"><h2>Calendar-year returns</h2><div class="table-wrap"><table id="calendarReturnTable"></table></div></article>
+        <article class="card"><h2>Monthly return heatmap</h2><div id="monthlyHeatmap" class="chart"></div></article>
+      </div>
+      <article class="card"><h2>Rolling risk</h2><div class="table-wrap"><table id="rollingRiskTable"></table></div></article>
+      <article class="method-box"><h3>Performance methodology</h3><p id="performanceMethodology"></p><p id="currencyMethodology"></p></article>
+    </section>
+
+    <section id="portfolio" class="panel">
+      <div class="grid two">
+        <article class="card"><h2>Sector allocation & active weights</h2><div id="sectorActiveChart" class="chart"></div><div class="table-wrap"><table id="sectorTable"></table></div><p id="benchmarkSectorNote" class="footnote"></p></article>
+        <article class="card"><h2>Geographic exposure</h2><div id="geographyChart" class="chart"></div><p class="footnote">Country exposure is based on company domicile from public company metadata, not revenue geography.</p></article>
       </div>
       <article class="card">
         <div class="section-head">
-          <div>
-            <h2>Holdings</h2>
-            <p class="muted">Expected returns are base-case annualized scenario estimates from the investment-thesis workbook.</p>
-          </div>
-          <button class="button-link primary" data-open-tab="theses">View Company Theses →</button>
+          <div><h2>Holdings</h2><p class="muted">Expected returns are base-case annualized scenario estimates from the investment-thesis workbook.</p></div>
+          <button class="button-link primary" data-open-tab="theses">Open Company Theses →</button>
         </div>
         <div class="table-wrap"><table id="holdingsTable"></table></div>
       </article>
       <div class="grid two">
-        <article class="card"><h2>Factor/style exposures</h2><div id="factorChart" class="chart"></div></article>
-        <article class="card"><h2>Stress scenarios</h2><div id="stressChart" class="chart"></div></article>
+        <article class="card"><h2>Capital weight vs risk contribution</h2><div id="riskBudgetChart" class="chart"></div></article>
+        <article class="card"><h2>Portfolio underwriting profile</h2><div id="underwritingChart" class="chart"></div><p class="footnote">Weighted average of the published 1–5 company research scorecards.</p></article>
       </div>
-    </section>
-
-    <section id="philosophy" class="panel">
-      <article id="philosophyCard" class="card"></article>
-      <article class="card thesis-cta-card">
-        <p class="eyebrow">SECURITY SELECTION</p>
-        <h2>How the philosophy translates into individual holdings</h2>
-        <p>The Company Theses tab connects portfolio construction to company-level expected returns, conviction, valuation, catalysts, risks, falsification conditions and monitoring KPIs.</p>
-        <button class="button-link primary" data-open-tab="theses">Open Company Theses →</button>
-      </article>
     </section>
 
     <section id="theses" class="panel">
       <article class="card thesis-overview-card">
         <div class="section-head thesis-controls">
-          <div>
-            <p class="eyebrow">SECURITY SELECTION</p>
-            <h2>Company Investment Theses</h2>
-            <p class="muted">Why each company is held, what the base case implies, what could go wrong and what would change the thesis.</p>
-          </div>
-          <label class="company-picker">Company
-            <select id="thesisCompanySelect" aria-label="Select portfolio company"></select>
-          </label>
+          <div><p class="eyebrow">SECURITY SELECTION</p><h2>Company Investment Theses</h2><p class="muted">Why each company is held, what the base case implies, what could go wrong and what would change the thesis.</p></div>
+          <label class="company-picker">Company<select id="thesisCompanySelect" aria-label="Select portfolio company"></select></label>
         </div>
         <div id="returnOverviewChart" class="chart compact-chart"></div>
       </article>
-
       <section id="companyHeader" class="company-detail-header card"></section>
-
       <section class="grid two thesis-detail-grid">
-        <article class="card">
-          <h2>Investment scorecard</h2>
-          <div id="companyScoreChart" class="chart compact-chart"></div>
-        </article>
-        <article class="card">
-          <h2>Decision frame</h2>
-          <div id="decisionFrame" class="decision-frame"></div>
-        </article>
+        <article class="card"><h2>Investment scorecard</h2><div id="companyScoreChart" class="chart compact-chart"></div></article>
+        <article class="card"><h2>Decision frame</h2><div id="decisionFrame" class="decision-frame"></div></article>
       </section>
-
       <section id="companyThesisBody" class="thesis-grid thesis-body-grid"></section>
+      <article class="card thesis-method-note"><h2>How to read this tab</h2><p>Expected return is a base-case annualized scenario estimate and should be considered together with conviction, business quality, valuation and downside risk. The thesis is separated into business case, valuation, catalysts, risks and explicit falsification conditions.</p></article>
+    </section>
 
-      <article class="card thesis-method-note">
-        <h2>How to read this tab</h2>
-        <p>Expected return is a base-case annualized scenario estimate and should be considered together with conviction, business quality, valuation and downside risk. The thesis is separated into business case, valuation, catalysts, risks and explicit falsification conditions.</p>
-      </article>
+    <section id="risk" class="panel">
+      <div id="riskMetrics" class="metric-grid"></div>
+      <div class="grid two">
+        <article class="card"><h2>Return attribution</h2><div id="attributionChart" class="chart"></div><p class="footnote">Static current-weight research attribution; not transaction-level realized attribution.</p></article>
+        <article class="card"><h2>Factor / style sensitivity</h2><div id="factorChart" class="chart"></div></article>
+      </div>
+      <article class="card"><h2>Contributors & detractors</h2><div class="table-wrap"><table id="attributionTable"></table></div></article>
+      <div class="grid two">
+        <article class="card"><h2>Forward stress scenarios</h2><div id="stressChart" class="chart"></div></article>
+        <article class="card"><h2>Historical stress windows</h2><div class="table-wrap"><table id="historicalStressTable"></table></div></article>
+      </div>
+      <article class="card"><h2>Factor-adjusted alpha</h2><div class="table-wrap"><table id="alphaTable"></table></div><p class="footnote">Regression diagnostics are research tools and should not be interpreted as a guarantee of persistent alpha.</p></article>
     </section>
 
     <section id="research" class="panel">
       <article class="card research-intro">
-        <p class="eyebrow">EQUITY RESEARCH PROCESS</p>
-        <h2>From filings to valuation and thesis monitoring</h2>
-        <p>The production research engine combines issuer/regulatory source checks, historical financial analysis, segment economics, peer benchmarking, scenario valuation, risk controls and thesis monitoring. Public company case studies can be added here without exposing private workbooks.</p>
+        <div class="section-head research-head">
+          <div><p class="eyebrow">RESEARCH LIBRARY</p><h2>Company-level equity research</h2><p>Public market fundamentals, reverse-DCF expectations and the investment thesis are shown without exposing private workbooks or position economics.</p></div>
+          <label class="company-picker">Company<select id="researchCompanySelect" aria-label="Select research company"></select></label>
+        </div>
       </article>
-      <div class="grid three">
-        <article class="card"><h3>1. Fundamentals</h3><p>Revenue, margins, FCF, ROIC/ROE, leverage, capital allocation and segment trends.</p></article>
-        <article class="card"><h3>2. Valuation</h3><p>DCF, scenario analysis, trading multiples, reverse-DCF expectations and sensitivity testing.</p></article>
-        <article class="card"><h3>3. Thesis control</h3><p>Catalysts, key risks, falsification conditions, KPI monitoring and periodic review.</p></article>
-      </div>
-      <article class="card"><h2>What the full model supports</h2><p>SEC and issuer filings, company IR materials, financial statement history, segment analysis, dynamic peer selection, ownership analysis, news-impact review, DCF/scenario valuation, stress testing, model-quality controls, Excel outputs and portfolio integration.</p></article>
+      <div id="researchLibrary" class="research-library"></div>
+      <article id="researchDetail" class="card research-detail"></article>
     </section>
 
-    <section id="methodology" class="panel">
+    <section id="philosophy" class="panel">
+      <article id="philosophyCard" class="card"></article>
       <div class="grid two">
-        <article class="card"><h2>Research engine</h2><p>Python-based equity research pipeline using public issuer/regulatory data, financial models, scenario analysis and quality controls.</p></article>
-        <article class="card"><h2>Portfolio engine</h2><p>Performance, benchmark-relative risk, alpha regressions, factor exposures, attribution, stress tests and concentration analysis.</p></article>
-        <article class="card"><h2>Automation</h2><p>Local portfolio composition syncs securely to GitHub Actions. Scheduled runs rebuild the sanitized public snapshot.</p></article>
-        <article class="card"><h2>Public/private boundary</h2><p>Public: company names, weights, aggregate analytics, expected-return scenarios and selected thesis text. Private: shares, cost basis, total portfolio value, transactions, credentials and private models.</p></article>
+        <article class="card"><h2>Research engine</h2><p>Python-based equity research pipeline using public issuer/regulatory data, financial models, reverse DCF, scenario analysis and model-quality controls.</p></article>
+        <article class="card"><h2>Portfolio engine</h2><p>Benchmark-relative risk, alpha regressions, factor exposure, attribution, stress testing, concentration and portfolio-construction diagnostics.</p></article>
+        <article class="card"><h2>Automation</h2><p>Private holdings and thesis inputs sync securely to GitHub Actions. Scheduled and on-demand runs rebuild a sanitized public snapshot.</p></article>
+        <article class="card"><h2>Public / private boundary</h2><p>Public: company names, weights, public fundamentals, aggregate analytics, expected-return scenarios and selected thesis text. Private: shares, cost basis, total portfolio value, transactions, credentials, notes and private models.</p></article>
       </div>
+      <article class="method-box"><h3>Important disclosure</h3><p>This website is an independent investment-research demonstration. It is not a fund, managed account, solicitation, recommendation or investment product. Historical research analytics are not a client track record.</p></article>
     </section>
   </main>
 
-  <footer>Portfolio/project demonstration only — not investment advice.</footer>
+  <footer>Independent investment research demonstration — not investment advice or an investment product.</footer>
   <script src="app.js"></script>
 </body>
 </html>
