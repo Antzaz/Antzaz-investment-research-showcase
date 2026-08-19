@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Company-level investment theses, expected returns, risks and monitoring framework." />
+  <title>Company Theses | Investment Research Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body>
+  <header class="hero thesis-hero">
+    <div>
+      <a class="back-link" href="index.html">← Back to Portfolio Analytics</a>
+      <p class="eyebrow">SECURITY SELECTION</p>
+      <h1>Company Investment Theses</h1>
+      <p class="lede">Why each company is in the portfolio, what return the base case implies, what could go wrong, and what evidence would change the thesis.</p>
+      <p id="thesisFreshness" class="muted">Loading recruiter-safe thesis data…</p>
+    </div>
+  </header>
+
+  <nav class="tabs thesis-nav" aria-label="Company thesis navigation">
+    <a class="tab nav-link" href="index.html">Portfolio Analytics</a>
+    <a class="tab nav-link active" href="company-theses.html">Company Theses</a>
+  </nav>
+
+  <main class="thesis-page-shell">
+    <section class="card thesis-overview-card">
+      <div class="section-head thesis-controls">
+        <div>
+          <p class="eyebrow">PORTFOLIO THESIS MAP</p>
+          <h2>Expected return & conviction overview</h2>
+          <p class="muted">Base-case annualized return assumptions are scenario estimates from the investment-thesis workbook, not consensus targets.</p>
+        </div>
+        <label class="company-picker">Company
+          <select id="thesisCompanySelect" aria-label="Select company"></select>
+        </label>
+      </div>
+      <div id="returnOverviewChart" class="chart compact-chart"></div>
+    </section>
+
+    <section id="companyHeader" class="company-detail-header card"></section>
+
+    <section class="grid two thesis-detail-grid">
+      <article class="card">
+        <h2>Investment scorecard</h2>
+        <div id="companyScoreChart" class="chart compact-chart"></div>
+      </article>
+      <article class="card">
+        <h2>Decision frame</h2>
+        <div id="decisionFrame" class="decision-frame"></div>
+      </article>
+    </section>
+
+    <section id="companyThesisBody" class="thesis-grid thesis-body-grid"></section>
+
+    <section class="card thesis-method-note">
+      <h2>How to read this page</h2>
+      <p>Each thesis separates the core business case from valuation, catalysts, risks and falsification conditions. Expected return is a base-case scenario estimate derived from the portfolio research workbook. It should be interpreted together with conviction, business quality, valuation and downside risk rather than as a standalone forecast.</p>
+    </section>
+  </main>
+
+  <footer>Portfolio/project demonstration only — not investment advice.</footer>
+  <script src="company-theses.js"></script>
+</body>
+</html>
