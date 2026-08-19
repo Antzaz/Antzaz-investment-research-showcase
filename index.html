@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Interactive equity research and portfolio analytics showcase." />
+  <title>Investment Research & Portfolio Analytics</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">RECRUITER PORTFOLIO</p>
+      <h1>Investment Research & Portfolio Analytics</h1>
+      <p class="lede">Real portfolio analytics, documented investment theses, risk analysis and research methodology.</p>
+      <p id="freshness" class="muted">Loading latest validated portfolio snapshot…</p>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Portfolio sections">
+    <button class="tab active" data-target="portfolio">Portfolio Analytics</button>
+    <button class="tab" data-target="thesis">Investment Thesis</button>
+    <button class="tab" data-target="research">Equity Research</button>
+    <button class="tab" data-target="methodology">Methodology</button>
+  </nav>
+
+  <main>
+    <section id="portfolio" class="panel active-panel">
+      <div id="metrics" class="metric-grid"></div>
+      <div class="grid two">
+        <article class="card"><h2>Portfolio vs benchmark</h2><div id="growthChart" class="chart"></div></article>
+        <article class="card"><h2>Portfolio weights</h2><div id="weightsChart" class="chart"></div></article>
+      </div>
+      <div class="grid two">
+        <article class="card"><h2>Capital weight vs risk contribution</h2><div id="riskChart" class="chart"></div></article>
+        <article class="card"><h2>Sector allocation</h2><div id="sectorChart" class="chart"></div></article>
+      </div>
+      <article class="card"><h2>Holdings</h2><div class="table-wrap"><table id="holdingsTable"></table></div></article>
+      <div class="grid two">
+        <article class="card"><h2>Factor/style exposures</h2><div id="factorChart" class="chart"></div></article>
+        <article class="card"><h2>Stress scenarios</h2><div id="stressChart" class="chart"></div></article>
+      </div>
+    </section>
+
+    <section id="thesis" class="panel">
+      <article id="philosophyCard" class="card"></article>
+      <article class="card">
+        <div class="section-head"><h2>Company theses</h2><select id="companySelect"></select></div>
+        <div id="thesisSummary" class="metric-grid compact"></div>
+        <div id="scoreChart" class="chart"></div>
+        <div id="thesisBody" class="thesis-grid"></div>
+      </article>
+    </section>
+
+    <section id="research" class="panel">
+      <article class="card research-intro">
+        <p class="eyebrow">EQUITY RESEARCH PROCESS</p>
+        <h2>From filings to valuation and thesis monitoring</h2>
+        <p>The production research engine combines issuer/regulatory source checks, historical financial analysis, segment economics, peer benchmarking, scenario valuation, risk controls and thesis monitoring. Public company case studies can be added here without exposing private workbooks.</p>
+      </article>
+      <div class="grid three">
+        <article class="card"><h3>1. Fundamentals</h3><p>Revenue, margins, FCF, ROIC/ROE, leverage, capital allocation and segment trends.</p></article>
+        <article class="card"><h3>2. Valuation</h3><p>DCF, scenario analysis, trading multiples, reverse-DCF expectations and sensitivity testing.</p></article>
+        <article class="card"><h3>3. Thesis control</h3><p>Catalysts, key risks, falsification conditions, KPI monitoring and periodic review.</p></article>
+      </div>
+      <article class="card"><h2>What the full model supports</h2><p>SEC and issuer filings, company IR materials, financial statement history, segment analysis, dynamic peer selection, ownership analysis, news-impact review, DCF/scenario valuation, stress testing, model-quality controls, Excel outputs and portfolio integration.</p></article>
+    </section>
+
+    <section id="methodology" class="panel">
+      <div class="grid two">
+        <article class="card"><h2>Research engine</h2><p>Python-based equity research pipeline using public issuer/regulatory data, financial models, scenario analysis and quality controls.</p></article>
+        <article class="card"><h2>Portfolio engine</h2><p>Performance, benchmark-relative risk, alpha regressions, factor exposures, attribution, stress tests and concentration analysis.</p></article>
+        <article class="card"><h2>Automation</h2><p>Local portfolio composition syncs securely to GitHub Actions. Scheduled runs rebuild the sanitized public snapshot.</p></article>
+        <article class="card"><h2>Public/private boundary</h2><p>Public: company names, weights, aggregate analytics and selected thesis text. Private: shares, cost basis, total portfolio value, transactions, credentials and private models.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>Portfolio/project demonstration only — not investment advice.</footer>
+  <script src="app.js"></script>
+</body>
+</html>
