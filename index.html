@@ -20,7 +20,8 @@
 
   <nav class="tabs" aria-label="Portfolio sections">
     <button class="tab active" data-target="portfolio">Portfolio Analytics</button>
-    <button class="tab" data-target="thesis">Investment Thesis</button>
+    <button class="tab" data-target="philosophy">Portfolio Philosophy</button>
+    <a class="tab nav-link" href="company-theses.html">Company Theses</a>
     <button class="tab" data-target="research">Equity Research</button>
     <button class="tab" data-target="methodology">Methodology</button>
   </nav>
@@ -36,20 +37,23 @@
         <article class="card"><h2>Capital weight vs risk contribution</h2><div id="riskChart" class="chart"></div></article>
         <article class="card"><h2>Sector allocation</h2><div id="sectorChart" class="chart"></div></article>
       </div>
-      <article class="card"><h2>Holdings</h2><div class="table-wrap"><table id="holdingsTable"></table></div></article>
+      <article class="card">
+        <div class="section-head"><div><h2>Holdings</h2><p class="muted">Expected returns are base-case annualized scenario estimates from the thesis workbook.</p></div><a class="button-link" href="company-theses.html">Open Company Theses →</a></div>
+        <div class="table-wrap"><table id="holdingsTable"></table></div>
+      </article>
       <div class="grid two">
         <article class="card"><h2>Factor/style exposures</h2><div id="factorChart" class="chart"></div></article>
         <article class="card"><h2>Stress scenarios</h2><div id="stressChart" class="chart"></div></article>
       </div>
     </section>
 
-    <section id="thesis" class="panel">
+    <section id="philosophy" class="panel">
       <article id="philosophyCard" class="card"></article>
-      <article class="card">
-        <div class="section-head"><h2>Company theses</h2><select id="companySelect"></select></div>
-        <div id="thesisSummary" class="metric-grid compact"></div>
-        <div id="scoreChart" class="chart"></div>
-        <div id="thesisBody" class="thesis-grid"></div>
+      <article class="card thesis-cta-card">
+        <p class="eyebrow">SECURITY SELECTION</p>
+        <h2>Read the company-level investment cases</h2>
+        <p>Each portfolio holding has a separate recruiter-facing view of expected return, conviction, scorecard, investment thesis, moat, growth drivers, valuation, catalysts, risks, sell conditions and monitoring KPIs.</p>
+        <a class="button-link primary" href="company-theses.html">View Company Theses →</a>
       </article>
     </section>
 
@@ -72,7 +76,7 @@
         <article class="card"><h2>Research engine</h2><p>Python-based equity research pipeline using public issuer/regulatory data, financial models, scenario analysis and quality controls.</p></article>
         <article class="card"><h2>Portfolio engine</h2><p>Performance, benchmark-relative risk, alpha regressions, factor exposures, attribution, stress tests and concentration analysis.</p></article>
         <article class="card"><h2>Automation</h2><p>Local portfolio composition syncs securely to GitHub Actions. Scheduled runs rebuild the sanitized public snapshot.</p></article>
-        <article class="card"><h2>Public/private boundary</h2><p>Public: company names, weights, aggregate analytics and selected thesis text. Private: shares, cost basis, total portfolio value, transactions, credentials and private models.</p></article>
+        <article class="card"><h2>Public/private boundary</h2><p>Public: company names, weights, aggregate analytics, expected-return scenarios and selected thesis text. Private: shares, cost basis, total portfolio value, transactions, credentials and private models.</p></article>
       </div>
     </section>
   </main>
