@@ -44,7 +44,7 @@
     const metric = metricByLabel(container, label);
     if (!metric) return;
     const value = metric.querySelector('.value');
-    if (value) value.textContent = text;
+    if (value && value.textContent !== text) value.textContent = text;
     if (subtext) {
       let sub = metric.querySelector('.metric-sub');
       if (!sub) {
@@ -52,7 +52,7 @@
         sub.className = 'metric-sub';
         metric.appendChild(sub);
       }
-      sub.textContent = subtext;
+      if (sub.textContent !== subtext) sub.textContent = subtext;
     }
   }
 
@@ -95,11 +95,10 @@
         footnote.className = 'footnote';
         valuationBlock.appendChild(footnote);
       }
-      if (finite(dcf.implied_annual_fcf_growth)) {
-        footnote.textContent = `Reverse DCF: ${pct(dcf.implied_annual_fcf_growth)} implied annual FCF growth over ${Number(dcf.forecast_years || 10).toFixed(0)} years using ${pct(dcf.wacc)} WACC and ${pct(dcf.terminal_growth)} terminal growth.`;
-      } else {
-        footnote.textContent = 'Reverse DCF: not meaningful / insufficient public FCF data for this business under the simplified corporate FCF model.';
-      }
+      const text = finite(dcf.implied_annual_fcf_growth)
+        ? `Reverse DCF: ${pct(dcf.implied_annual_fcf_growth)} implied annual FCF growth over ${Number(dcf.forecast_years || 10).toFixed(0)} years using ${pct(dcf.wacc)} WACC and ${pct(dcf.terminal_growth)} terminal growth.`
+        : 'Reverse DCF: not meaningful / insufficient public FCF data for this business under the simplified corporate FCF model.';
+      if (footnote.textContent !== text) footnote.textContent = text;
     }
   }
 
