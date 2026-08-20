@@ -126,10 +126,28 @@
     setMetric(container, 'CAPM alpha', pct(m.annualized_alpha));
   }
 
+  function patchExcelDownload() {
+    const link = document.querySelector('a[href="models/Alphabet_Equity_Research_Demo.xlsx"]');
+    if (!link) return;
+    link.setAttribute('download', 'Alphabet_Equity_Research_Demo.xlsx');
+    link.removeAttribute('target');
+    link.textContent = 'Download Excel Model Demo ↓';
+
+    const card = link.closest('.card');
+    if (!card) return;
+    const textContainer = card.querySelector('.section-head > div');
+    if (!textContainer || textContainer.querySelector('.excel-download-note')) return;
+    const note = document.createElement('p');
+    note.className = 'footnote excel-download-note';
+    note.textContent = 'Excel may open files downloaded from the web in Protected View. Click “Enable Editing” before changing the blue/yellow assumptions.';
+    textContainer.appendChild(note);
+  }
+
   function patchAll() {
     patchResearchMetrics();
     patchOverviewFundamentals();
     patchRiskMetrics();
+    patchExcelDownload();
   }
 
   loadPublicData().then(() => {
@@ -143,6 +161,7 @@
     const detail = document.querySelector('#researchDetail');
     if (detail) observer.observe(detail, { childList: true, subtree: true });
     document.querySelector('#researchCompanySelect')?.addEventListener('change', () => setTimeout(patchAll, 0));
+    patchExcelDownload();
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
   else start();
