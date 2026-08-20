@@ -55,4 +55,9 @@
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
   else start();
+
+  const performanceHelper = document.createElement('script');
+  performanceHelper.src = `performance-precision.js?v=${Date.now()}`;
+  performanceHelper.async = true;
+  document.head.appendChild(performanceHelper);
 })();
