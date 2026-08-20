@@ -1,0 +1,50 @@
+name: Refresh public portfolio analytics
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 5 * * 1-5'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/public-data-refresh.yml'
+      - 'refresh_public_analytics.py'
+      - 'data/thesis_overrides.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: public-data-refresh
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install public-data dependencies
+        run: python -m pip install --disable-pip-version-check yfinance pandas numpy
+
+      - name: Build public analytics
+        run: python refresh_public_analytics.py
+
+      - name: Publish refreshed public data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/public_analytics.json data/public_fundamentals.json
+          if git diff --cached --quiet; then
+            echo "Public analytics already current."
+          else
+            git commit -m "Refresh public portfolio analytics"
+            git push origin HEAD:main
+          fi
