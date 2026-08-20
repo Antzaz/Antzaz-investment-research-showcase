@@ -27,6 +27,28 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Cache-bust first-party site assets
+        env:
+          BUILD_SHA: ${{ github.sha }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+
+          path = Path('index.html')
+          html = path.read_text(encoding='utf-8')
+          version = os.environ['BUILD_SHA'][:12]
+          for asset in [
+              'styles.css',
+              'fundamentals-bridge.js',
+              'app.js',
+              'rolling-risk-fallback.js',
+          ]:
+              html = html.replace(f'"{asset}"', f'"{asset}?v={version}"')
+          path.write_text(html, encoding='utf-8')
+          print(f'Cache-busted public assets with build {version}.')
+          PY
+
       - name: Upload static site
         uses: actions/upload-pages-artifact@v4
         with:
