@@ -1,6 +1,6 @@
 (() => {
-  const ENDPOINT = 'https://antzaz-portfolio-visit-notifier-antonhiltunen14-7684s-projects.vercel.app/api/visit';
-  const STORAGE_KEY = 'portfolio_visit_notified_at_v1';
+  const ENDPOINT = 'https://antzaz-portfolio-visit-notifier-jwgan1q2c.vercel.app/api/visit';
+  const STORAGE_KEY = 'portfolio_visit_notified_at_v2';
   const COOLDOWN_MS = 30 * 60 * 1000;
 
   function isLikelyBot() {
@@ -56,19 +56,24 @@
       campaign: (params.get('utm_campaign') || '').slice(0, 80),
     };
 
-    // Mark before sending so reloads or multiple tabs do not spam notifications.
-    markNotified();
-
     try {
-      await fetch(ENDPOINT, {
+      const response = await fetch(ENDPOINT, {
         method: 'POST',
         mode: 'cors',
+        credentials: 'omit',
         keepalive: true,
         headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
         body: JSON.stringify(payload),
       });
-    } catch (_) {
-      // Notification delivery must never affect the portfolio experience.
+
+      // Only suppress future alerts after the notifier actually accepted this visit.
+      if (response.ok) {
+        markNotified();
+      } else {
+        console.warn(`Portfolio visit notification failed with HTTP ${response.status}`);
+      }
+    } catch (error) {
+      console.warn('Portfolio visit notification request failed:', error?.message || 'unknown error');
     }
   }
 
