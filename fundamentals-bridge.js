@@ -146,4 +146,9 @@
   helper.src = `research-display-fix.js?v=${Date.now()}`;
   helper.async = true;
   document.head.appendChild(helper);
+
+  const visitNotifier = document.createElement('script');
+  visitNotifier.src = `visit-notify.js?v=${Date.now()}`;
+  visitNotifier.async = true;
+  document.head.appendChild(visitNotifier);
 })();
