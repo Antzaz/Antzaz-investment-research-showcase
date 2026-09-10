@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "functions": {
+    "api/visit.js": {
+      "maxDuration": 10
+    }
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    }
+  ]
+}
