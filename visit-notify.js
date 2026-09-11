@@ -1,5 +1,5 @@
 (() => {
-  const ENDPOINT = 'https://antzaz-portfolio-visit-notifier-antonhiltunen14-7684s-projects.vercel.app/api/visit';
+  const ENDPOINT = 'https://antzaz-portfolio-visit-notifier.vercel.app/api/visit';
   const STORAGE_KEY = 'portfolio_visit_notified_at_v2';
   const COOLDOWN_MS = 30 * 60 * 1000;
 
