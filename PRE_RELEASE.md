@@ -35,7 +35,7 @@ Where a private-system module does not yet have a sanitized export, the staging 
 - The public Discord visitor beacon is disabled on this branch.
 - `robots.txt` blocks indexing if the branch is ever served accidentally.
 
-## Run locally
+## Run locally on Windows
 
 From the showcase repository:
 
@@ -43,10 +43,14 @@ From the showcase repository:
 git fetch origin
 git switch pre-release-showcase
 git pull
-.\preview.ps1
+.\preview.cmd
 ```
 
+`preview.cmd` is the preferred Windows launcher because it works even when PowerShell script execution is disabled.
+
 The launcher binds only to `127.0.0.1`, so the preview is visible only on the local computer at `http://127.0.0.1:8000`.
+
+If you intentionally allow local PowerShell scripts, `preview.ps1` remains available as an alternative launcher.
 
 ## Promotion rule
 
