@@ -1,4 +1,7 @@
 (() => {
+  if (window.__antzazPortfolioVisitNotifierStarted) return;
+  window.__antzazPortfolioVisitNotifierStarted = true;
+
   const ENDPOINT = 'https://antzaz-portfolio-visit-notifier.vercel.app/api/visit';
   const STORAGE_KEY = 'portfolio_visit_notified_at_v2';
   const COOLDOWN_MS = 30 * 60 * 1000;
