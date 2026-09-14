@@ -40,8 +40,10 @@ jobs:
           version = os.environ['BUILD_SHA'][:12]
           for asset in [
               'styles.css',
+              'advanced-research.css',
               'fundamentals-bridge.js',
               'app.js',
+              'advanced-research.js',
               'rolling-risk-fallback.js',
           ]:
               html = html.replace(f'"{asset}"', f'"{asset}?v={version}"')
