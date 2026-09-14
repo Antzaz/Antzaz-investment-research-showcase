@@ -1,0 +1,83 @@
+name: Validate public showcase
+
+on:
+  push:
+    branches: [main, pre-release-showcase]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: JavaScript syntax
+        run: |
+          for f in app.js fundamentals-bridge.js visit-notify.js rolling-risk-fallback.js advanced-research.js advanced-research-v2.js site-consistency.js; do
+            if [ -f "$f" ]; then node --check "$f"; fi
+          done
+
+      - name: Validate public data and page wiring
+        run: |
+          python - <<'PY'
+          import json
+          import math
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          required_assets = [
+              'index.html', 'styles.css', 'app.js', 'fundamentals-bridge.js',
+              'advanced-research.js', 'advanced-research-v2.js', 'advanced-research.css',
+              'site-consistency.js', 'data/portfolio_snapshot.json',
+              'data/public_analytics.json', 'data/public_fundamentals.json',
+              'data/thesis_overrides.json',
+          ]
+          missing = [p for p in required_assets if not Path(p).exists()]
+          assert not missing, f'Missing required assets: {missing}'
+
+          html = Path('index.html').read_text(encoding='utf-8')
+          for asset in ['fundamentals-bridge.js', 'app.js', 'advanced-research.js']:
+              assert asset in html, f'index.html does not load {asset}'
+
+          analytics = json.loads(Path('data/public_analytics.json').read_text(encoding='utf-8'))
+          holdings = analytics.get('holdings') or []
+          assert holdings, 'No public holdings'
+          names = [str(x.get('company') or '') for x in holdings]
+          assert all(names), 'Blank company name in holdings'
+          assert len(names) == len(set(names)), 'Duplicate public holding names'
+
+          weights = [float(x.get('weight') or 0) for x in holdings]
+          assert all(math.isfinite(x) and x >= 0 for x in weights), 'Invalid holding weight'
+          assert abs(sum(weights) - 1.0) < 0.01, f'Weights sum to {sum(weights):.6f}, not approximately 1'
+          assert all(x.get('expected_annual_return') is not None for x in holdings), 'Missing published expected return'
+
+          ts = analytics.get('timeseries') or []
+          assert len(ts) >= 252, 'Insufficient public timeseries history'
+          dates = [x.get('date') for x in ts]
+          assert dates == sorted(dates), 'Timeseries dates are not sorted'
+
+          generated = analytics.get('generated_utc')
+          assert generated, 'Missing analytics generation timestamp'
+          dt = datetime.fromisoformat(generated.replace('Z', '+00:00'))
+          age_days = (datetime.now(timezone.utc) - dt.astimezone(timezone.utc)).total_seconds() / 86400
+          assert age_days < 8, f'Public analytics are stale: {age_days:.1f} days old'
+
+          metrics = analytics.get('metrics') or {}
+          for key in ['annualized_return','annualized_volatility','sharpe','tracking_error','max_drawdown','beta']:
+              val = metrics.get(key)
+              assert val is not None and math.isfinite(float(val)), f'Missing/invalid metric: {key}'
+
+          for row in analytics.get('reverse_dcf') or []:
+              if row.get('implied_annual_fcf_growth') is not None:
+                  assert abs(float(row.get('wacc')) - 0.09) < 1e-12, 'Unexpected reverse-DCF WACC'
+                  assert abs(float(row.get('terminal_growth')) - 0.03) < 1e-12, 'Unexpected reverse-DCF terminal growth'
+                  assert int(row.get('forecast_years')) == 10, 'Unexpected reverse-DCF forecast period'
+
+          print(f'Validated {len(holdings)} holdings, {len(ts)} market observations, and {len(analytics.get("reverse_dcf") or [])} reverse-DCF rows.')
+          PY
