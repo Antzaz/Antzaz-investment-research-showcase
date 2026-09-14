@@ -1,0 +1,14 @@
+.advanced-intro{border-color:rgba(91,192,190,.32)}
+.advanced-callout{margin-top:16px;padding:14px 16px;border:1px solid rgba(91,192,190,.28);border-radius:12px;background:rgba(91,192,190,.08);font-weight:650;line-height:1.55}
+.advanced-horizon-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:18px}
+.advanced-horizon{display:flex;flex-direction:column;gap:6px;min-height:145px}
+.advanced-horizon strong{font-size:2rem;letter-spacing:-.03em}.advanced-horizon span{font-weight:700}.advanced-horizon small{color:var(--muted,#91a3b8);line-height:1.45}
+.governance-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:16px}.governance-card{padding:18px;border:1px solid rgba(255,255,255,.09);border-radius:14px;background:rgba(255,255,255,.025)}.governance-card h3{margin:10px 0 8px}.governance-card p{margin:0;color:var(--muted,#91a3b8);line-height:1.55}.governance-card.champion{border-color:rgba(92,214,148,.32)}.governance-card.demoted{border-color:rgba(234,119,119,.25)}
+.status-dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#8b9bb0}.status-dot.challenger{background:#e4b95f}.status-dot.champion{background:#5cd694}.status-dot.demoted{background:#ea7777}
+.advanced-rule-list{display:grid;gap:12px}.advanced-rule-list>div{display:grid;gap:4px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07)}.advanced-rule-list>div:last-child{border-bottom:0}.advanced-rule-list span,.advanced-note{color:var(--muted,#91a3b8);line-height:1.55}
+.advanced-detail .metric-grid{margin-top:8px}
+.ai-layout{display:grid;grid-template-columns:minmax(300px,.85fr) minmax(0,1.4fr);gap:18px;margin-bottom:18px}.ai-controls-card{align-self:start}.advanced-control{display:grid;grid-template-columns:1fr auto;gap:8px 14px;margin:16px 0;color:var(--muted,#91a3b8);font-size:.94rem}.advanced-control select,.advanced-control input[type="range"]{grid-column:1/-1;width:100%}.advanced-control output{font-weight:750;color:#e8f1fb}.advanced-control select{padding:10px 12px;border-radius:9px;border:1px solid rgba(255,255,255,.13);background:#111b29;color:#e8f1fb}
+.advanced-control input[type="range"]{accent-color:#5bc0be}.scenario-input{width:110px;max-width:100%;padding:8px 9px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:#111b29;color:#e8f1fb}.advanced-warning{margin:12px 0;padding:12px 14px;border-radius:10px;background:rgba(234,119,119,.1);border:1px solid rgba(234,119,119,.28);color:#ffc5c5}
+#aiScenarioTable td:nth-child(2),#aiScenarioTable td:nth-child(3){width:160px}.advanced-tab{white-space:nowrap}
+@media(max-width:1000px){.advanced-horizon-grid,.governance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ai-layout{grid-template-columns:1fr}}
+@media(max-width:620px){.advanced-horizon-grid,.governance-grid{grid-template-columns:1fr}.scenario-input{width:90px}}
