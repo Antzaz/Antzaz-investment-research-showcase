@@ -3,7 +3,7 @@
   window.__antzazShortTermPerformanceLoaded = true;
 
   const DATA_URL = 'data/short_term_performance.json';
-  const PRIMARY_PERIODS = ['1D', '1W', '1M', '3M', 'YTD', '1Y'];
+  const PRIMARY_PERIODS = ['1D', '1W', '1M', '3M', '6M', 'YTD', '1Y'];
 
   const pct = value => {
     const x = Number(value);
@@ -73,7 +73,7 @@
         </div>
         <div class="short-term-performance-grid">${rows.map(card).join('')}</div>
         <p class="short-term-performance-note">
-          1D = latest benchmark trading session; 1W = 5 sessions; 1M = 21; 3M = 63; 1Y = 252. YTD is the compounded return for the current calendar year. ${data.methodology || ''}
+          1D = latest benchmark trading session; 1W = 5 sessions; 1M = 21; 3M = 63; 6M = 126; 1Y = 252. YTD is the compounded return for the current calendar year. ${data.methodology || ''}
         </p>
       </article>
     `;
