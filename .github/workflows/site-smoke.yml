@@ -19,7 +19,7 @@ jobs:
 
       - name: JavaScript syntax
         run: |
-          for f in app.js fundamentals-bridge.js visit-notify.js rolling-risk-fallback.js advanced-research.js advanced-research-v2.js site-consistency.js; do
+          for f in app.js fundamentals-bridge.js visit-notify.js rolling-risk-fallback.js advanced-research.js advanced-research-v2.js site-consistency.js short-term-performance.js; do
             if [ -f "$f" ]; then node --check "$f"; fi
           done
 
@@ -34,7 +34,7 @@ jobs:
           required_assets = [
               'index.html', 'styles.css', 'app.js', 'fundamentals-bridge.js',
               'advanced-research.js', 'advanced-research-v2.js', 'advanced-research.css',
-              'site-consistency.js', 'data/portfolio_snapshot.json',
+              'site-consistency.js', 'short-term-performance.js', 'data/portfolio_snapshot.json',
               'data/public_analytics.json', 'data/public_fundamentals.json',
               'data/thesis_overrides.json',
           ]
@@ -72,6 +72,16 @@ jobs:
           for key in ['annualized_return','annualized_volatility','sharpe','tracking_error','max_drawdown','beta']:
               val = metrics.get(key)
               assert val is not None and math.isfinite(float(val)), f'Missing/invalid metric: {key}'
+
+          short_path = Path('data/short_term_performance.json')
+          if short_path.exists():
+              short = json.loads(short_path.read_text(encoding='utf-8'))
+              periods = {row.get('period'): row for row in short.get('periods') or []}
+              for label in ['1D','1W','1M','3M','YTD','1Y']:
+                  assert label in periods, f'Missing short-term performance period: {label}'
+                  for key in ['portfolio_return','benchmark_return','excess_return']:
+                      val = periods[label].get(key)
+                      assert val is not None and math.isfinite(float(val)), f'Missing/invalid {label} {key}'
 
           for row in analytics.get('reverse_dcf') or []:
               if row.get('implied_annual_fcf_growth') is not None:
