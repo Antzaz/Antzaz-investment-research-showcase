@@ -1,0 +1,62 @@
+name: Mobile browser smoke
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - '*.css'
+      - '*.js'
+      - '.github/workflows/mobile-browser-smoke.yml'
+      - 'mobile-browser-smoke.mjs'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - '*.css'
+      - '*.js'
+      - '.github/workflows/mobile-browser-smoke.yml'
+      - 'mobile-browser-smoke.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mobile-browser:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+
+      - name: Cache Playwright Chromium
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-1.55.0
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Serve public site
+        run: |
+          python -m http.server 8000 --bind 127.0.0.1 > /tmp/showcase-http.log 2>&1 &
+          echo $! > /tmp/showcase-http.pid
+
+      - name: Run real mobile-browser checks
+        run: node mobile-browser-smoke.mjs
+
+      - name: Upload failure screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mobile-browser-failure
+          path: mobile-smoke-*.png
+          if-no-files-found: ignore
