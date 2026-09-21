@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - 'index.html'
+      - 'interactive-model-v2.js'
+      - 'interactive-model-v2.css'
+      - 'interactive-model.html'
       - '*.css'
       - '*.js'
       - '.github/workflows/mobile-browser-smoke.yml'

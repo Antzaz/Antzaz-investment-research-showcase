@@ -34,7 +34,8 @@ jobs:
           required_assets = [
               'index.html', 'styles.css', 'app.js', 'fundamentals-bridge.js',
               'advanced-research.js', 'advanced-research-v2.js', 'advanced-research.css',
-              'site-consistency.js', 'short-term-performance.js', 'data/portfolio_snapshot.json',
+              'site-consistency.js', 'short-term-performance.js', 'interactive-model.html',
+              'interactive-model-v2.css', 'interactive-model-v2.js', 'data/portfolio_snapshot.json',
               'data/public_analytics.json', 'data/public_fundamentals.json',
               'data/thesis_overrides.json',
           ]
@@ -44,6 +45,12 @@ jobs:
           html = Path('index.html').read_text(encoding='utf-8')
           for asset in ['fundamentals-bridge.js', 'app.js', 'advanced-research.js']:
               assert asset in html, f'index.html does not load {asset}'
+
+          demo_html = Path('interactive-model.html').read_text(encoding='utf-8')
+          assert 'interactive-model-v2.css' in demo_html, 'interactive model does not load v2 CSS'
+          assert 'interactive-model-v2.js' in demo_html, 'interactive model does not load v2 JS'
+          for sheet in ['Dashboard','Investment Summary','Decision View','Three-Case Scenarios','Cost of Capital','Advanced Analytics','Peer Comps','Segment Analysis','Market Expectations','Data Quality']:
+              assert sheet in demo_html, f'interactive model missing current-workbook sheet: {sheet}'
 
           # Mobile regression contract. Mobile CSS may adapt the shell, but it must
           # not rewrite Plotly geometry or break multi-element tab selectors.

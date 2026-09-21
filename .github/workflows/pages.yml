@@ -45,9 +45,17 @@ jobs:
               'app.js',
               'advanced-research.js',
               'rolling-risk-fallback.js',
+              'interactive-model-v2.css',
+              'interactive-model-v2.js',
           ]:
               html = html.replace(f'"{asset}"', f'"{asset}?v={version}"')
           path.write_text(html, encoding='utf-8')
+
+          demo_path = Path('interactive-model.html')
+          demo = demo_path.read_text(encoding='utf-8')
+          for asset in ['interactive-model-v2.css','interactive-model-v2.js']:
+              demo = demo.replace(f'"{asset}"', f'"{asset}?v={version}"')
+          demo_path.write_text(demo, encoding='utf-8')
           print(f'Cache-busted public assets with build {version}.')
           PY
 

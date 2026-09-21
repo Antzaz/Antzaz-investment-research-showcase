@@ -126,3 +126,57 @@ try {
 }
 
 if (failed) process.exit(1);
+
+
+// Interactive model demo regression
+for (const viewport of [
+  {width:390,height:844,name:'demo-phone'},
+  {width:1365,height:900,name:'demo-desktop'}
+]) {
+  const page = await browser.newPage({viewport:{width:viewport.width,height:viewport.height}});
+  const errors=[];
+  page.on('pageerror', err => errors.push(`pageerror: ${err.message}`));
+  page.on('console', msg => { if (msg.type()==='error') errors.push(`console: ${msg.text()}`); });
+  try {
+    await page.goto(BASE+'interactive-model.html',{waitUntil:'domcontentloaded',timeout:60000});
+    await page.waitForSelector('#dashboard.active',{timeout:20000});
+    const required=['dashboard','summary','decision','historical','statements','scenarios','cost','analytics','peers','segments','market','quality','methodology'];
+    const tabs=await page.locator('.tab[data-panel]').evaluateAll(nodes=>nodes.map(n=>n.dataset.panel));
+    for(const id of required) assert(tabs.includes(id), `${viewport.name}: missing demo sheet ${id}`);
+    for(const id of required){
+      await page.locator(`.tab[data-panel="${id}"]`).click();
+      await page.waitForTimeout(80);
+      const active=await page.locator('.panel.active').getAttribute('id');
+      assert(active===id,`${viewport.name}: demo tab ${id} activated ${active}`);
+    }
+    await page.locator('.tab[data-panel="dashboard"]').click();
+    const before=await page.locator('[data-metric="base-value"] strong').textContent();
+    await page.locator('.tab[data-panel="cost"]').click();
+    await page.locator('[data-cost="erp"]').fill('6.0');
+    await page.waitForTimeout(120);
+    await page.locator('.tab[data-panel="dashboard"]').click();
+    const after=await page.locator('[data-metric="base-value"] strong').textContent();
+    assert(before!==after,`${viewport.name}: changing ERP did not recalculate base valuation`);
+    await page.locator('.tab[data-panel="scenarios"]').click();
+    const growth=page.locator('#scenarioAssumptionTable input[data-array="growth"]').first();
+    await growth.fill('20.0');
+    await page.waitForTimeout(120);
+    await page.locator('.tab[data-panel="dashboard"]').click();
+    const afterGrowth=await page.locator('[data-metric="base-value"] strong').textContent();
+    assert(afterGrowth!==after,`${viewport.name}: changing scenario growth did not recalculate base valuation`);
+    await page.locator('.tab[data-panel="quality"]').click();
+    const q=await page.locator('#qualityHeadline').textContent();
+    assert(q&&q.includes('PASS'),`${viewport.name}: Data Quality did not render`);
+    const overflow=await page.evaluate(()=>({root:document.documentElement.scrollWidth,body:document.body.scrollWidth,inner:window.innerWidth}));
+    assert(overflow.root<=overflow.inner+2,`${viewport.name}: demo root overflow ${overflow.root}px > ${overflow.inner}px`);
+    assert(overflow.body<=overflow.inner+2,`${viewport.name}: demo body overflow ${overflow.body}px > ${overflow.inner}px`);
+    if(viewport.width<=700){
+      const sizes=await page.locator('input').evaluateAll(nodes=>nodes.map(n=>parseFloat(getComputedStyle(n).fontSize)).filter(Number.isFinite));
+      assert(sizes.length&&Math.min(...sizes)>=16,`${viewport.name}: a demo input can trigger iOS focus zoom`);
+    }
+    assert(errors.length===0,`${viewport.name}: demo browser errors: ${errors.join(' | ')}`);
+    console.log(`PASS ${viewport.name}: current-workbook demo tabs and recalculation`);
+  } finally {
+    await page.close();
+  }
+}
