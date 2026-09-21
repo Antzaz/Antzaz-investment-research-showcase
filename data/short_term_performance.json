@@ -1,7 +1,7 @@
 {
-  "generated_utc": "2026-09-18T09:50:22+00:00",
-  "as_of": "2026-09-17",
-  "previous_trading_date": "2026-09-16",
+  "generated_utc": "2026-09-21T10:47:52+00:00",
+  "as_of": "2026-09-18",
+  "previous_trading_date": "2026-09-17",
   "benchmark": "S&P 500",
   "benchmark_proxy": "SPY",
   "methodology": "Current published portfolio weights applied to adjusted close returns. Foreign/local-market prices are aligned to S&P 500 trading dates by carrying forward only already-observed closes; no backward-fill or future price is used. 1W/1M/3M/6M/1Y use 5/21/63/126/252 benchmark trading sessions.",
@@ -10,71 +10,71 @@
     {
       "period": "1D",
       "sessions": 1,
-      "portfolio_return": 0.00918654594323387,
-      "benchmark_return": 0.011338754633487547,
-      "excess_return": -0.0021522086902536763
+      "portfolio_return": 0.0036895974554191913,
+      "benchmark_return": 0.0012869590529585029,
+      "excess_return": 0.0024026384024606884
     },
     {
       "period": "1W",
       "sessions": 5,
-      "portfolio_return": 0.004501802698168911,
-      "benchmark_return": 0.006294232728351057,
-      "excess_return": -0.001792430030182146
+      "portfolio_return": -0.0010381083329265017,
+      "benchmark_return": -0.0009270593988092157,
+      "excess_return": -0.000111048934117286
     },
     {
       "period": "1M",
       "sessions": 21,
-      "portfolio_return": -0.0009669295750790452,
-      "benchmark_return": -0.006319677560687076,
-      "excess_return": 0.005352747985608031
+      "portfolio_return": 0.002504538210116536,
+      "benchmark_return": -0.007123679108401948,
+      "excess_return": 0.009628217318518484
     },
     {
       "period": "3M",
       "sessions": 63,
-      "portfolio_return": 0.08644765731480408,
-      "benchmark_return": 0.03185677993018876,
-      "excess_return": 0.05459087738461532
+      "portfolio_return": 0.08054143443275863,
+      "benchmark_return": 0.022553313664826824,
+      "excess_return": 0.057988120767931806
     },
     {
       "period": "6M",
       "sessions": 126,
-      "portfolio_return": 0.18858798335595672,
-      "benchmark_return": 0.15908361204695898,
-      "excess_return": 0.029504371308997746
+      "portfolio_return": 0.19117642462366513,
+      "benchmark_return": 0.16344252889744126,
+      "excess_return": 0.027733895726223867
     },
     {
       "period": "1Y",
       "sessions": 252,
-      "portfolio_return": 0.3287000250789822,
-      "benchmark_return": 0.16825738835650483,
-      "excess_return": 0.16044263672247738
+      "portfolio_return": 0.3411078311060072,
+      "benchmark_return": 0.1712158890441271,
+      "excess_return": 0.16989194206188007
     },
     {
       "period": "MTD",
-      "sessions": 12,
-      "portfolio_return": -0.0013216112970455551,
-      "benchmark_return": -0.005801463109118998,
-      "excess_return": 0.004479851812073443
+      "sessions": 13,
+      "portfolio_return": 0.0023631099446950188,
+      "benchmark_return": -0.004521938316798257,
+      "excess_return": 0.006885048261493276
     },
     {
       "period": "QTD",
-      "sessions": 55,
-      "portfolio_return": 0.08430768375694409,
-      "benchmark_return": 0.021197899809399567,
-      "excess_return": 0.06310978394754452
+      "sessions": 56,
+      "portfolio_return": 0.08830834262782528,
+      "benchmark_return": 0.022512176178943077,
+      "excess_return": 0.0657961664488822
     },
     {
       "period": "YTD",
-      "sessions": 178,
-      "portfolio_return": 0.2058271703147745,
-      "benchmark_return": 0.12425598485159872,
-      "excess_return": 0.08157118546317577
+      "sessions": 179,
+      "portfolio_return": 0.21027620906000632,
+      "benchmark_return": 0.12570291434556768,
+      "excess_return": 0.08457329471443864
     }
   ],
   "coverage": {
-    "aligned_daily_observations": 2512,
+    "aligned_daily_observations": 2511,
     "portfolio_components": 15,
-    "analysis_start": "2016-09-20",
-    "analysis_end": "2026-09-17"
+    "analysis_start": "2016-09-22",
+    "analysis_end": "2026-09-18"
   }
 }
