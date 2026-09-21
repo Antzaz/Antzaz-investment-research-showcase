@@ -7,16 +7,53 @@ const metric=(label,value,sub='')=>`<div class="metric"><div class="label">${esc
 const fieldCard=(title,value,kind='')=>value?`<article class="card thesis-block thesis-section ${kind}"><h2>${esc(title)}</h2><p>${esc(value)}</p></article>`:'';
 let thesisItems=[];let researchItems=[];let appData=null;let benchmarkRef=null;
 
+function resizeVisiblePlots(){
+  $('.active-panel .js-plotly-plot').forEach(el=>{try{Plotly.Plots.resize(el)}catch(_){}});
+}
+function centerActiveTab(){
+  const tabs=document.querySelector('.tabs'),active=tabs?.querySelector('.tab.active');
+  if(!tabs||!active||window.innerWidth>900)return;
+  const left=Math.max(0,active.offsetLeft-(tabs.clientWidth-active.offsetWidth)/2);
+  tabs.scrollTo({left,behavior:'smooth'});
+}
 function activateTab(target){
-  $$('.tab[data-target]').forEach(x=>x.classList.toggle('active',x.dataset.target===target));
-  $$('.panel').forEach(x=>x.classList.toggle('active-panel',x.id===target));
+  $('.tab[data-target]').forEach(x=>x.classList.toggle('active',x.dataset.target===target));
+  $('.panel').forEach(x=>x.classList.toggle('active-panel',x.id===target));
   history.replaceState(null,'',`#${target}`);
-  setTimeout(()=>$$(`#${target} .js-plotly-plot`).forEach(el=>Plotly.Plots.resize(el)),30);
-  window.scrollTo({top:document.querySelector('.tabs').offsetTop,behavior:'smooth'});
+  setTimeout(()=>{resizeVisiblePlots();centerActiveTab();},40);
+  const tabs=document.querySelector('.tabs');
+  if(tabs)window.scrollTo({top:tabs.offsetTop,behavior:window.innerWidth<=620?'auto':'smooth'});
 }
 $$('.tab[data-target]').forEach(b=>b.addEventListener('click',()=>activateTab(b.dataset.target)));
 $$('[data-open-tab]').forEach(b=>b.addEventListener('click',()=>activateTab(b.dataset.openTab)));
-function plot(id,data,layout={}){const el=$(`#${id}`);if(!el)return;Plotly.newPlot(id,data,{paper_bgcolor:'rgba(0,0,0,0)',plot_bgcolor:'rgba(0,0,0,0)',font:{color:'#dbe7f5'},margin:{l:48,r:20,t:20,b:55},...layout},{responsive:true,displayModeBar:false});}
+function plot(id,data,layout={}){
+  const el=$(`#${id}`);if(!el)return;
+  const narrow=window.matchMedia('(max-width: 620px)').matches;
+  const merged={
+    paper_bgcolor:'rgba(0,0,0,0)',
+    plot_bgcolor:'rgba(0,0,0,0)',
+    font:{color:'#dbe7f5'},
+    margin:{l:48,r:20,t:20,b:55},
+    autosize:true,
+    ...layout
+  };
+  if(narrow){
+    const m=merged.margin||{};
+    const clamp=(v,max,fallback)=>Math.min(Number.isFinite(+v)?+v:fallback,max);
+    merged.margin={l:clamp(m.l,70,42),r:clamp(m.r,14,10),t:clamp(m.t,24,18),b:clamp(m.b,82,55)};
+    merged.xaxis={automargin:true,...(merged.xaxis||{})};
+    merged.yaxis={automargin:true,...(merged.yaxis||{})};
+    merged.dragmode=false;
+  }
+  el.style.width='100%';
+  el.style.maxWidth='100%';
+  Plotly.newPlot(el,data,merged,{
+    responsive:true,
+    displayModeBar:false,
+    scrollZoom:false,
+    doubleClick:false
+  });
+}
 function noData(id,text='Available after the next successful research refresh.'){const el=$(`#${id}`);if(el)el.innerHTML=`<div class="empty-state">${esc(text)}</div>`;}
 
 function applyOverrides(snapshot,overrides){
@@ -69,3 +106,12 @@ function renderPhilosophy(p){if(!p||!Object.keys(p).length){$('#philosophyCard')
 
 async function init(){try{const [snapRes,overRes,benchRes]=await Promise.all([fetch(`data/portfolio_snapshot.json?v=${Date.now()}`,{cache:'no-store'}),fetch(`data/thesis_overrides.json?v=${Date.now()}`,{cache:'no-store'}),fetch(`data/benchmark_reference.json?v=${Date.now()}`,{cache:'no-store'})]);if(!snapRes.ok)throw new Error('snapshot unavailable');const snapshot=await snapRes.json(),overrides=overRes.ok?await overRes.json():{companies:[]};benchmarkRef=benchRes.ok?await benchRes.json():null;appData=applyOverrides(snapshot,overrides);renderHero(appData,benchmarkRef);renderOverview(appData,benchmarkRef);renderPerformance(appData);renderPortfolio(appData,benchmarkRef);renderTheses(appData.theses||[]);renderRisk(appData);renderResearch(appData);renderPhilosophy(appData.portfolio_philosophy||{});const hash=location.hash.replace('#','');if(['overview','performance','portfolio','theses','risk','research','philosophy'].includes(hash))activateTab(hash);}catch(e){console.error(e);$('#freshness').textContent='Latest portfolio snapshot is temporarily unavailable.';$('#overview').insertAdjacentHTML('afterbegin','<article class="card"><h2>Data temporarily unavailable</h2><p>Please reload after the next successful portfolio refresh.</p></article>');}}
 init();
+
+
+let __portfolioResizeTimer;
+function schedulePortfolioResize(){
+  clearTimeout(__portfolioResizeTimer);
+  __portfolioResizeTimer=setTimeout(resizeVisiblePlots,120);
+}
+window.addEventListener('resize',schedulePortfolioResize,{passive:true});
+window.addEventListener('orientationchange',schedulePortfolioResize,{passive:true});
