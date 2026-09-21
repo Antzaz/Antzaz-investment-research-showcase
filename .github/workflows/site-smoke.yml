@@ -19,7 +19,7 @@ jobs:
 
       - name: JavaScript syntax
         run: |
-          for f in app.js fundamentals-bridge.js visit-notify.js rolling-risk-fallback.js advanced-research.js advanced-research-v2.js site-consistency.js short-term-performance.js; do
+          for f in app.js fundamentals-bridge.js visit-notify.js rolling-risk-fallback.js advanced-research.js advanced-research-v2.js site-consistency.js short-term-performance.js interactive-model-v2.js; do
             if [ -f "$f" ]; then node --check "$f"; fi
           done
 

@@ -129,11 +129,13 @@ if (failed) process.exit(1);
 
 
 // Interactive model demo regression
+const demoBrowser = await chromium.launch({ headless: true });
+try {
 for (const viewport of [
   {width:390,height:844,name:'demo-phone'},
   {width:1365,height:900,name:'demo-desktop'}
 ]) {
-  const page = await browser.newPage({viewport:{width:viewport.width,height:viewport.height}});
+  const page = await demoBrowser.newPage({viewport:{width:viewport.width,height:viewport.height}});
   const errors=[];
   page.on('pageerror', err => errors.push(`pageerror: ${err.message}`));
   page.on('console', msg => { if (msg.type()==='error') errors.push(`console: ${msg.text()}`); });
@@ -179,4 +181,7 @@ for (const viewport of [
   } finally {
     await page.close();
   }
+}
+} finally {
+  await demoBrowser.close();
 }
