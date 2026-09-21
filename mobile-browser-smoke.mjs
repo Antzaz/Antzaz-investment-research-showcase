@@ -47,13 +47,33 @@ try {
         const active = await page.locator('.panel.active-panel').getAttribute('id');
         assert(active === target, `${viewport.name}: clicking ${target} activated ${active}`);
 
-        const overflow = await page.evaluate(() => ({
-          root: document.documentElement.scrollWidth,
-          body: document.body.scrollWidth,
-          inner: window.innerWidth,
-        }));
-        assert(overflow.root <= overflow.inner + 2, `${viewport.name}/${target}: root horizontal overflow ${overflow.root}px > ${overflow.inner}px`);
-        assert(overflow.body <= overflow.inner + 2, `${viewport.name}/${target}: body horizontal overflow ${overflow.body}px > ${overflow.inner}px`);
+        await page.waitForTimeout(300);
+        const overflow = await page.evaluate(() => {
+          const inner = window.innerWidth;
+          const offenders = [...document.querySelectorAll('body *')].map(el => {
+            const r = el.getBoundingClientRect();
+            return {
+              tag: el.tagName,
+              id: el.id || '',
+              cls: typeof el.className === 'string' ? el.className.slice(0,120) : '',
+              left: Math.round(r.left),
+              right: Math.round(r.right),
+              width: Math.round(r.width),
+              scrollWidth: el.scrollWidth,
+              clientWidth: el.clientWidth,
+            };
+          }).filter(x => x.right > inner + 2 || x.left < -2 || x.scrollWidth > x.clientWidth + 4)
+            .sort((a,b) => Math.max(b.right-inner,b.scrollWidth-b.clientWidth) - Math.max(a.right-inner,a.scrollWidth-a.clientWidth))
+            .slice(0,12);
+          return {
+            root: document.documentElement.scrollWidth,
+            body: document.body.scrollWidth,
+            inner,
+            offenders,
+          };
+        });
+        assert(overflow.root <= overflow.inner + 2, `${viewport.name}/${target}: root horizontal overflow ${overflow.root}px > ${overflow.inner}px; offenders=${JSON.stringify(overflow.offenders)}`);
+        assert(overflow.body <= overflow.inner + 2, `${viewport.name}/${target}: body horizontal overflow ${overflow.body}px > ${overflow.inner}px; offenders=${JSON.stringify(overflow.offenders)}`);
       }
 
       await page.locator('.tab[data-target="overview"]').click();
