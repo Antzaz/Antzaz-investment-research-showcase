@@ -45,18 +45,23 @@ jobs:
           for asset in ['fundamentals-bridge.js', 'app.js', 'advanced-research.js']:
               assert asset in html, f'index.html does not load {asset}'
 
-          # Mobile responsive contract: prevent iOS input auto-zoom, page-wide overflow,
-          # and Plotly touch/viewport regressions.
+          # Mobile regression contract. Mobile CSS may adapt the shell, but it must
+          # not rewrite Plotly geometry or break multi-element tab selectors.
+          import re
           styles = Path('styles.css').read_text(encoding='utf-8')
           app_js = Path('app.js').read_text(encoding='utf-8')
-          assert 'Mobile responsive hardening' in styles
-          assert 'font-size:16px!important' in styles
-          assert 'overflow-x:clip' in styles
-          assert 'flex-wrap:nowrap' in styles
-          assert "merged.dragmode=false" in app_js
-          assert "scrollZoom:false" in app_js
-          assert "orientationchange" in app_js
-          print('Mobile responsive contract validated.')
+          assert 'flex-wrap:nowrap' in styles, 'Mobile tabs must stay in one swipeable row'
+          assert 'font-size:16px!important' in styles, 'Mobile form controls must avoid iOS focus zoom'
+          assert "$('.tab[data-target]')" in app_js, 'Tab selector must address all tabs'
+          assert "$('.panel')" in app_js, 'Panel selector must address all panels'
+          bad_for_each = re.findall(r"\$\([^\n;]*\)\.forEach", app_js)
+          assert not bad_for_each, f'Single-element selector incorrectly used with forEach: {bad_for_each}'
+          assert 'merged.dragmode=false' not in app_js, 'Do not globally disable Plotly drag mode'
+          assert 'doubleClick:false' not in app_js, 'Do not globally override Plotly double-click behavior'
+          assert 'clamp=(v,max,fallback)' not in app_js, 'Do not globally clamp Plotly margins on mobile'
+          assert '.svg-container{max-width:100%!important}' not in styles, 'Do not force Plotly SVG geometry through CSS'
+          print('Mobile shell and chart-interaction regression contract validated.')
+
 
           analytics = json.loads(Path('data/public_analytics.json').read_text(encoding='utf-8'))
           holdings = analytics.get('holdings') or []
