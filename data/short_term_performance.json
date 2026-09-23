@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-22T10:02:55+00:00",
+  "generated_utc": "2026-09-23T10:03:12+00:00",
   "as_of": "2026-09-21",
   "previous_trading_date": "2026-09-18",
   "benchmark": "S&P 500",
@@ -38,16 +38,16 @@
     {
       "period": "6M",
       "sessions": 126,
-      "portfolio_return": 0.22517602715960638,
+      "portfolio_return": 0.22517602955338867,
       "benchmark_return": 0.1986653818375259,
-      "excess_return": 0.026510645322080473
+      "excess_return": 0.026510647715862756
     },
     {
       "period": "1Y",
       "sessions": 252,
-      "portfolio_return": 0.3389528381612208,
-      "benchmark_return": 0.18384411288319225,
-      "excess_return": 0.15510872527802855
+      "portfolio_return": 0.3389528210563222,
+      "benchmark_return": 0.1838442234714024,
+      "excess_return": 0.1551085975849198
     },
     {
       "period": "MTD",
@@ -66,15 +66,15 @@
     {
       "period": "YTD",
       "sessions": 180,
-      "portfolio_return": 0.22194841343823213,
-      "benchmark_return": 0.1431569292696322,
-      "excess_return": 0.07879148416859993
+      "portfolio_return": 0.22194842773036605,
+      "benchmark_return": 0.14315692926963375,
+      "excess_return": 0.0787914984607323
     }
   ],
   "coverage": {
-    "aligned_daily_observations": 2511,
+    "aligned_daily_observations": 2510,
     "portfolio_components": 15,
-    "analysis_start": "2016-09-23",
+    "analysis_start": "2016-09-26",
     "analysis_end": "2026-09-21"
   }
 }
