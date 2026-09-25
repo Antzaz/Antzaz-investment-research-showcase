@@ -74,6 +74,15 @@
         <article class="card advanced-horizon"><strong>12M</strong><span>Governed expected-return ensemble</span><small>Only return horizon permitted to influence optimizer inputs</small></article>
       </div>
       <article class="card">
+        <p class="eyebrow">LIVE MODEL OUTPUT</p>
+        <h2>Current ML forecasts</h2>
+        <p class="muted">Latest published model outputs for current portfolio holdings. Return forecasts are expected excess returns versus the benchmark, not absolute price targets.</p>
+        <div id="mlLiveMetrics" class="metric-grid compact"></div>
+        <div id="mlForecastChart" style="height:430px"></div>
+        <div class="table-wrap"><table id="mlForecastTable"></table></div>
+        <p id="mlLiveNote" class="footnote"></p>
+      </article>
+      <article class="card">
         <h2>Implemented ML research stack</h2>
         <div class="governance-grid">
           <div><strong>Expected excess return</strong><span>Histogram Gradient Boosting (65%) + Elastic Net (35%) with expanding walk-forward validation. Separate 1M, 3M, 6M and 12M forward excess-return targets.</span></div>
@@ -275,6 +284,43 @@
     loadCompanyState(); drawScenarioTable(); update();
   }
 
+
+  function renderML(d) {
+    const ml = d.ml || {};
+    const rows = Array.isArray(ml.predictions) ? ml.predictions.filter(r => finite(r.prediction)) : [];
+    const metricsEl = $('#mlLiveMetrics'), table = $('#mlForecastTable'), note = $('#mlLiveNote');
+    if (!rows.length) {
+      if (metricsEl) metricsEl.innerHTML = metric('Live output', ml.status || 'Awaiting data', 'No published ML predictions in the current snapshot');
+      if (table) table.innerHTML = '<tbody><tr><td class="muted">The public page will populate automatically after the next successful ML learning run publishes current predictions.</td></tr></tbody>';
+      if (note) note.textContent = 'No forecast values are fabricated when the persistent learning store has not produced a valid prediction.';
+      return;
+    }
+    const returnRows = rows.filter(r => /Excess Return/.test(r.model));
+    const companies = [...new Set(returnRows.map(r => r.company))];
+    const horizons = ['Expected 1M Excess Return','Expected 3M Excess Return','Expected 6M Excess Return','Expected 12M Excess Return'];
+    if (metricsEl) metricsEl.innerHTML = [
+      ['Companies', String(new Set(rows.map(r=>r.company)).size), 'Current portfolio coverage'],
+      ['Forecasts', String(rows.length), 'Latest published outputs'],
+      ['As of', ml.as_of || '—', 'Point-in-time model input'],
+      ['Benchmark', ml.benchmark || 'SPY', 'Excess-return reference']
+    ].map(x=>metric(...x)).join('');
+    if (table) table.innerHTML = '<thead><tr><th>Company</th><th>Model</th><th>Prediction</th><th>Confidence</th><th>As of</th></tr></thead><tbody>' +
+      rows.map(r=>'<tr><td>'+esc(r.company)+'</td><td>'+esc(r.model.replace('Expected ','').replace(' Excess Return',' excess return'))+'</td><td>'+pct(r.prediction)+'</td><td>'+esc(r.confidence||'—')+'</td><td>'+esc(r.as_of||'—')+'</td></tr>').join('') + '</tbody>';
+    if (returnRows.length) {
+      const traces = horizons.map(h => ({
+        type:'bar', name:h.replace('Expected ','').replace(' Excess Return',''),
+        x:companies,
+        y:companies.map(company => {
+          const r=returnRows.find(x=>x.company===company && x.model===h);
+          return r ? Number(r.prediction) : null;
+        }),
+        hovertemplate:'%{x}<br>%{fullData.name}: %{y:+.1%}<extra></extra>'
+      }));
+      plot('mlForecastChart', traces, {barmode:'group',yaxis:{tickformat:'+.0%',title:'Expected excess return vs benchmark'},xaxis:{tickangle:-20},margin:{l:65,r:15,t:20,b:120},legend:{orientation:'h'}});
+    }
+    if (note) note.textContent = 'These are model outputs from the persistent point-in-time learning store. They are research evidence, not investment recommendations or guaranteed returns.';
+  }
+
   async function loadData() {
     const [snapRes, overRes] = await Promise.all([
       fetch(`data/portfolio_snapshot.json?v=${Date.now()}`,{cache:'no-store'}),
@@ -290,6 +336,7 @@
     injectUI();
     try {
       const d = await loadData();
+      renderML(d);
       renderMarketExpectations(d);
       renderAI(d);
     } catch (err) {
