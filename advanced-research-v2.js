@@ -68,12 +68,25 @@
         <div class="advanced-callout">Machine learning is used as an additional source of evidence rather than as a black-box replacement for fundamental analysis.</div>
       </article>
       <div class="advanced-horizon-grid">
-        <article class="card advanced-horizon"><strong>1M</strong><span>Separate excess-return model</span><small>Faster feedback · research only</small></article>
-        <article class="card advanced-horizon"><strong>3M</strong><span>Separate excess-return model</span><small>Research only</small></article>
-        <article class="card advanced-horizon"><strong>6M</strong><span>Separate excess-return model</span><small>Research only</small></article>
-        <article class="card advanced-horizon"><strong>12M</strong><span>Governed expected-return model</span><small>Only ML horizon permitted to influence optimizer inputs</small></article>
+        <article class="card advanced-horizon"><strong>1M</strong><span>Short-horizon excess-return ensemble</span><small>Journaled for live evaluation · research only</small></article>
+        <article class="card advanced-horizon"><strong>3M</strong><span>Short-horizon excess-return ensemble</span><small>Journaled for live evaluation · research only</small></article>
+        <article class="card advanced-horizon"><strong>6M</strong><span>Short-horizon excess-return ensemble</span><small>Journaled for live evaluation · research only</small></article>
+        <article class="card advanced-horizon"><strong>12M</strong><span>Governed expected-return ensemble</span><small>Only return horizon permitted to influence optimizer inputs</small></article>
       </div>
       <article class="card">
+        <h2>Implemented ML research stack</h2>
+        <div class="governance-grid">
+          <div><strong>Expected excess return</strong><span>Histogram Gradient Boosting (65%) + Elastic Net (35%) with expanding walk-forward validation. Separate 1M, 3M, 6M and 12M forward excess-return targets.</span></div>
+          <div><strong>Earnings surprise</strong><span>Random Forest regression estimates the next EPS surprise using only information available before the earnings event.</span></div>
+          <div><strong>Financial anomaly detection</strong><span>Isolation Forest compares the latest operating profile with the company's own history and surfaces unusual financial patterns for diligence.</span></div>
+          <div><strong>Market regime classifier</strong><span>Five-cluster K-Means uses equity, duration, credit, commodity and dollar momentum plus equity volatility as portfolio context.</span></div>
+          <div><strong>AI impact ML</strong><span>Company-specific Ridge regression is evidence-gated and refuses to train until sufficient dated KPI history exists.</span></div>
+          <div><strong>Portfolio ML / sizing</strong><span>Ledoit-Wolf shrinkage covariance plus a constrained long-only optimizer can use governed 12M ML evidence; it never executes trades.</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <h2>Continual-learning governance</h2>
+        <p class="muted">Forecasts are stored before outcomes are known, matured only when their forward target becomes observable, and evaluated against contemporaneous simple baselines. Realized error, directional accuracy, skill and drift control model influence through the champion/challenger registry.</p>
         <h2>Governance ladder</h2>
         <div class="governance-grid">
           <div class="governance-card"><span class="status-dot"></span><h3>UNPROVEN</h3><p>Fewer than five matured live forecasts. The supervised model receives only a small influence multiplier while evidence accumulates.</p></div>
