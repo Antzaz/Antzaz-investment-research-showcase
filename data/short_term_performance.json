@@ -1,7 +1,7 @@
 {
-  "generated_utc": "2026-09-25T10:15:18+00:00",
-  "as_of": "2026-09-24",
-  "previous_trading_date": "2026-09-23",
+  "generated_utc": "2026-09-28T11:45:15+00:00",
+  "as_of": "2026-09-25",
+  "previous_trading_date": "2026-09-24",
   "benchmark": "S&P 500",
   "benchmark_proxy": "SPY",
   "methodology": "Current published portfolio weights applied to adjusted close returns. Foreign/local-market prices are aligned to S&P 500 trading dates by carrying forward only already-observed closes; no backward-fill or future price is used. 1W/1M/3M/6M/1Y use 5/21/63/126/252 benchmark trading sessions.",
@@ -10,71 +10,71 @@
     {
       "period": "1D",
       "sessions": 1,
-      "portfolio_return": -0.0018471435922575719,
-      "benchmark_return": -0.000820521854125067,
-      "excess_return": -0.001026621738132505
+      "portfolio_return": 0.005900163600723429,
+      "benchmark_return": 0.005435468794763754,
+      "excess_return": 0.0004646948059596756
     },
     {
       "period": "1W",
       "sessions": 5,
-      "portfolio_return": -0.002514618846830685,
-      "benchmark_return": 0.00850387880953729,
-      "excess_return": -0.011018497656367976
+      "portfolio_return": 0.001096120824990665,
+      "benchmark_return": 0.012682289531920743,
+      "excess_return": -0.011586168706930078
     },
     {
       "period": "1M",
       "sessions": 21,
-      "portfolio_return": 0.0001528029311874679,
-      "benchmark_return": 0.004145528071109572,
-      "excess_return": -0.003992725139922104
+      "portfolio_return": 0.0060473879651095075,
+      "benchmark_return": 0.009379439767086772,
+      "excess_return": -0.003332051801977265
     },
     {
       "period": "3M",
       "sessions": 63,
-      "portfolio_return": 0.10900519465345049,
-      "benchmark_return": 0.047371754116542375,
-      "excess_return": 0.06163344053690811
+      "portfolio_return": 0.11640246816837907,
+      "benchmark_return": 0.06073523942506598,
+      "excess_return": 0.05566722874331309
     },
     {
       "period": "6M",
       "sessions": 126,
-      "portfolio_return": 0.18399653328426546,
-      "benchmark_return": 0.1739387273750559,
-      "excess_return": 0.010057805909209572
+      "portfolio_return": 0.2197178098709025,
+      "benchmark_return": 0.2017819140817767,
+      "excess_return": 0.0179358957891258
     },
     {
       "period": "1Y",
       "sessions": 252,
-      "portfolio_return": 0.32253201188961156,
-      "benchmark_return": 0.1692478009877909,
-      "excess_return": 0.15328421090182065
+      "portfolio_return": 0.3334952015063686,
+      "benchmark_return": 0.17935540729752497,
+      "excess_return": 0.1541397942088436
     },
     {
       "period": "MTD",
-      "sessions": 17,
-      "portfolio_return": -0.0024145679025561195,
-      "benchmark_return": 0.002653112976586547,
-      "excess_return": -0.005067680879142666
+      "sessions": 18,
+      "portfolio_return": 0.0034587154961835953,
+      "benchmark_return": 0.008103002684143545,
+      "excess_return": -0.00464428718795995
     },
     {
       "period": "QTD",
-      "sessions": 60,
-      "portfolio_return": 0.08312101419567797,
-      "benchmark_return": 0.029882079740443324,
-      "excess_return": 0.05323893445523464
+      "sessions": 61,
+      "portfolio_return": 0.08949788826262028,
+      "benchmark_return": 0.03547997164715899,
+      "excess_return": 0.05401791661546129
     },
     {
       "period": "YTD",
-      "sessions": 183,
-      "portfolio_return": 0.20450752001607353,
-      "benchmark_return": 0.13381657999269048,
-      "excess_return": 0.07069094002338305
+      "sessions": 184,
+      "portfolio_return": 0.2115990659767557,
+      "benchmark_return": 0.1399794046322267,
+      "excess_return": 0.07161966134452902
     }
   ],
   "coverage": {
-    "aligned_daily_observations": 2512,
+    "aligned_daily_observations": 2511,
     "portfolio_components": 15,
-    "analysis_start": "2016-09-27",
-    "analysis_end": "2026-09-24"
+    "analysis_start": "2016-09-29",
+    "analysis_end": "2026-09-25"
   }
 }
