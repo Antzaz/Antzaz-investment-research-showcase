@@ -1,7 +1,7 @@
 {
-  "generated_utc": "2026-09-28T11:45:15+00:00",
-  "as_of": "2026-09-25",
-  "previous_trading_date": "2026-09-24",
+  "generated_utc": "2026-09-30T11:12:25+00:00",
+  "as_of": "2026-09-29",
+  "previous_trading_date": "2026-09-28",
   "benchmark": "S&P 500",
   "benchmark_proxy": "SPY",
   "methodology": "Current published portfolio weights applied to adjusted close returns. Foreign/local-market prices are aligned to S&P 500 trading dates by carrying forward only already-observed closes; no backward-fill or future price is used. 1W/1M/3M/6M/1Y use 5/21/63/126/252 benchmark trading sessions.",
@@ -10,71 +10,71 @@
     {
       "period": "1D",
       "sessions": 1,
-      "portfolio_return": 0.005900163600723429,
-      "benchmark_return": 0.005435468794763754,
-      "excess_return": 0.0004646948059596756
+      "portfolio_return": -0.0007279112059161985,
+      "benchmark_return": -0.0018416336927525867,
+      "excess_return": 0.0011137224868363882
     },
     {
       "period": "1W",
       "sessions": 5,
-      "portfolio_return": 0.001096120824990665,
-      "benchmark_return": 0.012682289531920743,
-      "excess_return": -0.011586168706930078
+      "portfolio_return": -0.009310406629945311,
+      "benchmark_return": -0.011869963818333051,
+      "excess_return": 0.00255955718838774
     },
     {
       "period": "1M",
       "sessions": 21,
-      "portfolio_return": 0.0060473879651095075,
-      "benchmark_return": 0.009379439767086772,
-      "excess_return": -0.003332051801977265
+      "portfolio_return": -0.0063898069441283845,
+      "benchmark_return": -0.004227359303351497,
+      "excess_return": -0.0021624476407768878
     },
     {
       "period": "3M",
       "sessions": 63,
-      "portfolio_return": 0.11640246816837907,
-      "benchmark_return": 0.06073523942506598,
-      "excess_return": 0.05566722874331309
+      "portfolio_return": 0.08377954949151167,
+      "benchmark_return": 0.025881677602689557,
+      "excess_return": 0.05789787188882212
     },
     {
       "period": "6M",
       "sessions": 126,
-      "portfolio_return": 0.2197178098709025,
-      "benchmark_return": 0.2017819140817767,
-      "excess_return": 0.0179358957891258
+      "portfolio_return": 0.2401451216386703,
+      "benchmark_return": 0.215360442352597,
+      "excess_return": 0.024784679286073308
     },
     {
       "period": "1Y",
       "sessions": 252,
-      "portfolio_return": 0.3334952015063686,
-      "benchmark_return": 0.17935540729752497,
-      "excess_return": 0.1541397942088436
+      "portfolio_return": 0.32319815876883795,
+      "benchmark_return": 0.1671521778930547,
+      "excess_return": 0.15604598087578325
     },
     {
       "period": "MTD",
-      "sessions": 18,
-      "portfolio_return": 0.0034587154961835953,
-      "benchmark_return": 0.008103002684143545,
-      "excess_return": -0.00464428718795995
+      "sessions": 20,
+      "portfolio_return": -0.0018080380605204338,
+      "benchmark_return": -0.001241522861321953,
+      "excess_return": -0.0005665151991984807
     },
     {
       "period": "QTD",
-      "sessions": 61,
-      "portfolio_return": 0.08949788826262028,
-      "benchmark_return": 0.03547997164715899,
-      "excess_return": 0.05401791661546129
+      "sessions": 63,
+      "portfolio_return": 0.08377954949151167,
+      "benchmark_return": 0.025881677602689557,
+      "excess_return": 0.05789787188882212
     },
     {
       "period": "YTD",
-      "sessions": 184,
-      "portfolio_return": 0.2115990659767557,
-      "benchmark_return": 0.1399794046322267,
-      "excess_return": 0.07161966134452902
+      "sessions": 186,
+      "portfolio_return": 0.20523986871048372,
+      "benchmark_return": 0.12941246192942035,
+      "excess_return": 0.07582740678106337
     }
   ],
   "coverage": {
     "aligned_daily_observations": 2511,
     "portfolio_components": 15,
-    "analysis_start": "2016-09-29",
-    "analysis_end": "2026-09-25"
+    "analysis_start": "2016-10-03",
+    "analysis_end": "2026-09-29"
   }
 }
