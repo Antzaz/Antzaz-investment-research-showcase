@@ -3,7 +3,7 @@
   window.__antzazShortTermPerformanceLoaded = true;
 
   const DATA_URL = 'data/short_term_performance.json';
-  const PRIMARY_PERIODS = ['1D', '1W', '1M', '3M', '6M', 'YTD', '1Y'];
+  const PRIMARY_PERIODS = ['1D', '1W', '1M', '3M', '6M', 'YTD', '1Y', 'Since inception'];
 
   const pct = value => {
     const x = Number(value);
@@ -43,6 +43,7 @@
   }
 
   function card(row) {
+    if (row.portfolio_return == null) return `<div class="short-term-return-card"><div class="period">${row.period}</div><div class="portfolio-return neutral">N/A</div><div class="comparison">Not enough history since inception</div></div>`;
     const excessTone = tone(row.excess_return);
     const portfolioTone = tone(row.portfolio_return);
     return `
@@ -69,11 +70,11 @@
             <h2>Daily, weekly & longer-term performance</h2>
             <p class="muted">Aggregate model-portfolio return, benchmark return and excess return.</p>
           </div>
-          <div class="short-term-performance-asof">Through ${data.as_of || 'latest available date'}</div>
+          <div class="short-term-performance-asof">Inception ${data.portfolio_inception_date || '2026-06-02'} · Through ${data.as_of || 'latest available date'}</div>
         </div>
         <div class="short-term-performance-grid">${rows.map(card).join('')}</div>
         <p class="short-term-performance-note">
-          1D = latest benchmark trading session; 1W = 5 sessions; 1M = 21; 3M = 63; 6M = 126; 1Y = 252. YTD is the compounded return for the current calendar year. ${data.methodology || ''}
+          1D = latest benchmark trading session; 1W = 5 sessions; 1M = 21; 3M = 63; 6M = 126; 1Y = 252. YTD is the compounded return since January 1 or portfolio inception, whichever is later. Since inception starts June 2, 2026. ${data.methodology || ''}
         </p>
       </article>
     `;
