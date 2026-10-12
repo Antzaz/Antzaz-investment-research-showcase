@@ -19,6 +19,7 @@ from refresh_public_analytics import (
 
 ROOT = Path(__file__).resolve().parent
 OUTPUT_PATH = ROOT / "data" / "short_term_performance.json"
+PORTFOLIO_INCEPTION = pd.Timestamp("2026-06-02")
 TRADING_PERIODS = {
     "1D": 1,
     "1W": 5,
@@ -147,21 +148,26 @@ def build_short_term_performance() -> dict:
     if daily.empty:
         raise SystemExit("No aligned daily portfolio returns were produced.")
 
-    rows = [_period_row(label, daily, benchmark_returns) for label in TRADING_PERIODS]
-    rows.extend(_calendar_period_row(label, daily, benchmark_returns) for label in ("MTD", "QTD", "YTD"))
+    # Do not publish pre-inception returns as an actual portfolio track record.
+    inception_daily = daily.loc[daily.index >= PORTFOLIO_INCEPTION]
+    inception_benchmark = benchmark_returns.reindex(inception_daily.index)
+    rows = [_period_row(label, inception_daily, inception_benchmark) if len(inception_daily) >= sessions else {"period": label, "sessions": len(inception_daily), "portfolio_return": None, "benchmark_return": None, "excess_return": None} for label, sessions in TRADING_PERIODS.items()]
+    rows.extend(_calendar_period_row(label, inception_daily, inception_benchmark) for label in ("MTD", "QTD", "YTD"))
+    rows.append({"period": "Since inception", "sessions": len(inception_daily), "portfolio_return": _compound(inception_daily), "benchmark_return": _compound(inception_benchmark), "excess_return": (_compound(inception_daily) - _compound(inception_benchmark)) if not inception_daily.empty else None})
 
     as_of = pd.Timestamp(daily.index[-1]).date().isoformat()
     previous = pd.Timestamp(daily.index[-2]).date().isoformat() if len(daily) > 1 else None
     return {
         "generated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "as_of": as_of,
+        "portfolio_inception_date": PORTFOLIO_INCEPTION.date().isoformat(),
         "previous_trading_date": previous,
         "benchmark": "S&P 500",
         "benchmark_proxy": BENCHMARK,
         "methodology": (
             "Current published portfolio weights applied to adjusted close returns. "
             "Foreign/local-market prices are aligned to S&P 500 trading dates by carrying forward only already-observed closes; "
-            "no backward-fill or future price is used. 1W/1M/3M/6M/1Y use 5/21/63/126/252 benchmark trading sessions."
+            "no backward-fill or future price is used. Portfolio inception is 2026-06-02; periods longer than the available inception history are not shown as returns. Returns use current published weights and are not transaction-based realized performance."
         ),
         "privacy_note": (
             "This file contains aggregate portfolio and benchmark percentage returns only. "
@@ -172,6 +178,7 @@ def build_short_term_performance() -> dict:
             "aligned_daily_observations": int(len(daily)),
             "portfolio_components": int(len(weights)),
             "analysis_start": pd.Timestamp(daily.index[0]).date().isoformat(),
+            "portfolio_inception_date": PORTFOLIO_INCEPTION.date().isoformat(),
             "analysis_end": as_of,
         },
     }
