@@ -10,6 +10,7 @@ on:
       - '.github/workflows/public-data-refresh.yml'
       - 'refresh_public_analytics.py'
       - 'refresh_short_term_performance.py'
+      - 'refresh_stock_quotes.py'
       - 'data/thesis_overrides.json'
 
 permissions:
@@ -43,11 +44,14 @@ jobs:
       - name: Build short-term performance summary
         run: python refresh_short_term_performance.py
 
+      - name: Build public stock quotes
+        run: python refresh_stock_quotes.py
+
       - name: Publish refreshed public data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/public_analytics.json data/public_fundamentals.json data/short_term_performance.json
+          git add data/public_analytics.json data/public_fundamentals.json data/short_term_performance.json data/stock_quotes.json
           if git diff --cached --quiet; then
             echo "Public analytics already current."
           else
