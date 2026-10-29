@@ -110,29 +110,45 @@ def apply_overrides(snapshot: dict, overrides: dict) -> tuple[list[dict], dict[s
     return holdings, alias_map
 
 
-def download_prices(symbols: list[str]) -> pd.DataFrame:
-    raw = yf.download(
-        tickers=list(dict.fromkeys(symbols)),
-        period=HISTORY_PERIOD,
-        auto_adjust=True,
-        progress=False,
-        threads=True,
-        group_by="column",
-    )
-    if raw.empty:
-        raise RuntimeError("No price history returned by Yahoo Finance.")
-    if isinstance(raw.columns, pd.MultiIndex):
-        if "Close" not in raw.columns.get_level_values(0):
-            raise RuntimeError("Price download did not contain Close data.")
-        close = raw["Close"].copy()
-    else:
-        close = raw[["Close"]].copy()
-        close.columns = symbols[:1]
-    if isinstance(close, pd.Series):
-        close = close.to_frame(name=symbols[0])
-    close = close.dropna(how="all").sort_index()
-    close.columns = [str(c).upper() for c in close.columns]
-    return close
+def download_prices(symbols: list[str], attempts: int = 3) -> pd.DataFrame:
+    """Download adjusted closes with bounded retries.
+
+    The public refresh must fail loudly rather than publish a partially stale dataset when
+    Yahoo has a transient empty/partial response.
+    """
+    unique = list(dict.fromkeys(symbols))
+    last_error = None
+    for attempt in range(attempts):
+        try:
+            raw = yf.download(
+                tickers=unique,
+                period=HISTORY_PERIOD,
+                auto_adjust=True,
+                progress=False,
+                threads=True,
+                group_by="column",
+            )
+            if raw is None or raw.empty:
+                raise RuntimeError("No price history returned by Yahoo Finance.")
+            if isinstance(raw.columns, pd.MultiIndex):
+                if "Close" not in raw.columns.get_level_values(0):
+                    raise RuntimeError("Price download did not contain Close data.")
+                close = raw["Close"].copy()
+            else:
+                close = raw[["Close"]].copy()
+                close.columns = unique[:1]
+            if isinstance(close, pd.Series):
+                close = close.to_frame(name=unique[0])
+            close = close.dropna(how="all").sort_index()
+            close.columns = [str(x).upper() for x in close.columns]
+            if close.empty:
+                raise RuntimeError("Adjusted-close table was empty after normalization.")
+            return close
+        except Exception as exc:
+            last_error = exc
+            if attempt < attempts - 1:
+                time.sleep(2.0 * (attempt + 1))
+    raise RuntimeError(f"Price download failed after {attempts} attempts: {last_error}")
 
 
 def fetch_info(symbol: str, attempts: int = 3) -> dict:
@@ -253,6 +269,96 @@ def historical_stress_table(p: pd.Series, b: pd.Series) -> list[dict]:
             "active_return": (pv - bv) if pv is not None and bv is not None else None,
         })
     return rows
+
+
+def _ols_alpha(y: pd.Series, factors: pd.DataFrame, model_name: str) -> dict | None:
+    """Public-data OLS alpha diagnostic using ETF/benchmark return proxies.
+
+    This is intentionally a transparent proxy model rather than claiming proprietary
+    Fama-French factor data.  P-values use a large-sample normal approximation.
+    """
+    if factors is None or factors.empty:
+        return None
+    frame = pd.concat([y.rename("portfolio"), factors], axis=1).dropna()
+    if len(frame) < max(120, factors.shape[1] * 20):
+        return None
+    yv = frame["portfolio"].to_numpy(dtype=float)
+    x = frame.drop(columns=["portfolio"]).to_numpy(dtype=float)
+    x = np.column_stack([np.ones(len(x)), x])
+    try:
+        beta = np.linalg.lstsq(x, yv, rcond=None)[0]
+        fitted = x @ beta
+        resid = yv - fitted
+        n, k = x.shape
+        dof = max(1, n - k)
+        sse = float(resid.T @ resid)
+        sigma2 = sse / dof
+        xtx_inv = np.linalg.pinv(x.T @ x)
+        se0 = math.sqrt(max(0.0, sigma2 * float(xtx_inv[0, 0])))
+        alpha_daily = float(beta[0])
+        t_stat = alpha_daily / se0 if se0 > 0 else None
+        p_value = math.erfc(abs(t_stat) / math.sqrt(2)) if t_stat is not None else None
+        sst = float(((yv - yv.mean()) ** 2).sum())
+        r2 = 1.0 - sse / sst if sst > 0 else None
+        annualized_alpha = (1.0 + alpha_daily) ** TRADING_DAYS - 1.0
+        return {
+            "model": model_name,
+            "annualized_alpha": num(annualized_alpha),
+            "t_stat": num(t_stat),
+            "p_value": num(p_value),
+            "r2": num(r2),
+            "significant_5pct": bool(p_value is not None and p_value < 0.05),
+            "interpretation": (
+                "Positive alpha proxy" if annualized_alpha > 0
+                else "Negative alpha proxy" if annualized_alpha < 0
+                else "Near-zero alpha proxy"
+            ),
+        }
+    except Exception:
+        return None
+
+
+def public_alpha_table(p: pd.Series, prices: pd.DataFrame) -> list[dict]:
+    """Refresh the public alpha table from public adjusted-price proxies."""
+    proxy_returns = prices.pct_change(fill_method=None)
+    rows = []
+
+    market = proxy_returns.get(BENCHMARK)
+    if market is not None:
+        capm = _ols_alpha(p, market.rename("Market").to_frame(), "CAPM / Jensen")
+        if capm:
+            rows.append(capm)
+
+    style_symbols = [
+        FACTOR_PROXIES["SmallCap_IWM"],
+        FACTOR_PROXIES["Value_IWD"],
+        FACTOR_PROXIES["Growth_IWF"],
+        FACTOR_PROXIES["Momentum_MTUM"],
+        FACTOR_PROXIES["Quality_QUAL"],
+        FACTOR_PROXIES["LowVol_USMV"],
+    ]
+    available = [s for s in style_symbols if s in proxy_returns.columns]
+    if available:
+        style = _ols_alpha(
+            p,
+            proxy_returns[available].rename(columns={s: f"Proxy_{s}" for s in available}),
+            "Public Style Proxy",
+        )
+        if style:
+            rows.append(style)
+    return rows
+
+
+def public_stress_table(beta: float | None, annualized_volatility: float | None) -> list[dict]:
+    """Simple beta/volatility stress set recalculated on every market-data refresh."""
+    b = float(beta) if beta is not None else 1.0
+    vol = float(annualized_volatility) if annualized_volatility is not None else 0.20
+    return [
+        {"scenario": "Market -10%", "estimated_return": num(-0.10 * b)},
+        {"scenario": "Market -20%", "estimated_return": num(-0.20 * b - 0.15 * vol)},
+        {"scenario": "Severe risk-off", "estimated_return": num(-0.30 * b - 0.25 * vol)},
+        {"scenario": "Market +10%", "estimated_return": num(0.10 * b)},
+    ]
 
 
 def main():
@@ -498,7 +604,9 @@ def main():
         "portfolio_characteristics": portfolio_characteristics,
         "holdings": enriched_holdings,
         "attribution": attribution,
+        "alpha": public_alpha_table(p, prices),
         "factors": factors,
+        "stress": public_stress_table(beta, ann_vol),
         "historical_stress": historical_stress_table(p, b),
         "rolling_risk": rolling_risk_table(p, b),
         "reverse_dcf": reverse_dcf_rows,
@@ -522,6 +630,8 @@ def main():
         "holdings": len(enriched_holdings),
         "timeseries": len(timeseries),
         "attribution": len(attribution),
+        "alpha_models": len(analytics["alpha"]),
+        "stress_scenarios": len(analytics["stress"]),
         "rolling_risk": len(analytics["rolling_risk"]),
         "historical_stress": len(analytics["historical_stress"]),
         "reverse_dcf_solved": sum(1 for x in reverse_dcf_rows if x["implied_annual_fcf_growth"] is not None),
