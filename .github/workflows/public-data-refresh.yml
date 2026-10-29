@@ -1,9 +1,10 @@
-name: Refresh public portfolio analytics
+name: Refresh all public portfolio data
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '20 5 * * 1-5'
+    # Daily after the U.S. cash session has closed; also runs weekends to keep freshness metadata current.
+    - cron: '30 22 * * *'
   push:
     branches: [main]
     paths:
@@ -11,6 +12,10 @@ on:
       - 'refresh_public_analytics.py'
       - 'refresh_short_term_performance.py'
       - 'refresh_stock_quotes.py'
+      - 'refresh_portfolio_snapshot.py'
+      - 'validate_public_refresh.py'
+      - 'fundamentals-bridge.js'
+      - 'stock-quotes.js'
       - 'data/thesis_overrides.json'
 
 permissions:
@@ -23,7 +28,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -47,15 +52,23 @@ jobs:
       - name: Build public stock quotes
         run: python refresh_stock_quotes.py
 
+      - name: Refresh canonical public portfolio snapshot
+        run: python refresh_portfolio_snapshot.py
+
+      - name: Validate complete public refresh
+        run: |
+          python -m py_compile refresh_public_analytics.py refresh_short_term_performance.py refresh_stock_quotes.py refresh_portfolio_snapshot.py validate_public_refresh.py
+          python validate_public_refresh.py
+
       - name: Publish refreshed public data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/public_analytics.json data/public_fundamentals.json data/short_term_performance.json data/stock_quotes.json
+          git add data/portfolio_snapshot.json data/public_analytics.json data/public_fundamentals.json data/short_term_performance.json data/stock_quotes.json
           if git diff --cached --quiet; then
-            echo "Public analytics already current."
+            echo "Public portfolio data already current."
           else
-            git commit -m "Refresh public portfolio analytics"
+            git commit -m "Refresh all public portfolio data"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
