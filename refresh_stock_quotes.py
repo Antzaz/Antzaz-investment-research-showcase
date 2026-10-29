@@ -1,5 +1,5 @@
 from __future__ import annotations
-"""Public market-only quotes: never export private purchase prices or transactions."""
+"""Public market-only quotes; company names are public, ticker symbols and private position economics are not exported."""
 import json
 from datetime import datetime, timezone
 from pathlib import Path
@@ -21,21 +21,29 @@ def build():
     for h in holdings:
         symbol = SYMBOLS[h["company"]]
         if symbol not in prices:
-            rows.append({"company": h["company"], "symbol": symbol, "status": "unavailable"})
+            rows.append({"company": h["company"], "status": "unavailable"})
             continue
         series = pd.to_numeric(prices[symbol], errors="coerce").dropna()
         if series.empty:
-            rows.append({"company": h["company"], "symbol": symbol, "status": "unavailable"})
+            rows.append({"company": h["company"], "status": "unavailable"})
             continue
         changes = {}
         for label, sessions in WINDOWS.items():
             changes[label] = float(series.iloc[-1] / series.iloc[-1-sessions] - 1) if len(series) > sessions else None
-        rows.append({"company": h["company"], "symbol": symbol, "currency": h.get("currency"),
+        rows.append({"company": h["company"], "currency": h.get("currency"),
                      "as_of": series.index[-1].date().isoformat(), "current_price": float(series.iloc[-1]),
                      "changes": changes, "status": "ok"})
-    return {"generated_utc": datetime.now(timezone.utc).isoformat(), "source": "Yahoo Finance adjusted daily closes",
-            "note": "Prices may be delayed. Public data excludes private cost basis, shares, and transactions.",
-            "stocks": rows}
+    unavailable=[x["company"] for x in rows if x.get("status")!="ok"]
+    if unavailable:
+        raise RuntimeError("Quote refresh incomplete for: " + ", ".join(unavailable))
+    as_of_dates=sorted({x.get("as_of") for x in rows if x.get("as_of")})
+    return {
+        "generated_utc": datetime.now(timezone.utc).isoformat(),
+        "market_as_of": as_of_dates[-1] if as_of_dates else None,
+        "source": "Yahoo Finance adjusted daily closes",
+        "note": "Prices may be delayed. Public data excludes ticker symbols, private cost basis, shares, and transactions.",
+        "stocks": rows,
+    }
 
 if __name__ == "__main__":
     OUT.parent.mkdir(exist_ok=True, parents=True)
