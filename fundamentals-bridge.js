@@ -90,6 +90,7 @@
       public_analytics_note: analytics.source_note || null,
     };
 
+    snapshot.generated_utc = analytics.generated_utc || snapshot.generated_utc;
     snapshot.metrics = { ...(snapshot.metrics || {}), ...(analytics.metrics || {}) };
     snapshot.portfolio_characteristics = {
       ...(snapshot.portfolio_characteristics || {}),
@@ -99,7 +100,9 @@
     for (const key of [
       'holdings',
       'attribution',
+      'alpha',
       'factors',
+      'stress',
       'historical_stress',
       'rolling_risk',
       'reverse_dcf',
