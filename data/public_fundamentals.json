@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-29T20:05:04.668579+00:00",
+  "generated_utc": "2026-10-29T20:06:10.257552+00:00",
   "source_note": "Public market characteristics refreshed independently from the private research pipeline. Forward P/E uses public forward P/E or price/forward-EPS fallback. Reverse DCF uses a simplified 10-year FCF model with 9% WACC and 3% terminal growth.",
   "companies": [
     {
@@ -52,7 +52,7 @@
     {
       "company": "Alphabet Inc.",
       "aliases": [],
-      "forward_pe": 18.700382,
+      "forward_pe": 18.7071,
       "revenue_growth": 0.242,
       "operating_margin": 0.34033,
       "roe": 0.48676,
@@ -112,7 +112,7 @@
     {
       "company": "Universal Health Services, Inc.",
       "aliases": [],
-      "forward_pe": 7.35997,
+      "forward_pe": 7.556273,
       "revenue_growth": 0.053,
       "operating_margin": 0.0,
       "roe": 0.1974,
@@ -159,12 +159,12 @@
     {
       "company": "Berkshire Hathaway Inc.",
       "aliases": [],
-      "forward_pe": 24.157791,
+      "forward_pe": 24.158014,
       "revenue_growth": 0.1,
       "operating_margin": 0.32561,
       "roe": 0.121199995,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": -0.00844187900009391,
+        "implied_annual_fcf_growth": -0.008440351912668842,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
@@ -179,7 +179,7 @@
       "operating_margin": 0.11896,
       "roe": 0.21114,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.1193723427238319,
+        "implied_annual_fcf_growth": 0.11908140249677979,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
