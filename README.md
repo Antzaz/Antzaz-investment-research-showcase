@@ -124,9 +124,19 @@ gh repo create Antzaz-investment-research-showcase --public --source . --remote 
 
 ## Automatic portfolio refresh
 
-The `Daily private portfolio refresh` GitHub Actions workflow rebuilds the private analytics, restores recruiter-safe thesis inputs, validates the public snapshot and can update only the sanitized JSON in the public showcase repository.
+Public market data is refreshed **every calendar day after the U.S. cash market closes** by the public repository's `Refresh all public portfolio data` workflow. The scheduled run is currently `22:30 UTC` and rebuilds the canonical public snapshot plus all market-derived sidecars in one validated publish:
 
-Configure the main repository with:
+- `data/portfolio_snapshot.json` — canonical public dataset used by the website;
+- `data/public_analytics.json` — portfolio/risk/attribution/factor analytics;
+- `data/public_fundamentals.json` — public company fundamentals and reverse-DCF inputs;
+- `data/short_term_performance.json` — 1D/1W/1M/3M/6M/1Y/MTD/QTD/YTD performance;
+- `data/stock_quotes.json` — latest adjusted closes and standard return windows.
+
+The workflow refuses to publish if the generated files are stale, holdings/quote coverage is incomplete, required analytics are empty, or sensitive fields such as ticker symbols, share counts, cost basis, private market value or transactions appear in the public payload.
+
+The private main repository still owns the authoritative portfolio inputs. Its `Daily private portfolio refresh` / recruiter sync can publish a new sanitized base snapshot whenever holdings, weights or recruiter-safe thesis inputs change. The public repository then keeps every **market-derived** field current independently, so a cross-repository token problem cannot freeze prices, returns, risk analytics, fundamentals or the visible snapshot date.
+
+For private-to-public input synchronization, configure the main repository with:
 
 - Actions secret: `SHOWCASE_REPO_TOKEN`
 - Actions variable: `SHOWCASE_REPOSITORY=Antzaz/Antzaz-investment-research-showcase`
