@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-01T01:22:12+00:00",
+  "generated_utc": "2026-11-02T01:43:03+00:00",
   "as_of": "2026-10-30",
   "portfolio_inception_date": "2026-06-02",
   "previous_trading_date": "2026-10-29",
@@ -67,16 +67,16 @@
     {
       "period": "YTD",
       "sessions": 106,
-      "portfolio_return": 0.022473163547010566,
-      "benchmark_return": 0.0013293676049999092,
-      "excess_return": 0.021143795942010657
+      "portfolio_return": 0.022473164079010566,
+      "benchmark_return": 0.0013292866258827196,
+      "excess_return": 0.021143877453127846
     },
     {
       "period": "Since inception",
       "sessions": 106,
-      "portfolio_return": 0.022473163547010566,
-      "benchmark_return": 0.0013293676049999092,
-      "excess_return": 0.021143795942010657
+      "portfolio_return": 0.022473164079010566,
+      "benchmark_return": 0.0013292866258827196,
+      "excess_return": 0.021143877453127846
     }
   ],
   "coverage": {

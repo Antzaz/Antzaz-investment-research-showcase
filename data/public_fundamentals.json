@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-01T01:22:11.047389+00:00",
+  "generated_utc": "2026-11-02T01:43:01.733788+00:00",
   "source_note": "Public market characteristics refreshed independently from the private research pipeline. Forward P/E uses public forward P/E or price/forward-EPS fallback. Reverse DCF uses a simplified 10-year FCF model with 9% WACC and 3% terminal growth.",
   "companies": [
     {
       "company": "Amazon.com, Inc.",
       "aliases": [],
-      "forward_pe": 22.575686,
+      "forward_pe": 22.067202,
       "revenue_growth": 0.121,
       "operating_margin": 0.13903,
       "roe": 0.27416,
@@ -50,7 +50,7 @@
     {
       "company": "Alphabet Inc.",
       "aliases": [],
-      "forward_pe": 18.485123,
+      "forward_pe": 18.439241,
       "revenue_growth": 0.247,
       "operating_margin": 0.31805,
       "roe": 0.44286,
@@ -65,7 +65,7 @@
     {
       "company": "Microsoft Corporation",
       "aliases": [],
-      "forward_pe": 21.626915,
+      "forward_pe": 21.618698,
       "revenue_growth": 0.188,
       "operating_margin": 0.49757,
       "roe": 0.34221,
@@ -95,9 +95,9 @@
     {
       "company": "Chevron Corporation",
       "aliases": [],
-      "forward_pe": 14.904452,
-      "revenue_growth": 0.391,
-      "operating_margin": 0.20545,
+      "forward_pe": 14.808575,
+      "revenue_growth": 0.348,
+      "operating_margin": 0.18009001,
       "roe": null,
       "reverse_dcf": {
         "implied_annual_fcf_growth": null,
@@ -110,7 +110,7 @@
     {
       "company": "Universal Health Services, Inc.",
       "aliases": [],
-      "forward_pe": 7.531461,
+      "forward_pe": 7.335802,
       "revenue_growth": 0.053,
       "operating_margin": 0.09601,
       "roe": 0.1974,
@@ -142,10 +142,10 @@
       "aliases": [],
       "forward_pe": 8.2372055,
       "revenue_growth": 0.411,
-      "operating_margin": 0.21368,
+      "operating_margin": 0.24511999,
       "roe": 0.17828,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.059179057416725134,
+        "implied_annual_fcf_growth": 0.027386576959998687,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
@@ -175,7 +175,7 @@
       "operating_margin": 0.11896,
       "roe": 0.21114,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.11479541978047869,
+        "implied_annual_fcf_growth": 0.11508559026524623,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
@@ -186,11 +186,11 @@
       "company": "Sanofi",
       "aliases": [],
       "forward_pe": 8.435543,
-      "revenue_growth": 0.146,
-      "operating_margin": 0.21033001,
-      "roe": 0.05709,
+      "revenue_growth": 0.157,
+      "operating_margin": 0.30887,
+      "roe": 0.057150003,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.04736876473180052,
+        "implied_annual_fcf_growth": 0.011061374349995101,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
