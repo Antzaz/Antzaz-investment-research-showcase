@@ -1,8 +1,8 @@
 {
-  "generated_utc": "2026-11-02T01:43:03+00:00",
-  "as_of": "2026-10-30",
+  "generated_utc": "2026-11-03T03:38:33+00:00",
+  "as_of": "2026-11-02",
   "portfolio_inception_date": "2026-06-02",
-  "previous_trading_date": "2026-10-29",
+  "previous_trading_date": "2026-10-30",
   "benchmark": "S&P 500",
   "benchmark_proxy": "SPY",
   "methodology": "Current published portfolio weights applied to adjusted close returns. Foreign/local-market prices are aligned to S&P 500 trading dates by carrying forward only already-observed closes; no backward-fill or future price is used. Portfolio inception is 2026-06-02; periods longer than the available inception history are not shown as returns. Returns use current published weights and are not transaction-based realized performance.",
@@ -11,79 +11,79 @@
     {
       "period": "1D",
       "sessions": 1,
-      "portfolio_return": -0.019584874296357357,
-      "benchmark_return": -0.01772904090171079,
-      "excess_return": -0.0018558333946465666
+      "portfolio_return": -0.007055953628583134,
+      "benchmark_return": -0.004790127636589259,
+      "excess_return": -0.002265825991993875
     },
     {
       "period": "1W",
       "sessions": 5,
-      "portfolio_return": -0.01568414970868992,
-      "benchmark_return": -0.005592326228453404,
-      "excess_return": -0.010091823480236517
+      "portfolio_return": -0.03223128304980305,
+      "benchmark_return": -0.017338045149285053,
+      "excess_return": -0.014893237900517997
     },
     {
       "period": "1M",
       "sessions": 21,
-      "portfolio_return": -0.031162435693861457,
-      "benchmark_return": -0.010824774718204644,
-      "excess_return": -0.020337660975656813
+      "portfolio_return": -0.048375576916934615,
+      "benchmark_return": -0.0227899261065736,
+      "excess_return": -0.025585650810361016
     },
     {
       "period": "3M",
       "sessions": 63,
-      "portfolio_return": -0.026959179548229684,
-      "benchmark_return": -9.690770736103804e-05,
-      "excess_return": -0.026862271840868646
+      "portfolio_return": -0.03968210414016338,
+      "benchmark_return": -0.02250969703955219,
+      "excess_return": -0.017172407100611187
     },
     {
       "period": "6M",
-      "sessions": 106,
+      "sessions": 107,
       "portfolio_return": null,
       "benchmark_return": null,
       "excess_return": null
     },
     {
       "period": "1Y",
-      "sessions": 106,
+      "sessions": 107,
       "portfolio_return": null,
       "benchmark_return": null,
       "excess_return": null
     },
     {
       "period": "MTD",
-      "sessions": 22,
-      "portfolio_return": -0.028818646999913766,
-      "benchmark_return": -0.009060795058476456,
-      "excess_return": -0.01975785194143731
+      "sessions": 1,
+      "portfolio_return": -0.007055953628583134,
+      "benchmark_return": -0.004790127636589259,
+      "excess_return": -0.002265825991993875
     },
     {
       "period": "QTD",
-      "sessions": 22,
-      "portfolio_return": -0.028818646999913766,
-      "benchmark_return": -0.009060795058476456,
-      "excess_return": -0.01975785194143731
+      "sessions": 23,
+      "portfolio_return": -0.03567125759162704,
+      "benchmark_return": -0.013807520330246681,
+      "excess_return": -0.021863737261380356
     },
     {
       "period": "YTD",
-      "sessions": 106,
-      "portfolio_return": 0.022473164079010566,
-      "benchmark_return": 0.0013292866258827196,
-      "excess_return": 0.021143877453127846
+      "sessions": 107,
+      "portfolio_return": 0.015258640846798288,
+      "benchmark_return": -0.0034672084633101674,
+      "excess_return": 0.018725849310108456
     },
     {
       "period": "Since inception",
-      "sessions": 106,
-      "portfolio_return": 0.022473164079010566,
-      "benchmark_return": 0.0013292866258827196,
-      "excess_return": 0.021143877453127846
+      "sessions": 107,
+      "portfolio_return": 0.015258640846798288,
+      "benchmark_return": -0.0034672084633101674,
+      "excess_return": 0.018725849310108456
     }
   ],
   "coverage": {
-    "aligned_daily_observations": 2513,
+    "aligned_daily_observations": 2511,
     "portfolio_components": 15,
-    "analysis_start": "2016-11-01",
+    "analysis_start": "2016-11-04",
     "portfolio_inception_date": "2026-06-02",
-    "analysis_end": "2026-10-30"
+    "analysis_end": "2026-11-02"
   }
 }
