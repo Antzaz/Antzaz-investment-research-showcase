@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-11-04T02:35:33.089868+00:00",
+  "generated_utc": "2026-11-05T02:41:51.041862+00:00",
   "source_note": "Public market characteristics refreshed independently from the private research pipeline. Forward P/E uses public forward P/E or price/forward-EPS fallback. Reverse DCF uses a simplified 10-year FCF model with 9% WACC and 3% terminal growth.",
   "companies": [
     {
       "company": "Amazon.com, Inc.",
       "aliases": [],
-      "forward_pe": 22.9663,
+      "forward_pe": 24.371632,
       "revenue_growth": 0.121,
       "operating_margin": 0.13903,
       "roe": 0.27416,
@@ -20,12 +20,12 @@
     {
       "company": "NVIDIA Corporation",
       "aliases": [],
-      "forward_pe": 12.987445,
+      "forward_pe": 12.575246,
       "revenue_growth": 1.059,
       "operating_margin": 0.66236997,
       "roe": 1.17211,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.287618580369167,
+        "implied_annual_fcf_growth": 0.28311217943936573,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
@@ -35,7 +35,7 @@
     {
       "company": "JPMorgan Chase & Co.",
       "aliases": [],
-      "forward_pe": 13.216252,
+      "forward_pe": 13.768786,
       "revenue_growth": 0.102,
       "operating_margin": 0.42584,
       "roe": 0.18013,
@@ -50,7 +50,7 @@
     {
       "company": "Alphabet Inc.",
       "aliases": [],
-      "forward_pe": 18.074183,
+      "forward_pe": 18.64862,
       "revenue_growth": 0.247,
       "operating_margin": 0.31805,
       "roe": 0.44286,
@@ -65,7 +65,7 @@
     {
       "company": "Microsoft Corporation",
       "aliases": [],
-      "forward_pe": 21.546915,
+      "forward_pe": 22.986574,
       "revenue_growth": 0.188,
       "operating_margin": 0.49757,
       "roe": 0.34221,
@@ -80,7 +80,7 @@
     {
       "company": "Taiwan Semiconductor Manufacturing Company Limited",
       "aliases": [],
-      "forward_pe": 17.310026,
+      "forward_pe": 16.88771,
       "revenue_growth": 0.509,
       "operating_margin": 0.58655,
       "roe": 0.41854998,
@@ -95,7 +95,7 @@
     {
       "company": "Chevron Corporation",
       "aliases": [],
-      "forward_pe": 13.771589,
+      "forward_pe": 13.263568,
       "revenue_growth": 0.348,
       "operating_margin": 0.18009001,
       "roe": null,
@@ -110,12 +110,12 @@
     {
       "company": "Universal Health Services, Inc.",
       "aliases": [],
-      "forward_pe": 7.698363,
+      "forward_pe": 8.538477,
       "revenue_growth": 0.053,
       "operating_margin": 0.09601,
       "roe": 0.1974,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.06289345547607994,
+        "implied_annual_fcf_growth": 0.0716390836856654,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
@@ -125,12 +125,12 @@
     {
       "company": "Schneider Electric SE",
       "aliases": [],
-      "forward_pe": 19.03846,
+      "forward_pe": 18.387302,
       "revenue_growth": 0.098,
       "operating_margin": 0.18199,
       "roe": 0.18620001,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.09965616630917784,
+        "implied_annual_fcf_growth": 0.09557292135070894,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
@@ -140,12 +140,12 @@
     {
       "company": "TotalEnergies SE",
       "aliases": [],
-      "forward_pe": 7.8064866,
+      "forward_pe": 7.6178513,
       "revenue_growth": 0.411,
       "operating_margin": 0.24511999,
       "roe": 0.17828,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.02388122956085892,
+        "implied_annual_fcf_growth": 0.021027355068285902,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
@@ -155,12 +155,12 @@
     {
       "company": "Berkshire Hathaway Inc.",
       "aliases": [],
-      "forward_pe": 24.834295,
+      "forward_pe": 25.815952,
       "revenue_growth": 0.1,
       "operating_margin": 0.32561,
       "roe": 0.121199995,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": -0.0038541629848065084,
+        "implied_annual_fcf_growth": 0.002518689624473658,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
@@ -170,12 +170,12 @@
     {
       "company": "Cummins Inc.",
       "aliases": [],
-      "forward_pe": 14.382597,
+      "forward_pe": 13.553865,
       "revenue_growth": 0.094,
       "operating_margin": 0.11896,
       "roe": 0.21114,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.11523333276233727,
+        "implied_annual_fcf_growth": 0.10764829272127041,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
@@ -185,12 +185,12 @@
     {
       "company": "Sanofi",
       "aliases": [],
-      "forward_pe": 8.507628,
+      "forward_pe": 8.909267,
       "revenue_growth": 0.157,
       "operating_margin": 0.30887,
       "roe": 0.057150003,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.01363781860050517,
+        "implied_annual_fcf_growth": 0.019034269825928152,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
@@ -200,9 +200,9 @@
     {
       "company": "Lumentum Holdings Inc.",
       "aliases": [],
-      "forward_pe": 17.646696,
+      "forward_pe": 16.066034,
       "revenue_growth": 1.365,
-      "operating_margin": 0.2795,
+      "operating_margin": 0.27974,
       "roe": -2.45788,
       "reverse_dcf": {
         "implied_annual_fcf_growth": null,
@@ -215,12 +215,12 @@
     {
       "company": "Medpace Holdings, Inc.",
       "aliases": [],
-      "forward_pe": 33.417442,
+      "forward_pe": 33.078983,
       "revenue_growth": 0.085,
       "operating_margin": 0.23120001,
       "roe": 1.17878,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.12762149408382217,
+        "implied_annual_fcf_growth": 0.12624535506999923,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
