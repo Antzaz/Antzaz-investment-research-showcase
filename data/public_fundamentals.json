@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-07T02:13:09.395571+00:00",
+  "generated_utc": "2026-11-08T01:43:23.017332+00:00",
   "source_note": "Public market characteristics refreshed independently from the private research pipeline. Forward P/E uses public forward P/E or price/forward-EPS fallback. Reverse DCF uses a simplified 10-year FCF model with 9% WACC and 3% terminal growth.",
   "companies": [
     {
@@ -95,16 +95,16 @@
     {
       "company": "Chevron Corporation",
       "aliases": [],
-      "forward_pe": 12.997636,
+      "forward_pe": 12.869038,
       "revenue_growth": 0.348,
-      "operating_margin": 0.18009001,
-      "roe": null,
+      "operating_margin": 0.17889999,
+      "roe": 0.13853,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": null,
+        "implied_annual_fcf_growth": 0.02655836361703423,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
-        "status": "Not meaningful / insufficient public FCF data"
+        "status": "Solved"
       }
     },
     {
@@ -170,12 +170,12 @@
     {
       "company": "Cummins Inc.",
       "aliases": [],
-      "forward_pe": 12.92851,
-      "revenue_growth": 0.094,
-      "operating_margin": 0.11896,
-      "roe": 0.21114,
+      "forward_pe": 13.188579,
+      "revenue_growth": 0.135,
+      "operating_margin": 0.13954,
+      "roe": 0.25047,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.10215412317224748,
+        "implied_annual_fcf_growth": 0.0841675439798194,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
