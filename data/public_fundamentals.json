@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-08T01:43:23.017332+00:00",
+  "generated_utc": "2026-11-09T01:51:25.294971+00:00",
   "source_note": "Public market characteristics refreshed independently from the private research pipeline. Forward P/E uses public forward P/E or price/forward-EPS fallback. Reverse DCF uses a simplified 10-year FCF model with 9% WACC and 3% terminal growth.",
   "companies": [
     {
@@ -65,7 +65,7 @@
     {
       "company": "Microsoft Corporation",
       "aliases": [],
-      "forward_pe": 21.944775,
+      "forward_pe": 21.929937,
       "revenue_growth": 0.188,
       "operating_margin": 0.49757,
       "roe": 0.34221,
@@ -115,7 +115,7 @@
       "operating_margin": 0.09601,
       "roe": 0.1974,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.07121833033621983,
+        "implied_annual_fcf_growth": 0.07122260360192822,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
@@ -140,7 +140,7 @@
     {
       "company": "TotalEnergies SE",
       "aliases": [],
-      "forward_pe": 7.3955307,
+      "forward_pe": 7.231781,
       "revenue_growth": 0.411,
       "operating_margin": 0.24511999,
       "roe": 0.17828,
