@@ -76,6 +76,30 @@ jobs:
           assert all(names), 'Blank company name in holdings'
           assert len(names) == len(set(names)), 'Duplicate public holding names'
 
+          # An explicitly excluded stock must never reappear through a stale
+          # private publisher, its thesis, quotes, fundamentals or analytics.
+          forbidden_public_company = 'NVIDIA Corporation'
+          snapshot = json.loads(Path('data/portfolio_snapshot.json').read_text(encoding='utf-8'))
+          for filename, collection in [
+              ('data/portfolio_snapshot.json', 'holdings'),
+              ('data/portfolio_snapshot.json', 'theses'),
+              ('data/portfolio_snapshot.json', 'attribution'),
+              ('data/portfolio_snapshot.json', 'reverse_dcf'),
+              ('data/public_analytics.json', 'holdings'),
+              ('data/public_analytics.json', 'attribution'),
+              ('data/public_analytics.json', 'reverse_dcf'),
+              ('data/public_fundamentals.json', 'companies'),
+              ('data/stock_quotes.json', 'stocks'),
+          ]:
+              doc = snapshot if filename.endswith('portfolio_snapshot.json') else json.loads(Path(filename).read_text(encoding='utf-8'))
+              assert all(row.get('company') != forbidden_public_company for row in (doc.get(collection) or [])), (
+                  f'Excluded stock was republished in {filename}:{collection}'
+              )
+          assert not any(x.get('match_company') == forbidden_public_company
+                         for x in json.loads(Path('data/thesis_overrides.json').read_text(encoding='utf-8')).get('companies') or [])
+          assert {x['company'] for x in snapshot.get('holdings') or []} == set(names)
+          assert abs(sum(float(x.get('weight') or 0) for x in snapshot.get('holdings') or []) - 1) < 1e-8
+
           weights = [float(x.get('weight') or 0) for x in holdings]
           assert all(math.isfinite(x) and x >= 0 for x in weights), 'Invalid holding weight'
           assert abs(sum(weights) - 1.0) < 0.01, f'Weights sum to {sum(weights):.6f}, not approximately 1'
