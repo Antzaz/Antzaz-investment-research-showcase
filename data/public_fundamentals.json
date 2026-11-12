@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-12T09:22:19.199954+00:00",
+  "generated_utc": "2026-11-12T09:23:21.407211+00:00",
   "source_note": "Public market characteristics refreshed independently from the private research pipeline. Forward P/E uses public forward P/E or price/forward-EPS fallback. Reverse DCF uses a simplified 10-year FCF model with 9% WACC and 3% terminal growth.",
   "companies": [
     {
@@ -9,6 +9,36 @@
       "revenue_growth": 0.121,
       "operating_margin": 0.13087,
       "roe": 0.27416,
+      "reverse_dcf": {
+        "implied_annual_fcf_growth": null,
+        "wacc": 0.09,
+        "terminal_growth": 0.03,
+        "forecast_years": 10,
+        "status": "Not meaningful / insufficient public FCF data"
+      }
+    },
+    {
+      "company": "Advanced Micro Devices, Inc.",
+      "aliases": [],
+      "forward_pe": 31.255884,
+      "revenue_growth": 0.447,
+      "operating_margin": 0.17820999,
+      "roe": 0.1196,
+      "reverse_dcf": {
+        "implied_annual_fcf_growth": 0.29172698573668054,
+        "wacc": 0.09,
+        "terminal_growth": 0.03,
+        "forecast_years": 10,
+        "status": "Solved"
+      }
+    },
+    {
+      "company": "Microsoft Corporation",
+      "aliases": [],
+      "forward_pe": 21.537926,
+      "revenue_growth": 0.188,
+      "operating_margin": 0.47104,
+      "roe": 0.34221,
       "reverse_dcf": {
         "implied_annual_fcf_growth": null,
         "wacc": 0.09,
@@ -48,18 +78,18 @@
       }
     },
     {
-      "company": "Microsoft Corporation",
+      "company": "Chevron Corporation",
       "aliases": [],
-      "forward_pe": 21.537926,
-      "revenue_growth": 0.188,
-      "operating_margin": 0.47104,
-      "roe": 0.34221,
+      "forward_pe": 12.931148,
+      "revenue_growth": 0.348,
+      "operating_margin": 0.15105,
+      "roe": 0.13853,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": null,
+        "implied_annual_fcf_growth": 0.0269516747594839,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
-        "status": "Not meaningful / insufficient public FCF data"
+        "status": "Solved"
       }
     },
     {
@@ -78,14 +108,14 @@
       }
     },
     {
-      "company": "Chevron Corporation",
+      "company": "Universal Health Services, Inc.",
       "aliases": [],
-      "forward_pe": 12.929642,
-      "revenue_growth": 0.348,
-      "operating_margin": 0.15105,
-      "roe": 0.13853,
+      "forward_pe": 8.584813,
+      "revenue_growth": 0.053,
+      "operating_margin": 0.108500004,
+      "roe": 0.1974,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.0269516747594839,
+        "implied_annual_fcf_growth": 0.06989085745158563,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
@@ -93,14 +123,14 @@
       }
     },
     {
-      "company": "Universal Health Services, Inc.",
+      "company": "Berkshire Hathaway Inc.",
       "aliases": [],
-      "forward_pe": 8.5519495,
-      "revenue_growth": 0.053,
-      "operating_margin": 0.108500004,
-      "roe": 0.1974,
+      "forward_pe": 26.178963,
+      "revenue_growth": 0.112,
+      "operating_margin": 0.26602,
+      "roe": 0.10574,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.06989085745158563,
+        "implied_annual_fcf_growth": 0.04408438020399641,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
@@ -138,14 +168,14 @@
       }
     },
     {
-      "company": "Berkshire Hathaway Inc.",
+      "company": "Sanofi",
       "aliases": [],
-      "forward_pe": 26.178963,
-      "revenue_growth": 0.112,
-      "operating_margin": 0.26602,
-      "roe": 0.10574,
+      "forward_pe": 8.926383,
+      "revenue_growth": 0.157,
+      "operating_margin": 0.22275999,
+      "roe": 0.057150003,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.04408438020399641,
+        "implied_annual_fcf_growth": 0.01829776286876983,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
@@ -168,14 +198,14 @@
       }
     },
     {
-      "company": "Sanofi",
+      "company": "Medpace Holdings, Inc.",
       "aliases": [],
-      "forward_pe": 8.926383,
-      "revenue_growth": 0.157,
-      "operating_margin": 0.22275999,
-      "roe": 0.057150003,
+      "forward_pe": 33.481915,
+      "revenue_growth": 0.085,
+      "operating_margin": 0.2139,
+      "roe": 1.17878,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.01829776286876983,
+        "implied_annual_fcf_growth": 0.12788204270631354,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
@@ -191,21 +221,6 @@
       "roe": -2.45788,
       "reverse_dcf": {
         "implied_annual_fcf_growth": 0.46730827042862766,
-        "wacc": 0.09,
-        "terminal_growth": 0.03,
-        "forecast_years": 10,
-        "status": "Solved"
-      }
-    },
-    {
-      "company": "Medpace Holdings, Inc.",
-      "aliases": [],
-      "forward_pe": 33.481915,
-      "revenue_growth": 0.085,
-      "operating_margin": 0.2139,
-      "roe": 1.17878,
-      "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.12788204270631354,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
