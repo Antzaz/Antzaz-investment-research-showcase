@@ -4,7 +4,6 @@
   "companies": [
     {"match_company":"Alphabet Inc.","display_company":"Alphabet Inc.","expected_annual_return":0.12632322908944033,"country":"United States","currency":"USD"},
     {"match_company":"Amazon.com, Inc.","display_company":"Amazon.com, Inc.","expected_annual_return":0.1441035800044741,"country":"United States","currency":"USD"},
-    {"match_company":"NVIDIA Corporation","display_company":"NVIDIA Corporation","expected_annual_return":0.1407898019091759,"country":"United States","currency":"USD"},
     {"match_company":"JPM","display_company":"JPMorgan Chase & Co.","expected_annual_return":0.07367750992162861,"country":"United States","currency":"USD"},
     {"match_company":"Berkshire Hathaway Inc.","display_company":"Berkshire Hathaway Inc.","expected_annual_return":0.08300421888822651,"country":"United States","currency":"USD"},
     {"match_company":"Schneider Electric S.E.","display_company":"Schneider Electric SE","expected_annual_return":0.07631175440289012,"country":"France","currency":"EUR"},
