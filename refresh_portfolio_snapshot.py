@@ -105,10 +105,23 @@ def _merge_holdings(base_rows: list[dict], live_rows: list[dict], quote_rows: li
 
 def _refresh_theses(theses: list[dict], holdings: list[dict]) -> list[dict]:
     lookup = {str(x.get("company") or ""): x for x in holdings}
+    # Preserve private-published safe thesis prose while resolving the older
+    # abbreviated workbook names to the displayed company names. Never keep
+    # orphan theses (including explicitly excluded former public holdings).
+    overrides = _load(DATA / "thesis_overrides.json")
+    aliases = {
+        str(entry.get("match_company") or ""): str(entry.get("display_company") or "")
+        for entry in overrides.get("companies") or []
+    }
     refreshed = []
     for thesis in theses:
         row = dict(thesis)
-        live = lookup.get(str(row.get("company") or "")) or {}
+        name = str(row.get("company") or "")
+        canonical = aliases.get(name) or name
+        live = lookup.get(canonical)
+        if not live:
+            continue
+        row["company"] = canonical
         for field in MARKET_HOLDING_FIELDS | {"current_price", "price_as_of", "price_changes"}:
             if live.get(field) is not None:
                 row[field] = live.get(field)
