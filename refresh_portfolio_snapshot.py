@@ -32,6 +32,10 @@ MARKET_HOLDING_FIELDS = {
     "roe",
 }
 
+# Analyst-authored public expected-return assumptions come from the validated
+# public overrides; publish them beside the refreshed market holding fields.
+PUBLIC_HOLDING_FIELDS = MARKET_HOLDING_FIELDS | {"expected_annual_return"}
+
 FORBIDDEN_KEYS = {
     "ticker",
     "symbol",
@@ -85,7 +89,7 @@ def _merge_holdings(base_rows: list[dict], live_rows: list[dict], quote_rows: li
             continue
         row = dict(base.get(company, {}))
         row["company"] = company
-        for field in MARKET_HOLDING_FIELDS:
+        for field in PUBLIC_HOLDING_FIELDS:
             if live.get(field) is not None:
                 row[field] = live.get(field)
 
@@ -122,7 +126,7 @@ def _refresh_theses(theses: list[dict], holdings: list[dict]) -> list[dict]:
         if not live:
             continue
         row["company"] = canonical
-        for field in MARKET_HOLDING_FIELDS | {"current_price", "price_as_of", "price_changes"}:
+        for field in PUBLIC_HOLDING_FIELDS | {"current_price", "price_as_of", "price_changes"}:
             if live.get(field) is not None:
                 row[field] = live.get(field)
         refreshed.append(row)
