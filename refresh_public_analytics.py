@@ -87,7 +87,15 @@ def safe_json(value):
 
 
 def apply_overrides(snapshot: dict, overrides: dict) -> tuple[list[dict], dict[str, dict]]:
-    by_match = {str(x.get("match_company")): x for x in overrides.get("companies", [])}
+    # A first public refresh canonicalizes display names (JPM, SNY, Schneider).
+    # Match both original private names and displayed names on later refreshes
+    # so expected-return assumptions cannot silently disappear.
+    by_match = {}
+    for entry in overrides.get("companies", []):
+        for key in ("match_company", "display_company"):
+            name = str(entry.get(key) or "").strip()
+            if name:
+                by_match[name] = entry
     alias_map: dict[str, dict] = {}
     holdings = []
     for row in snapshot.get("holdings", []):
