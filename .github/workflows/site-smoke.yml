@@ -19,7 +19,7 @@ jobs:
 
       - name: JavaScript syntax
         run: |
-          for f in app.js fundamentals-bridge.js visit-notify.js rolling-risk-fallback.js advanced-research.js advanced-research-v2.js site-consistency.js short-term-performance.js interactive-model-v2.js; do
+          for f in app.js fundamentals-bridge.js visit-notify.js rolling-risk-fallback.js advanced-research.js advanced-research-v2.js site-consistency.js short-term-performance.js interactive-model-v2.js macro-context.js; do
             if [ -f "$f" ]; then node --check "$f"; fi
           done
 
@@ -37,7 +37,7 @@ jobs:
               'site-consistency.js', 'short-term-performance.js', 'interactive-model.html',
               'interactive-model-v2.css', 'interactive-model-v2.js', 'data/portfolio_snapshot.json',
               'data/public_analytics.json', 'data/public_fundamentals.json',
-              'data/thesis_overrides.json',
+              'data/thesis_overrides.json', 'data/macro_context.json', 'macro-context.js',
           ]
           missing = [p for p in required_assets if not Path(p).exists()]
           assert not missing, f'Missing required assets: {missing}'
@@ -46,6 +46,19 @@ jobs:
           for asset in ['fundamentals-bridge.js', 'app.js', 'advanced-research.js']:
               assert asset in html, f'index.html does not load {asset}'
 
+          assert 'macro-context.js' in html, 'Overview must load the safe macro bridge'
+          macro = json.loads(Path('data/macro_context.json').read_text(encoding='utf-8'))
+          if macro.get('status') == 'PASS':
+              allowed = {'schema_version', 'status', 'as_of', 'generated_utc', 'regime',
+                         'growth_momentum', 'inflation_momentum', 'methodology_version',
+                         'source', 'interpretation'}
+              assert set(macro) == allowed, 'Macro bridge must not contain private or extra fields'
+              assert macro['regime'] in {'Goldilocks', 'Reflation', 'Disinflationary Slowdown', 'Stagflation'}
+              assert macro['schema_version'] == 1
+              for key in ('growth_momentum', 'inflation_momentum'):
+                  assert isinstance(macro[key], (float, int)) and math.isfinite(macro[key])
+          else:
+              assert macro.get('status') == 'UNAVAILABLE', 'No invented economic regime permitted'
           demo_html = Path('interactive-model.html').read_text(encoding='utf-8')
           assert 'interactive-model-v2.css' in demo_html, 'interactive model does not load v2 CSS'
           assert 'interactive-model-v2.js' in demo_html, 'interactive model does not load v2 JS'
