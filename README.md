@@ -15,6 +15,26 @@ This folder is the recruiter-safe public demonstration layer for the larger equi
 - illustrative equity-research dashboard examples
 - methodology and architecture
 
+## Curated public holdings (November 2026)
+
+The recruiter-facing model portfolio intentionally excludes **NVIDIA**. The private
+portfolio may still contain that company; the public showcase does not mirror
+every private position. After exclusion, the **14 remaining public company weights
+are rescaled to total 100%** before all public portfolio calculations.
+
+The independent public refresh runs the 14-company market history through the
+complete performance, risk, factor, attribution, stress, short-term return, quote
+and fundamental models. A security's old return contribution must **never** be
+subtracted from a composite CAGR or risk figure without recomputing the underlying
+daily observations. The public publication validator checks that excluded names
+are absent and that every reported sidecar shares the same company universe.
+
+The private-to-public automatic snapshot and fundamentals publishers are disabled
+while the private and public universes differ. The public repository's
+`Refresh all public portfolio data` workflow is the authoritative daily source
+of recruiter-facing statistics. Changing the private holdings file alone does not
+change this curated public policy.
+
 ## Portfolio data policy
 
 The recruiter-facing portfolio snapshot uses **real outputs from the production portfolio** while sensitive position economics remain excluded.
