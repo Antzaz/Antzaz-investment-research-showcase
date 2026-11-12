@@ -103,7 +103,12 @@ jobs:
           weights = [float(x.get('weight') or 0) for x in holdings]
           assert all(math.isfinite(x) and x >= 0 for x in weights), 'Invalid holding weight'
           assert abs(sum(weights) - 1.0) < 0.01, f'Weights sum to {sum(weights):.6f}, not approximately 1'
-          assert all(x.get('expected_annual_return') is not None for x in holdings), 'Missing published expected return'
+          # The newly added AMD holding has no analyst-approved 12-month return
+          # estimate yet. Display an unavailable forecast rather than invent one.
+          missing_forecast = [x.get('company') for x in holdings if x.get('expected_annual_return') is None]
+          assert set(missing_forecast) <= {'Advanced Micro Devices, Inc.'}, f'Unexpected missing expected returns: {missing_forecast}'
+          assert len(holdings) == 15, f'Expected 15 holdings after AMD addition, found {len(holdings)}'
+          assert 'Advanced Micro Devices, Inc.' in names, 'AMD was not added to the public portfolio'
 
           ts = analytics.get('timeseries') or []
           assert len(ts) >= 252, 'Insufficient public timeseries history'
