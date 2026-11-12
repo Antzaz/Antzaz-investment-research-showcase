@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-12T09:23:21.407211+00:00",
+  "generated_utc": "2026-11-12T09:24:09.336382+00:00",
   "source_note": "Public market characteristics refreshed independently from the private research pipeline. Forward P/E uses public forward P/E or price/forward-EPS fallback. Reverse DCF uses a simplified 10-year FCF model with 9% WACC and 3% terminal growth.",
   "companies": [
     {
@@ -80,7 +80,7 @@
     {
       "company": "Chevron Corporation",
       "aliases": [],
-      "forward_pe": 12.931148,
+      "forward_pe": 12.929642,
       "revenue_growth": 0.348,
       "operating_margin": 0.15105,
       "roe": 0.13853,
@@ -110,7 +110,7 @@
     {
       "company": "Universal Health Services, Inc.",
       "aliases": [],
-      "forward_pe": 8.584813,
+      "forward_pe": 8.5519495,
       "revenue_growth": 0.053,
       "operating_margin": 0.108500004,
       "roe": 0.1974,
@@ -140,12 +140,12 @@
     {
       "company": "Schneider Electric SE",
       "aliases": [],
-      "forward_pe": 19.367596,
+      "forward_pe": 19.379507,
       "revenue_growth": 0.098,
       "operating_margin": 0.17915002,
       "roe": 0.18620001,
       "reverse_dcf": {
-        "implied_annual_fcf_growth": 0.10165645035809312,
+        "implied_annual_fcf_growth": 0.10172865345769744,
         "wacc": 0.09,
         "terminal_growth": 0.03,
         "forecast_years": 10,
