@@ -2,7 +2,7 @@
   "snapshot_type": "sanitized_real_portfolio_analytics",
   "generated_utc": "2026-11-12T09:22:19.199954+00:00",
   "privacy_note": "Company names, portfolio weights and recruiter-safe investment theses are public. Tickers, shares, cost basis, market value, unrealized P&L, transactions, private notes, credentials and private workbooks are excluded.",
-  "data_note": "Portfolio market analytics are refreshed daily from public market data using the already-published company names and portfolio weights. Recruiter-safe thesis text and portfolio inputs remain preserved until the next private sanitized-input sync.",
+  "data_note": "Curated public portfolio. Fifteen positions including AMD, with allocation weights reset to the November 11, 2026 closing prices; market analytics refreshed daily with fixed current-weight research backcasts. Private share counts, cost basis, cash flows and exact portfolio values remain excluded.",
   "metrics": {
     "annualized_return": 0.24357229844559392,
     "annualized_volatility": 0.19824399089660993,
@@ -22,7 +22,7 @@
     "largest_risk_contribution": 0.18450000218906726,
     "annualized_alpha": 0.06407387454970791,
     "alpha_t_stat": 4.00187928304923,
-    "alpha_p_value": 6.475789941973672e-05,
+    "alpha_p_value": 0.00006475789941973672,
     "alpha_r_squared": 0.8784016405978152,
     "benchmark_annualized_return": 0.16544310382654182,
     "benchmark_correlation": 0.9408751616477861,
@@ -37,8 +37,7 @@
     {
       "company": "Amazon.com, Inc.",
       "sector": "Consumer Cyclical",
-      "weight": 0.15332351192792118,
-      "risk_contribution": 0.18450000218906726,
+      "weight": 0.14312524635025836,
       "forward_pe": 24.411116,
       "currency": "USD",
       "country": "United States",
@@ -59,58 +58,21 @@
       "expected_annual_return": 0.1441035800044741
     },
     {
-      "company": "JPMorgan Chase & Co.",
-      "weight": 0.10733236285873647,
-      "forward_pe": 13.427804,
-      "currency": "USD",
+      "company": "Advanced Micro Devices, Inc.",
+      "sector": "Technology",
+      "industry": "Semiconductors",
       "country": "United States",
-      "sector": "Financial Services",
-      "revenue_growth": 0.102,
-      "roe": 0.18013,
-      "industry": "Banks - Diversified",
-      "operating_margin": 0.44787997,
-      "risk_contribution": 0.10542232585492477,
-      "current_price": 343.3900146484375,
-      "price_as_of": "2026-11-11",
-      "price_changes": {
-        "1D": 0.0038588806266421916,
-        "1W": -0.0247649060404197,
-        "1M": 0.0360861184472101,
-        "3M": -0.04959050864568093,
-        "6M": 0.15456387171234365,
-        "1Y": 0.10449553532559697
-      },
-      "expected_annual_return": 0.07367750992162861
-    },
-    {
-      "company": "Alphabet Inc.",
-      "sector": "Communication Services",
-      "weight": 0.1017035116481393,
-      "risk_contribution": 0.11383121083881018,
-      "forward_pe": 19.01185,
       "currency": "USD",
-      "country": "United States",
-      "revenue_growth": 0.247,
-      "roe": 0.44286,
-      "industry": "Internet Content & Information",
-      "operating_margin": 0.33321,
-      "current_price": 293.45001220703125,
+      "weight": 0.09910200838425506,
+      "current_price": 552.9,
       "price_as_of": "2026-11-11",
-      "price_changes": {
-        "1D": 0.02112188468607612,
-        "1W": 0.015643995590039372,
-        "1M": -0.17052967036133115,
-        "3M": -0.1522155159204086,
-        "6M": -0.27024483431254864,
-        "1Y": 0.01417848259618193
-      },
-      "expected_annual_return": 0.12632322908944033
+      "expected_annual_return": null,
+      "price_changes": {}
     },
     {
       "company": "Microsoft Corporation",
       "sector": "Technology",
-      "weight": 0.094874028809795,
-      "risk_contribution": 0.10036207215388615,
+      "weight": 0.09340754225571236,
       "forward_pe": 21.537926,
       "currency": "USD",
       "country": "United States",
@@ -131,34 +93,55 @@
       "expected_annual_return": 0.15514277151342876
     },
     {
-      "company": "Taiwan Semiconductor Manufacturing Company Limited",
-      "sector": "Technology",
-      "weight": 0.08143569171368313,
-      "risk_contribution": 0.09710385632544065,
-      "forward_pe": 17.675642,
+      "company": "JPMorgan Chase & Co.",
+      "weight": 0.09232403719685003,
+      "forward_pe": 13.427804,
       "currency": "USD",
-      "country": "Taiwan",
-      "revenue_growth": 0.509,
-      "roe": 0.41854998,
-      "industry": "Semiconductors",
-      "operating_margin": 0.5796,
-      "current_price": 413.3500061035156,
+      "country": "United States",
+      "sector": "Financial Services",
+      "revenue_growth": 0.102,
+      "roe": 0.18013,
+      "industry": "Banks - Diversified",
+      "operating_margin": 0.44787997,
+      "current_price": 343.3900146484375,
       "price_as_of": "2026-11-11",
       "price_changes": {
-        "1D": 0.04254942153381158,
-        "1W": 0.0444725359532927,
-        "1M": -0.07137398760374203,
-        "3M": -0.037239150519662534,
-        "6M": 0.039093310514888735,
-        "1Y": 0.4147213966713035
+        "1D": 0.0038588806266421916,
+        "1W": -0.0247649060404197,
+        "1M": 0.0360861184472101,
+        "3M": -0.04959050864568093,
+        "6M": 0.15456387171234365,
+        "1Y": 0.10449553532559697
       },
-      "expected_annual_return": 0.1670262853486341
+      "expected_annual_return": 0.07367750992162861
+    },
+    {
+      "company": "Alphabet Inc.",
+      "sector": "Communication Services",
+      "weight": 0.0788971393654394,
+      "forward_pe": 19.01185,
+      "currency": "USD",
+      "country": "United States",
+      "revenue_growth": 0.247,
+      "roe": 0.44286,
+      "industry": "Internet Content & Information",
+      "operating_margin": 0.33321,
+      "current_price": 293.45001220703125,
+      "price_as_of": "2026-11-11",
+      "price_changes": {
+        "1D": 0.02112188468607612,
+        "1W": 0.015643995590039372,
+        "1M": -0.17052967036133115,
+        "3M": -0.1522155159204086,
+        "6M": -0.27024483431254864,
+        "1Y": 0.01417848259618193
+      },
+      "expected_annual_return": 0.12632322908944033
     },
     {
       "company": "Chevron Corporation",
       "sector": "Energy",
-      "weight": 0.08105551153622653,
-      "risk_contribution": 0.06998023745397318,
+      "weight": 0.07645677781595149,
       "forward_pe": 12.929642,
       "currency": "USD",
       "country": "United States",
@@ -179,10 +162,32 @@
       "expected_annual_return": 0.07156246915893166
     },
     {
+      "company": "Taiwan Semiconductor Manufacturing Company Limited",
+      "sector": "Technology",
+      "weight": 0.07408901387321846,
+      "forward_pe": 17.675642,
+      "currency": "USD",
+      "country": "Taiwan",
+      "revenue_growth": 0.509,
+      "roe": 0.41854998,
+      "industry": "Semiconductors",
+      "operating_margin": 0.5796,
+      "current_price": 413.3500061035156,
+      "price_as_of": "2026-11-11",
+      "price_changes": {
+        "1D": 0.04254942153381158,
+        "1W": 0.0444725359532927,
+        "1M": -0.07137398760374203,
+        "3M": -0.037239150519662534,
+        "6M": 0.039093310514888735,
+        "1Y": 0.4147213966713035
+      },
+      "expected_annual_return": 0.1670262853486341
+    },
+    {
       "company": "Universal Health Services, Inc.",
       "sector": "Healthcare",
-      "weight": 0.06819236813638299,
-      "risk_contribution": 0.0622206409215772,
+      "weight": 0.07053826230124553,
       "forward_pe": 8.5519495,
       "currency": "USD",
       "country": "United States",
@@ -203,58 +208,9 @@
       "expected_annual_return": 0.1433526096760529
     },
     {
-      "company": "Schneider Electric SE",
-      "weight": 0.0589084501999461,
-      "forward_pe": 19.367596,
-      "currency": "EUR",
-      "country": "France",
-      "sector": "Industrials",
-      "revenue_growth": 0.098,
-      "roe": 0.18620001,
-      "industry": "Specialty Industrial Machinery",
-      "operating_margin": 0.17915002,
-      "risk_contribution": 0.044324218028870016,
-      "current_price": 243.89999389648438,
-      "price_as_of": "2026-11-12",
-      "price_changes": {
-        "1D": 0.005773170707151998,
-        "1W": 0.07044102419587817,
-        "1M": -0.07753404112416884,
-        "3M": -0.21004050559843113,
-        "6M": -0.0782313368463532,
-        "1Y": 0.06774405907243741
-      },
-      "expected_annual_return": 0.07631175440289012
-    },
-    {
-      "company": "TotalEnergies SE",
-      "sector": "Energy",
-      "weight": 0.05276645163343313,
-      "risk_contribution": 0.042973702420441615,
-      "forward_pe": 7.24331,
-      "currency": "USD",
-      "country": "France",
-      "revenue_growth": 0.411,
-      "roe": 0.17828,
-      "industry": "Oil & Gas Integrated",
-      "operating_margin": 0.16996,
-      "current_price": 87.95999908447266,
-      "price_as_of": "2026-11-11",
-      "price_changes": {
-        "1D": 0.0009103531355831862,
-        "1W": -0.02763652471039124,
-        "1M": -0.01112982459511025,
-        "3M": 0.022354524930874753,
-        "6M": -0.025982709114857894,
-        "1Y": 0.45131953640477107
-      },
-      "expected_annual_return": 0.11355695521305237
-    },
-    {
       "company": "Berkshire Hathaway Inc.",
       "sector": "Financial Services",
-      "weight": 0.04953786125834681,
-      "risk_contribution": 0.03336729785528214,
+      "weight": 0.05271818090446839,
       "forward_pe": 26.178963,
       "currency": "USD",
       "country": "United States",
@@ -275,10 +231,78 @@
       "expected_annual_return": 0.08300421888822651
     },
     {
+      "company": "Schneider Electric SE",
+      "weight": 0.04836438803910553,
+      "forward_pe": 19.367596,
+      "currency": "EUR",
+      "country": "France",
+      "sector": "Industrials",
+      "revenue_growth": 0.098,
+      "roe": 0.18620001,
+      "industry": "Specialty Industrial Machinery",
+      "operating_margin": 0.17915002,
+      "current_price": 242.5,
+      "price_as_of": "2026-11-11",
+      "price_changes": {
+        "1D": 0.005773170707151998,
+        "1W": 0.07044102419587817,
+        "1M": -0.07753404112416884,
+        "3M": -0.21004050559843113,
+        "6M": -0.0782313368463532,
+        "1Y": 0.06774405907243741
+      },
+      "expected_annual_return": 0.07631175440289012
+    },
+    {
+      "company": "TotalEnergies SE",
+      "sector": "Energy",
+      "weight": 0.0472979520713428,
+      "forward_pe": 7.24331,
+      "currency": "USD",
+      "country": "France",
+      "revenue_growth": 0.411,
+      "roe": 0.17828,
+      "industry": "Oil & Gas Integrated",
+      "operating_margin": 0.16996,
+      "current_price": 87.95999908447266,
+      "price_as_of": "2026-11-11",
+      "price_changes": {
+        "1D": 0.0009103531355831862,
+        "1W": -0.02763652471039124,
+        "1M": -0.01112982459511025,
+        "3M": 0.022354524930874753,
+        "6M": -0.025982709114857894,
+        "1Y": 0.45131953640477107
+      },
+      "expected_annual_return": 0.11355695521305237
+    },
+    {
+      "company": "Sanofi",
+      "weight": 0.04340305929004346,
+      "forward_pe": 8.926383,
+      "currency": "USD",
+      "country": "France",
+      "sector": "Healthcare",
+      "revenue_growth": 0.157,
+      "roe": 0.057150003,
+      "industry": "Drug Manufacturers - General",
+      "operating_margin": 0.22275999,
+      "current_price": 48.43000030517578,
+      "price_as_of": "2026-11-11",
+      "price_changes": {
+        "1D": 0.0041468124577588306,
+        "1W": 0.020223279119149673,
+        "1M": 0.23798572667400797,
+        "3M": 0.10621292040962427,
+        "6M": 0.14167851003421905,
+        "1Y": 0.009015675084407038
+      },
+      "expected_annual_return": 0.14682203987282533
+    },
+    {
       "company": "Cummins Inc.",
       "sector": "Industrials",
-      "weight": 0.04891617631514772,
-      "risk_contribution": 0.044192295038917945,
+      "weight": 0.03321396084057374,
       "forward_pe": 13.583872,
       "currency": "USD",
       "country": "United States",
@@ -299,58 +323,9 @@
       "expected_annual_return": 0.05429448699556816
     },
     {
-      "company": "Sanofi",
-      "weight": 0.044292144884407705,
-      "forward_pe": 8.926383,
-      "currency": "USD",
-      "country": "France",
-      "sector": "Healthcare",
-      "revenue_growth": 0.157,
-      "roe": 0.057150003,
-      "industry": "Drug Manufacturers - General",
-      "operating_margin": 0.22275999,
-      "risk_contribution": 0.019932425896674082,
-      "current_price": 48.43000030517578,
-      "price_as_of": "2026-11-11",
-      "price_changes": {
-        "1D": 0.0041468124577588306,
-        "1W": 0.020223279119149673,
-        "1M": 0.23798572667400797,
-        "3M": 0.10621292040962427,
-        "6M": 0.14167851003421905,
-        "1Y": 0.009015675084407038
-      },
-      "expected_annual_return": 0.14682203987282533
-    },
-    {
-      "company": "Lumentum Holdings Inc.",
-      "sector": "Technology",
-      "weight": 0.034405845577837574,
-      "risk_contribution": 0.05550186829637482,
-      "forward_pe": 16.147194,
-      "currency": "USD",
-      "country": "United States",
-      "revenue_growth": 1.365,
-      "roe": -2.45788,
-      "industry": "Communication Equipment",
-      "operating_margin": 0.23354,
-      "current_price": 648.0599975585938,
-      "price_as_of": "2026-11-11",
-      "price_changes": {
-        "1D": 0.10671651459733233,
-        "1W": 0.03400079387091148,
-        "1M": -0.3440621828518138,
-        "3M": -0.26391111263319833,
-        "6M": -0.37104146992858844,
-        "1Y": 1.4935932934370242
-      },
-      "expected_annual_return": 0.08476139081296141
-    },
-    {
       "company": "Medpace Holdings, Inc.",
       "sector": "Healthcare",
-      "weight": 0.023256083499996374,
-      "risk_contribution": 0.026287846725760265,
+      "weight": 0.023830726731483936,
       "forward_pe": 33.481915,
       "currency": "USD",
       "country": "United States",
@@ -369,6 +344,29 @@
         "1Y": 0.10713812675417378
       },
       "expected_annual_return": 0.12323801249089805
+    },
+    {
+      "company": "Lumentum Holdings Inc.",
+      "sector": "Technology",
+      "weight": 0.023231704580051395,
+      "forward_pe": 16.147194,
+      "currency": "USD",
+      "country": "United States",
+      "revenue_growth": 1.365,
+      "roe": -2.45788,
+      "industry": "Communication Equipment",
+      "operating_margin": 0.23354,
+      "current_price": 648.0599975585938,
+      "price_as_of": "2026-11-11",
+      "price_changes": {
+        "1D": 0.10671651459733233,
+        "1W": 0.03400079387091148,
+        "1M": -0.3440621828518138,
+        "3M": -0.26391111263319833,
+        "6M": -0.37104146992858844,
+        "1Y": 1.4935932934370242
+      },
+      "expected_annual_return": 0.08476139081296141
     }
   ],
   "portfolio_philosophy": {
@@ -392,7 +390,7 @@
     {
       "company": "Amazon.com, Inc.",
       "sector": "Consumer Cyclical",
-      "weight": 0.15332351192792118,
+      "weight": 0.14312524635025836,
       "status": "Active",
       "time_horizon": "3–5+ years",
       "conviction": 4,
@@ -434,13 +432,12 @@
       "industry": "Internet Retail",
       "operating_margin": 0.13087,
       "current_price": 266.1700134277344,
-      "risk_contribution": 0.18450000218906726,
       "expected_annual_return": 0.1441035800044741
     },
     {
       "company": "JPMorgan Chase & Co.",
       "sector": "Financial Services",
-      "weight": 0.10733236285873647,
+      "weight": 0.09232403719685003,
       "status": "Active",
       "time_horizon": "3–5+ years",
       "conviction": 3.5,
@@ -468,7 +465,6 @@
       "revenue_growth": 0.102,
       "operating_margin": 0.44787997,
       "price_as_of": "2026-11-11",
-      "risk_contribution": 0.10542232585492477,
       "price_changes": {
         "1D": 0.0038588806266421916,
         "1W": -0.0247649060404197,
@@ -488,7 +484,7 @@
     {
       "company": "Alphabet Inc.",
       "sector": "Communication Services",
-      "weight": 0.1017035116481393,
+      "weight": 0.0788971393654394,
       "status": "Active",
       "time_horizon": "3–5+ years",
       "conviction": 4.5,
@@ -530,13 +526,12 @@
       "industry": "Internet Content & Information",
       "operating_margin": 0.33321,
       "current_price": 293.45001220703125,
-      "risk_contribution": 0.11383121083881018,
       "expected_annual_return": 0.12632322908944033
     },
     {
       "company": "Microsoft Corporation",
       "sector": "Technology",
-      "weight": 0.094874028809795,
+      "weight": 0.09340754225571236,
       "status": "Active",
       "time_horizon": "3–5+ years",
       "conviction": 4.5,
@@ -578,13 +573,12 @@
       "industry": "Software - Infrastructure",
       "operating_margin": 0.47104,
       "current_price": 521.1300048828125,
-      "risk_contribution": 0.10036207215388615,
       "expected_annual_return": 0.15514277151342876
     },
     {
       "company": "Taiwan Semiconductor Manufacturing Company Limited",
       "sector": "Technology",
-      "weight": 0.08143569171368313,
+      "weight": 0.07408901387321846,
       "status": "Active",
       "time_horizon": "3–5+ years",
       "conviction": 4.5,
@@ -626,13 +620,12 @@
       "industry": "Semiconductors",
       "operating_margin": 0.5796,
       "current_price": 413.3500061035156,
-      "risk_contribution": 0.09710385632544065,
       "expected_annual_return": 0.1670262853486341
     },
     {
       "company": "Chevron Corporation",
       "sector": "Energy",
-      "weight": 0.08105551153622653,
+      "weight": 0.07645677781595149,
       "status": "Active",
       "time_horizon": "3–5+ years",
       "conviction": 3,
@@ -674,13 +667,12 @@
       "industry": "Oil & Gas Integrated",
       "operating_margin": 0.15105,
       "current_price": 213.27999877929688,
-      "risk_contribution": 0.06998023745397318,
       "expected_annual_return": 0.07156246915893166
     },
     {
       "company": "Universal Health Services, Inc.",
       "sector": "Healthcare",
-      "weight": 0.06819236813638299,
+      "weight": 0.07053826230124553,
       "status": "Active",
       "time_horizon": "3–5+ years",
       "conviction": 4,
@@ -722,13 +714,12 @@
       "industry": "Medical Care Facilities",
       "operating_margin": 0.108500004,
       "current_price": 196.77000427246094,
-      "risk_contribution": 0.0622206409215772,
       "expected_annual_return": 0.1433526096760529
     },
     {
       "company": "Schneider Electric SE",
       "sector": "Industrials",
-      "weight": 0.0589084501999461,
+      "weight": 0.04836438803910553,
       "status": "Active",
       "time_horizon": "3–5+ years",
       "conviction": 3,
@@ -756,7 +747,6 @@
       "revenue_growth": 0.098,
       "operating_margin": 0.17915002,
       "price_as_of": "2026-11-12",
-      "risk_contribution": 0.044324218028870016,
       "price_changes": {
         "1D": 0.005773170707151998,
         "1W": 0.07044102419587817,
@@ -776,7 +766,7 @@
     {
       "company": "TotalEnergies SE",
       "sector": "Energy",
-      "weight": 0.05276645163343313,
+      "weight": 0.0472979520713428,
       "status": "Active",
       "time_horizon": "3–5+ years",
       "conviction": 3.5,
@@ -818,13 +808,12 @@
       "industry": "Oil & Gas Integrated",
       "operating_margin": 0.16996,
       "current_price": 87.95999908447266,
-      "risk_contribution": 0.042973702420441615,
       "expected_annual_return": 0.11355695521305237
     },
     {
       "company": "Berkshire Hathaway Inc.",
       "sector": "Financial Services",
-      "weight": 0.04953786125834681,
+      "weight": 0.05271818090446839,
       "status": "Active",
       "time_horizon": "3–5+ years",
       "conviction": 4,
@@ -866,13 +855,12 @@
       "industry": "Insurance - Diversified",
       "operating_margin": 0.26602,
       "current_price": 588.239990234375,
-      "risk_contribution": 0.03336729785528214,
       "expected_annual_return": 0.08300421888822651
     },
     {
       "company": "Cummins Inc.",
       "sector": "Industrials",
-      "weight": 0.04891617631514772,
+      "weight": 0.03321396084057374,
       "status": "Active",
       "time_horizon": "3–5+ years",
       "conviction": 3,
@@ -914,13 +902,12 @@
       "industry": "Specialty Industrial Machinery",
       "operating_margin": 0.11837,
       "current_price": 463.260009765625,
-      "risk_contribution": 0.044192295038917945,
       "expected_annual_return": 0.05429448699556816
     },
     {
       "company": "Sanofi",
       "sector": "Healthcare",
-      "weight": 0.044292144884407705,
+      "weight": 0.04340305929004346,
       "status": "Active",
       "time_horizon": "3–5+ years",
       "conviction": 4,
@@ -948,7 +935,6 @@
       "revenue_growth": 0.157,
       "operating_margin": 0.22275999,
       "price_as_of": "2026-11-11",
-      "risk_contribution": 0.019932425896674082,
       "price_changes": {
         "1D": 0.0041468124577588306,
         "1W": 0.020223279119149673,
@@ -968,7 +954,7 @@
     {
       "company": "Lumentum Holdings Inc.",
       "sector": "Technology",
-      "weight": 0.034405845577837574,
+      "weight": 0.023231704580051395,
       "status": "Active",
       "time_horizon": "3–5+ years",
       "conviction": 3,
@@ -1010,13 +996,12 @@
       "industry": "Communication Equipment",
       "operating_margin": 0.23354,
       "current_price": 648.0599975585938,
-      "risk_contribution": 0.05550186829637482,
       "expected_annual_return": 0.08476139081296141
     },
     {
       "company": "Medpace Holdings, Inc.",
       "sector": "Healthcare",
-      "weight": 0.023256083499996374,
+      "weight": 0.023830726731483936,
       "status": "Active",
       "time_horizon": "3–5+ years",
       "conviction": 4,
@@ -1058,7 +1043,6 @@
       "industry": "Diagnostics & Research",
       "operating_margin": 0.2139,
       "current_price": 664.77001953125,
-      "risk_contribution": 0.026287846725760265,
       "expected_annual_return": 0.12323801249089805
     }
   ],
@@ -13112,7 +13096,10 @@
     "public_fundamentals_generated_utc": "2026-11-12T09:22:19.199954+00:00",
     "stock_quotes_generated_utc": "2026-11-12T09:22:25.013916+00:00",
     "stock_market_as_of": "2026-11-12",
-    "short_term_performance_generated_utc": "2026-11-12T09:22:22+00:00"
+    "short_term_performance_generated_utc": "2026-11-12T09:22:22+00:00",
+    "public_weight_as_of": "2026-11-11",
+    "public_reference_currency": "USD",
+    "public_weight_basis": "Market-value weights derived from matched-date closing prices; FX-normalized for European listing. Historical return series will be recomputed using these fixed reference weights."
   },
   "portfolio_characteristics": {
     "weighted_forward_pe": 17.445646723314546,
