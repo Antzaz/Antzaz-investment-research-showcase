@@ -147,7 +147,9 @@ def download_prices(symbols: list[str], attempts: int = 3) -> pd.DataFrame:
                 period=HISTORY_PERIOD,
                 auto_adjust=True,
                 progress=False,
-                threads=True,
+                # Parallel Yahoo requests occasionally contend on its shared
+                # SQLite timezone cache (BRK-B 'database is locked').
+                threads=False,
                 group_by="column",
             )
             if raw is None or raw.empty:
@@ -165,6 +167,15 @@ def download_prices(symbols: list[str], attempts: int = 3) -> pd.DataFrame:
             close.columns = [str(x).upper() for x in close.columns]
             if close.empty:
                 raise RuntimeError("Adjusted-close table was empty after normalization.")
+            missing = [
+                s for s in unique
+                if s not in close.columns or pd.to_numeric(close[s], errors="coerce").dropna().empty
+            ]
+            if missing:
+                raise RuntimeError(
+                    "Yahoo returned incomplete adjusted-close histories for "
+                    + ", ".join(missing)
+                )
             return close
         except Exception as exc:
             last_error = exc
