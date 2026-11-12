@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # A GITHUB_TOKEN-generated data-refresh commit does not trigger push
+  # workflows. Deploy again when the validated market refresh completes.
+  workflow_run:
+    workflows: ["Refresh all public portfolio data"]
+    types: [completed]
 
 permissions:
   contents: read
@@ -16,6 +21,7 @@ concurrency:
 
 jobs:
   deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
