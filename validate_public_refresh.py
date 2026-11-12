@@ -116,6 +116,11 @@ def main() -> None:
             raise RuntimeError(f"Excluded company leaked into public {name}: {excluded}")
 
     names = {x.get("company") for x in holdings}
+    if len(holdings) != 15 or "Advanced Micro Devices, Inc." not in names:
+        raise RuntimeError("The public model must contain the 14 retained holdings plus AMD")
+    missing_forecast = {x.get("company") for x in holdings if x.get("expected_annual_return") is None}
+    if missing_forecast - {"Advanced Micro Devices, Inc."}:
+        raise RuntimeError(f"Unexpected missing analyst forecasts: {missing_forecast}")
     for name in ("analytics.holdings", "fundamentals.companies", "quotes.stocks", "analytics.attribution", "analytics.reverse_dcf"):
         other = {x.get("company") for x in datasets[name]}
         if names != other:
