@@ -19,14 +19,24 @@ This folder is the recruiter-safe public demonstration layer for the larger equi
 
 The recruiter-facing model portfolio intentionally excludes **NVIDIA**. The private
 portfolio may still contain that company; the public showcase does not mirror
-every private position. After exclusion, the **14 remaining public company weights
-are rescaled to total 100%** before all public portfolio calculations.
+every private position. **Advanced Micro Devices (AMD)** has replaced it as the
+15th **public** holding. AMD's initial weighting was sized using **10 shares at
+the November 11, 2026 closing price of USD 552.90**. All 14 retained position
+weights were recalculated from their November 11 quotes and the same private
+position quantities, with Schneider Electric's Paris listing converted at the
+November 11 ECB EUR/USD reference rate of 1.1127. Only resulting normalized
+**public percentage weights**, not private quantities, cost basis, total value
+or transaction ledger, are committed to the public data files. The as-of-date
+reference weights are then used as fixed weights for subsequent research
+backcasts; they do not purport to be a transaction-weighted track record.
 
-The independent public refresh runs the 14-company market history through the
+The independent public refresh runs the 15-company market history through the
 complete performance, risk, factor, attribution, stress, short-term return, quote
-and fundamental models. A security's old return contribution must **never** be
-subtracted from a composite CAGR or risk figure without recomputing the underlying
-daily observations. The public publication validator checks that excluded names
+and fundamental models. AMD's analyst expected-return estimate remains
+unavailable until a supported thesis/forecast is provided; it is never
+fabricated. A security's old return contribution must **never** be subtracted
+from a composite CAGR or risk figure without recomputing the underlying daily
+observations. The public publication validator checks that excluded names
 are absent and that every reported sidecar shares the same company universe.
 
 The private-to-public automatic snapshot and fundamentals publishers are disabled
