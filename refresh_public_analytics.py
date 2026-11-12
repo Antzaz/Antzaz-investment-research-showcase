@@ -29,7 +29,6 @@ MAX_GROWTH = 0.50
 SYMBOLS = {
     "Alphabet Inc.": "GOOGL",
     "Amazon.com, Inc.": "AMZN",
-    "NVIDIA Corporation": "NVDA",
     "JPMorgan Chase & Co.": "JPM",
     "Berkshire Hathaway Inc.": "BRK-B",
     "Schneider Electric SE": "SU.PA",
@@ -43,6 +42,11 @@ SYMBOLS = {
     "Cummins Inc.": "CMI",
     "Microsoft Corporation": "MSFT",
 }
+
+# A public showcase is an explicitly curated subset of the private portfolio.
+# Never publish excluded issuers or calculate public statistics using their
+# returns, even if an upstream private portfolio sync contains them.
+PUBLIC_EXCLUDED_COMPANIES = {"NVIDIA Corporation"}
 
 FACTOR_PROXIES = {
     "Market_SPY": "SPY",
@@ -99,6 +103,8 @@ def apply_overrides(snapshot: dict, overrides: dict) -> tuple[list[dict], dict[s
             )
             out["country"] = out.get("country") or override.get("country")
             out["currency"] = out.get("currency") or override.get("currency")
+        if raw_name in PUBLIC_EXCLUDED_COMPANIES or str(out["company"]).strip() in PUBLIC_EXCLUDED_COMPANIES:
+            continue
         holdings.append(out)
         alias_map[out["company"]] = {
             "match_company": raw_name,
@@ -107,6 +113,14 @@ def apply_overrides(snapshot: dict, overrides: dict) -> tuple[list[dict], dict[s
             "country": out.get("country"),
             "currency": out.get("currency"),
         }
+
+    # Renormalize *published* weights, not private share counts. Every
+    # downstream statistic must use this exact 14-company public universe.
+    total_weight = sum(float(h.get("weight") or 0.0) for h in holdings)
+    if not holdings or total_weight <= 0:
+        raise ValueError("No valid positive public holdings remain after exclusions")
+    for holding in holdings:
+        holding["weight"] = float(holding.get("weight") or 0.0) / total_weight
     return holdings, alias_map
 
 
