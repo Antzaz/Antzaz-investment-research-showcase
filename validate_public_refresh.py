@@ -95,6 +95,41 @@ def main() -> None:
             f"analytics={len(live_holdings)}, quotes={len(stocks)}"
         )
 
+    # A private source sync can include companies intentionally omitted from
+    # the public model portfolio. A publish must never restore those names or
+    # keep aggregate risk/performance calculated from the wrong universe.
+    from refresh_public_analytics import PUBLIC_EXCLUDED_COMPANIES
+    datasets = {
+        "snapshot.holdings": holdings,
+        "snapshot.theses": snapshot.get("theses") or [],
+        "snapshot.attribution": snapshot.get("attribution") or [],
+        "snapshot.reverse_dcf": snapshot.get("reverse_dcf") or [],
+        "analytics.holdings": live_holdings,
+        "analytics.attribution": analytics.get("attribution") or [],
+        "analytics.reverse_dcf": analytics.get("reverse_dcf") or [],
+        "fundamentals.companies": fundamentals.get("companies") or [],
+        "quotes.stocks": stocks,
+    }
+    for name, rows in datasets.items():
+        excluded = [x.get("company") for x in rows if x.get("company") in PUBLIC_EXCLUDED_COMPANIES]
+        if excluded:
+            raise RuntimeError(f"Excluded company leaked into public {name}: {excluded}")
+
+    names = {x.get("company") for x in holdings}
+    for name in ("analytics.holdings", "fundamentals.companies", "quotes.stocks", "analytics.attribution", "analytics.reverse_dcf"):
+        other = {x.get("company") for x in datasets[name]}
+        if names != other:
+            raise RuntimeError(f"Public holding universe differs in {name}")
+
+    for name, rows in (("snapshot", holdings), ("analytics", live_holdings)):
+        weight_sum = sum(float(x.get("weight") or 0) for x in rows)
+        if abs(weight_sum - 1.0) > 1e-8:
+            raise RuntimeError(f"{name} published weights do not sum to 100%: {weight_sum}")
+    if int(short_term.get("coverage", {}).get("portfolio_components") or -1) != len(holdings):
+        raise RuntimeError("Short-term portfolio calculations use a different holding count")
+    if snapshot.get("timeseries") != analytics.get("timeseries"):
+        raise RuntimeError("Canonical snapshot contains a different portfolio return series from analytics")
+
     if any(row.get("status") != "ok" for row in stocks):
         bad = [row.get("company") for row in stocks if row.get("status") != "ok"]
         raise RuntimeError("Incomplete quote coverage: " + ", ".join(str(x) for x in bad))
