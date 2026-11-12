@@ -1,20 +1,111 @@
 {
   "generated_utc": "2026-08-19T18:22:00Z",
-  "source_note": "Recruiter-safe expected-return assumptions from the completed portfolio investment thesis workbook. Values are scenario estimates, not price targets. Country and currency are public company/listing metadata fallbacks until the next automated research refresh.",
+  "source_note": "Recruiter-safe expected-return assumptions from the completed portfolio investment thesis workbook. Values are scenario estimates, not price targets. Country and currency are public company/listing metadata fallbacks until the next automated research refresh. AMD was added using the November 11, 2026 market close; no analyst expected-return estimate has been supplied, so its forecast remains unavailable rather than fabricated.",
   "companies": [
-    {"match_company":"Alphabet Inc.","display_company":"Alphabet Inc.","expected_annual_return":0.12632322908944033,"country":"United States","currency":"USD"},
-    {"match_company":"Amazon.com, Inc.","display_company":"Amazon.com, Inc.","expected_annual_return":0.1441035800044741,"country":"United States","currency":"USD"},
-    {"match_company":"JPM","display_company":"JPMorgan Chase & Co.","expected_annual_return":0.07367750992162861,"country":"United States","currency":"USD"},
-    {"match_company":"Berkshire Hathaway Inc.","display_company":"Berkshire Hathaway Inc.","expected_annual_return":0.08300421888822651,"country":"United States","currency":"USD"},
-    {"match_company":"Schneider Electric S.E.","display_company":"Schneider Electric SE","expected_annual_return":0.07631175440289012,"country":"France","currency":"EUR"},
-    {"match_company":"Chevron Corporation","display_company":"Chevron Corporation","expected_annual_return":0.07156246915893166,"country":"United States","currency":"USD"},
-    {"match_company":"Taiwan Semiconductor Manufacturing Company Limited","display_company":"Taiwan Semiconductor Manufacturing Company Limited","expected_annual_return":0.1670262853486341,"country":"Taiwan","currency":"USD"},
-    {"match_company":"Lumentum Holdings Inc.","display_company":"Lumentum Holdings Inc.","expected_annual_return":0.08476139081296141,"country":"United States","currency":"USD"},
-    {"match_company":"Universal Health Services, Inc.","display_company":"Universal Health Services, Inc.","expected_annual_return":0.1433526096760529,"country":"United States","currency":"USD"},
-    {"match_company":"SNY","display_company":"Sanofi","expected_annual_return":0.14682203987282533,"country":"France","currency":"USD"},
-    {"match_company":"TotalEnergies SE","display_company":"TotalEnergies SE","expected_annual_return":0.11355695521305237,"country":"France","currency":"USD"},
-    {"match_company":"Medpace Holdings, Inc.","display_company":"Medpace Holdings, Inc.","expected_annual_return":0.12323801249089805,"country":"United States","currency":"USD"},
-    {"match_company":"Cummins Inc.","display_company":"Cummins Inc.","expected_annual_return":0.05429448699556816,"country":"United States","currency":"USD"},
-    {"match_company":"Microsoft Corporation","display_company":"Microsoft Corporation","expected_annual_return":0.15514277151342876,"country":"United States","currency":"USD"}
+    {
+      "match_company": "Alphabet Inc.",
+      "display_company": "Alphabet Inc.",
+      "expected_annual_return": 0.12632322908944033,
+      "country": "United States",
+      "currency": "USD"
+    },
+    {
+      "match_company": "Amazon.com, Inc.",
+      "display_company": "Amazon.com, Inc.",
+      "expected_annual_return": 0.1441035800044741,
+      "country": "United States",
+      "currency": "USD"
+    },
+    {
+      "match_company": "JPM",
+      "display_company": "JPMorgan Chase & Co.",
+      "expected_annual_return": 0.07367750992162861,
+      "country": "United States",
+      "currency": "USD"
+    },
+    {
+      "match_company": "Berkshire Hathaway Inc.",
+      "display_company": "Berkshire Hathaway Inc.",
+      "expected_annual_return": 0.08300421888822651,
+      "country": "United States",
+      "currency": "USD"
+    },
+    {
+      "match_company": "Schneider Electric S.E.",
+      "display_company": "Schneider Electric SE",
+      "expected_annual_return": 0.07631175440289012,
+      "country": "France",
+      "currency": "EUR"
+    },
+    {
+      "match_company": "Chevron Corporation",
+      "display_company": "Chevron Corporation",
+      "expected_annual_return": 0.07156246915893166,
+      "country": "United States",
+      "currency": "USD"
+    },
+    {
+      "match_company": "Taiwan Semiconductor Manufacturing Company Limited",
+      "display_company": "Taiwan Semiconductor Manufacturing Company Limited",
+      "expected_annual_return": 0.1670262853486341,
+      "country": "Taiwan",
+      "currency": "USD"
+    },
+    {
+      "match_company": "Lumentum Holdings Inc.",
+      "display_company": "Lumentum Holdings Inc.",
+      "expected_annual_return": 0.08476139081296141,
+      "country": "United States",
+      "currency": "USD"
+    },
+    {
+      "match_company": "Universal Health Services, Inc.",
+      "display_company": "Universal Health Services, Inc.",
+      "expected_annual_return": 0.1433526096760529,
+      "country": "United States",
+      "currency": "USD"
+    },
+    {
+      "match_company": "SNY",
+      "display_company": "Sanofi",
+      "expected_annual_return": 0.14682203987282533,
+      "country": "France",
+      "currency": "USD"
+    },
+    {
+      "match_company": "TotalEnergies SE",
+      "display_company": "TotalEnergies SE",
+      "expected_annual_return": 0.11355695521305237,
+      "country": "France",
+      "currency": "USD"
+    },
+    {
+      "match_company": "Medpace Holdings, Inc.",
+      "display_company": "Medpace Holdings, Inc.",
+      "expected_annual_return": 0.12323801249089805,
+      "country": "United States",
+      "currency": "USD"
+    },
+    {
+      "match_company": "Cummins Inc.",
+      "display_company": "Cummins Inc.",
+      "expected_annual_return": 0.05429448699556816,
+      "country": "United States",
+      "currency": "USD"
+    },
+    {
+      "match_company": "Microsoft Corporation",
+      "display_company": "Microsoft Corporation",
+      "expected_annual_return": 0.15514277151342876,
+      "country": "United States",
+      "currency": "USD"
+    },
+    {
+      "match_company": "Advanced Micro Devices, Inc.",
+      "display_company": "Advanced Micro Devices, Inc.",
+      "expected_annual_return": null,
+      "country": "United States",
+      "currency": "USD"
+    }
   ]
 }
