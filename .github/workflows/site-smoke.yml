@@ -125,11 +125,17 @@ jobs:
           if short_path.exists():
               short = json.loads(short_path.read_text(encoding='utf-8'))
               periods = {row.get('period'): row for row in short.get('periods') or []}
+              required_sessions = {'1D': 1, '1W': 5, '1M': 21, '3M': 63, '1Y': 252}
               for label in ['1D','1W','1M','3M','YTD','1Y']:
                   assert label in periods, f'Missing short-term performance period: {label}'
+                  row = periods[label]
+                  unavailable = label in required_sessions and int(row.get('sessions') or 0) < required_sessions[label]
                   for key in ['portfolio_return','benchmark_return','excess_return']:
-                      val = periods[label].get(key)
-                      assert val is not None and math.isfinite(float(val)), f'Missing/invalid {label} {key}'
+                      val = row.get(key)
+                      if unavailable:
+                          assert val is None, f'{label} {key} must not invent pre-inception history'
+                      else:
+                          assert val is not None and math.isfinite(float(val)), f'Missing/invalid {label} {key}'
 
           for row in analytics.get('reverse_dcf') or []:
               if row.get('implied_annual_fcf_growth') is not None:
