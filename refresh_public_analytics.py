@@ -41,6 +41,7 @@ SYMBOLS = {
     "Medpace Holdings, Inc.": "MEDP",
     "Cummins Inc.": "CMI",
     "Microsoft Corporation": "MSFT",
+    "Advanced Micro Devices, Inc.": "AMD",
 }
 
 # A public showcase is an explicitly curated subset of the private portfolio.
