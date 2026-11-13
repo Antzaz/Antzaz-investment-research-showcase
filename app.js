@@ -25,6 +25,29 @@ function applyOverrides(snapshot,overrides){
   ['holdings','theses','attribution','reverse_dcf'].forEach(k=>snapshot[k]=(snapshot[k]||[]).map(merge));
   return snapshot;
 }
+function applyCuratedResearch(snapshot, curated){
+  // The public holdings list controls eligibility: never display orphan theses
+  // or reintroduce excluded issuers through a separately published research note.
+  const holdings=new Map((snapshot.holdings||[]).map(x=>[x.company,x]));
+  const theses=new Map((snapshot.theses||[]).filter(x=>holdings.has(x.company)).map(x=>[x.company,x]));
+  for(const authored of (curated?.companies||[])){
+    const company=String(authored.company||'');
+    const live=holdings.get(company);
+    if(!live)continue;
+    const row={...(theses.get(company)||{}),...authored};
+    // Market/position/forecast fields always come from the live public snapshot,
+    // never from an analyst-authored explanatory note.
+    for(const field of ['company','sector','weight','industry','country','currency',
+      'forward_pe','revenue_growth','operating_margin','roe','current_price',
+      'price_as_of','price_changes','risk_contribution']){
+      if(Object.prototype.hasOwnProperty.call(live,field))row[field]=live[field];
+    }
+    row.expected_annual_return=live.expected_annual_return??null;
+    theses.set(company,row);
+  }
+  snapshot.theses=[...theses.values()];
+  return snapshot;
+}
 function canonicalSector(s){return ({'Technology':'Information Technology','Financial Services':'Financials','Consumer Cyclical':'Consumer Discretionary','Healthcare':'Health Care','Consumer Defensive':'Consumer Staples','Basic Materials':'Materials'})[s]||s||'Unknown';}
 function weightedExpected(holdings){const e=holdings.filter(x=>x.expected_annual_return!=null&&x.weight!=null);const w=e.reduce((s,x)=>s+(+x.weight||0),0);return w?e.reduce((s,x)=>s+(+x.weight||0)*(+x.expected_annual_return||0),0)/w:null;}
 function dateOf(s){const d=new Date(`${s}T00:00:00Z`);return Number.isNaN(d.getTime())?null:d;}
@@ -81,5 +104,5 @@ function renderResearchDetail(x){if(!x)return;const rd=x.reverse_dcf||{};$('#res
 
 function renderPhilosophy(p){if(!p||!Object.keys(p).length){$('#philosophyCard').innerHTML='<h2>Portfolio philosophy</h2><p class="muted">No public philosophy text has been published yet.</p>';return;}const fields=[['Investment Philosophy','investment_philosophy'],['Portfolio Objective','portfolio_objective'],['Research Process','research_process'],['Selection Criteria','selection_criteria'],['Position Sizing','position_sizing'],['Diversification','diversification'],['Risk Management','risk_management'],['Sell Discipline','sell_discipline'],['Monitoring & Review','monitoring_and_review'],['Portfolio Edge','portfolio_edge'],['What I Avoid','what_i_avoid'],['Closing Summary','closing_summary']];$('#philosophyCard').innerHTML=`<h2>Portfolio Philosophy</h2><div class="metric-grid compact">${metric('Benchmark',p.benchmark||'—')}${metric('Time horizon',p.time_horizon||'—')}${metric('Return objective',p.return_objective||'—')}</div><div class="thesis-grid">${fields.filter(x=>p[x[1]]).map(([t,k])=>`<div class="thesis-block"><h3>${esc(t)}</h3><p>${esc(p[k])}</p></div>`).join('')}</div>`;}
 
-async function init(){try{const [snapRes,overRes,benchRes]=await Promise.all([fetch(`data/portfolio_snapshot.json?v=${Date.now()}`,{cache:'no-store'}),fetch(`data/thesis_overrides.json?v=${Date.now()}`,{cache:'no-store'}),fetch(`data/benchmark_reference.json?v=${Date.now()}`,{cache:'no-store'})]);if(!snapRes.ok)throw new Error('snapshot unavailable');const snapshot=await snapRes.json(),overrides=overRes.ok?await overRes.json():{companies:[]};benchmarkRef=benchRes.ok?await benchRes.json():null;appData=applyOverrides(snapshot,overrides);renderHero(appData,benchmarkRef);renderOverview(appData,benchmarkRef);renderPerformance(appData);renderPortfolio(appData,benchmarkRef);renderTheses(appData.theses||[]);renderRisk(appData);renderResearch(appData);renderPhilosophy(appData.portfolio_philosophy||{});const hash=location.hash.replace('#','');if(['overview','performance','portfolio','theses','risk','research','philosophy'].includes(hash))activateTab(hash);}catch(e){console.error(e);$('#freshness').textContent='Latest portfolio snapshot is temporarily unavailable.';$('#overview').insertAdjacentHTML('afterbegin','<article class="card"><h2>Data temporarily unavailable</h2><p>Please reload after the next successful portfolio refresh.</p></article>');}}
+async function init(){try{const [snapRes,overRes,benchRes,curatedRes]=await Promise.all([fetch(`data/portfolio_snapshot.json?v=${Date.now()}`,{cache:'no-store'}),fetch(`data/thesis_overrides.json?v=${Date.now()}`,{cache:'no-store'}),fetch(`data/benchmark_reference.json?v=${Date.now()}`,{cache:'no-store'}),fetch(`data/curated_research.json?v=${Date.now()}`,{cache:'no-store'})]);if(!snapRes.ok)throw new Error('snapshot unavailable');const snapshot=await snapRes.json(),overrides=overRes.ok?await overRes.json():{companies:[]},curated=curatedRes.ok?await curatedRes.json():{companies:[]};benchmarkRef=benchRes.ok?await benchRes.json():null;appData=applyCuratedResearch(applyOverrides(snapshot,overrides),curated);renderHero(appData,benchmarkRef);renderOverview(appData,benchmarkRef);renderPerformance(appData);renderPortfolio(appData,benchmarkRef);renderTheses(appData.theses||[]);renderRisk(appData);renderResearch(appData);renderPhilosophy(appData.portfolio_philosophy||{});const hash=location.hash.replace('#','');if(['overview','performance','portfolio','theses','risk','research','philosophy'].includes(hash))activateTab(hash);}catch(e){console.error(e);$('#freshness').textContent='Latest portfolio snapshot is temporarily unavailable.';$('#overview').insertAdjacentHTML('afterbegin','<article class="card"><h2>Data temporarily unavailable</h2><p>Please reload after the next successful portfolio refresh.</p></article>');}}
 init();
