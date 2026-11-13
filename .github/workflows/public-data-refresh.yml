@@ -17,6 +17,7 @@ on:
       - 'fundamentals-bridge.js'
       - 'stock-quotes.js'
       - 'data/thesis_overrides.json'
+      - 'data/curated_research.json'
 
 permissions:
   contents: write
