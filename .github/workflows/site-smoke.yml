@@ -120,6 +120,30 @@ jobs:
           # estimate yet. Display an unavailable forecast rather than invent one.
           missing_forecast = [x.get('company') for x in holdings if x.get('expected_annual_return') is None]
           assert set(missing_forecast) <= {'Advanced Micro Devices, Inc.'}, f'Unexpected missing expected returns: {missing_forecast}'
+          curated = json.loads(Path('data/curated_research.json').read_text(encoding='utf-8'))
+          curated_amd = [r for r in curated.get('companies') or [] if r.get('company') == 'Advanced Micro Devices, Inc.']
+          assert len(curated_amd) == 1, 'Missing or duplicated durable AMD research'
+          scores = curated_amd[0].get('scores') or {}
+          required_score_keys = {
+              'business_quality', 'moat_score', 'management_capital_allocation',
+              'balance_sheet', 'growth', 'valuation', 'risk_resilience',
+          }
+          assert set(scores) == required_score_keys, 'AMD must use original NVIDIA seven-factor research framework'
+          assert all(1 <= float(v) <= 5 for v in scores.values()), 'AMD scorecards must be on a 1–5 scale'
+          assert abs(curated_amd[0]['composite_score'] - sum(scores.values()) / 7) < 1e-10
+          amd_theses = [r for r in snapshot.get('theses') or [] if r.get('company') == 'Advanced Micro Devices, Inc.']
+          assert len(amd_theses) == 1, 'AMD must appear in the canonical Equity Research/Company Theses dataset'
+          assert amd_theses[0]['investment_thesis'] and amd_theses[0]['sell_condition']
+          assert amd_theses[0]['expected_annual_return'] is None, 'No unapproved expected-return assumption for AMD'
+          assert len(snapshot.get('theses') or []) == len(holdings), 'A research note is required for every public holding'
+          assert 'data/curated_research.json' in app_js, 'Client must overlay durable authored research'
+          from refresh_portfolio_snapshot import _apply_curated_research
+          restored = _apply_curated_research(
+              [r for r in snapshot['theses'] if r['company'] != 'Advanced Micro Devices, Inc.'],
+              holdings,
+          )
+          assert sum(r.get('company') == 'Advanced Micro Devices, Inc.' for r in restored) == 1, 'Daily refresh lost AMD thesis'
+          assert not any(r.get('company') == 'NVIDIA Corporation' for r in restored), 'Excluded former holding reappeared'
           assert len(holdings) == 15, f'Expected 15 holdings after AMD addition, found {len(holdings)}'
           assert 'Advanced Micro Devices, Inc.' in names, 'AMD was not added to the public portfolio'
 
