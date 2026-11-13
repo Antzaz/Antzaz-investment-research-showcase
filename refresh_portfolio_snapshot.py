@@ -133,6 +133,46 @@ def _refresh_theses(theses: list[dict], holdings: list[dict]) -> list[dict]:
     return refreshed
 
 
+
+def _apply_curated_research(theses: list[dict], holdings: list[dict]) -> list[dict]:
+    """Overlay recruiter-safe authored research without altering live portfolio data.
+
+    A later private input sync may reset the public snapshot, so independently
+    versioned curated theses are reapplied during every daily market refresh.
+    Only companies already in the public holdings universe are eligible.
+    """
+    document = _load(DATA / "curated_research.json")
+    live = {str(row.get("company") or ""): row for row in holdings}
+    by_company = {
+        str(row.get("company") or ""): dict(row)
+        for row in theses
+        if str(row.get("company") or "") in live
+    }
+    authored_fields = {
+        "status", "time_horizon", "conviction", "composite_score",
+        "investment_thesis", "why_owned", "competitive_advantage",
+        "growth_drivers", "valuation_rationale", "catalysts", "key_risks",
+        "sell_condition", "monitoring_kpi", "review_date", "public_notes", "scores",
+    }
+    for authored in document.get("companies") or []:
+        if not isinstance(authored, dict):
+            raise RuntimeError("Curated company research entries must be objects")
+        company = str(authored.get("company") or "").strip()
+        if company not in live:
+            continue
+        row = dict(by_company.get(company) or {"company": company})
+        row.update({key: authored[key] for key in authored_fields if key in authored})
+        for field in PUBLIC_HOLDING_FIELDS | {"current_price", "price_as_of", "price_changes"}:
+            if field in live[company]:
+                row[field] = live[company][field]
+        # An expected return must come from a documented analyst scenario, not
+        # be inferred from the historic replaced NVIDIA position or scored fields.
+        row["expected_annual_return"] = live[company].get("expected_annual_return")
+        by_company[company] = row
+
+    return list(by_company.values())
+
+
 def main() -> None:
     base = _load(SNAPSHOT_PATH)
     analytics = _load(ANALYTICS_PATH)
@@ -186,7 +226,10 @@ def main() -> None:
         or {}
     )
     snapshot["holdings"] = merged_holdings
-    snapshot["theses"] = _refresh_theses(snapshot.get("theses") or [], merged_holdings)
+    snapshot["theses"] = _apply_curated_research(
+        _refresh_theses(snapshot.get("theses") or [], merged_holdings),
+        merged_holdings,
+    )
 
     for key in (
         "attribution",
