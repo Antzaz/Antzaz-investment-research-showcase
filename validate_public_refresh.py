@@ -126,6 +126,18 @@ def main() -> None:
         if names != other:
             raise RuntimeError(f"Public holding universe differs in {name}")
 
+    # Authored coverage must match every published investment holding and survive
+    # a later private-source sync that has not yet included the AMD addition.
+    theses = snapshot.get("theses") or []
+    thesis_names = [row.get("company") for row in theses]
+    if len(theses) != len(holdings) or set(thesis_names) != names or len(thesis_names) != len(set(thesis_names)):
+        raise RuntimeError("Company theses must match all 15 public holdings exactly")
+    amd_thesis = next(row for row in theses if row["company"] == "Advanced Micro Devices, Inc.")
+    if not amd_thesis.get("investment_thesis") or not amd_thesis.get("sell_condition"):
+        raise RuntimeError("AMD is missing researched investment rationale or falsification conditions")
+    if amd_thesis.get("expected_annual_return") is not None:
+        raise RuntimeError("AMD expected return requires a separate approved analyst model")
+
     for name, rows in (("snapshot", holdings), ("analytics", live_holdings)):
         weight_sum = sum(float(x.get("weight") or 0) for x in rows)
         if abs(weight_sum - 1.0) > 1e-8:
