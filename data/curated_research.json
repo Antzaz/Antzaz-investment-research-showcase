@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "generated_utc": "2026-11-13T09:00:00Z",
+  "source_note": "Curated recruiter-safe company theses. Numerical 1–5 scores are analyst judgments, not factual ratings or realized performance. Refreshed market metrics stay in the public snapshot; expected_annual_return is intentionally not estimated for AMD.",
+  "sources": [
+    {
+      "title": "AMD Q3 2026 earnings release, 3 November 2026",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1303/amd-reports-third-quarter-2026-financial-results"
+    },
+    {
+      "title": "AMD Q3 2026 Form 10-Q, filed 4 November 2026",
+      "url": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000191/amd-20260926.htm"
+    }
+  ],
+  "companies": [
+    {
+      "company": "Advanced Micro Devices, Inc.",
+      "status": "Active",
+      "time_horizon": "3–5+ years",
+      "conviction": 3.5,
+      "investment_thesis": "AMD is a high-growth challenger in accelerated computing, with a multi-product opportunity spanning EPYC server CPUs, Instinct AI accelerators, rack-scale Helios systems and client/embedded silicon. The investment case is that AI training and inference demand, rising EPYC penetration and an increasingly competitive system-level offering support durable share gains. Unlike NVIDIA, AMD does not yet have an equally entrenched software ecosystem; execution and customer adoption must compensate for a weaker platform moat.",
+      "why_owned": "Own for differentiated exposure to the same secular AI infrastructure and accelerated-computing growth drivers that supported the former NVIDIA thesis, while adding a credible second-source supplier and a growing server CPU franchise. EPYC cash generation and client/embedded franchises diversify the AI GPU opportunity; keep exposure disciplined because AMD is a challenger and the share price embeds ambitious growth expectations.",
+      "competitive_advantage": "High-performance CPU/GPU design, EPYC server platform adoption, Instinct accelerator portfolio, rack-scale system integration, chiplet engineering, foundry and ecosystem partnerships, and established cloud/enterprise relationships. ROCm and the open software approach can improve accessibility, but CUDA's developer network effect gives NVIDIA a stronger software moat today.",
+      "growth_drivers": "Instinct MI450 and successor GPU ramps; Helios rack-scale deployments; inference and enterprise AI adoption; EPYC Venice/server CPU market-share gains; sovereign and hyperscaler demand; customer diversification; higher-volume datacenter products; selective client and embedded recovery.",
+      "valuation_rationale": "The published public fundamentals snapshot shows AMD at approximately 33.1x forward earnings. The public simplified reverse DCF implies approximately 30% annual free-cash-flow growth for 10 years at 9% WACC and 3% terminal growth; that is a demanding market-implied hurdle, not a forecast. Underwrite with bear/base/bull growth and margin paths, include competition and multiple compression, and avoid assigning a numerical expected return until a documented analyst scenario model is approved.",
+      "catalysts": "Sustained AI accelerator shipments and customer deployments; Helios/MI450 execution; EPYC server share gains; stronger ROCm ecosystem adoption; expanding Data Center operating profit and gross margin; more diversified large-customer commitments; improved cash conversion.",
+      "key_risks": "NVIDIA's CUDA/software and system advantage; hyperscaler custom ASICs; concentrated data-center customers; export restrictions; contract-manufacturer/foundry/advanced-packaging capacity; GPU ramp or ROCm compatibility setbacks; margin pressure; cyclical client/gaming demand; rich valuation and possible multiple compression.",
+      "sell_condition": "Re-underwrite or reduce if AI accelerator order conversion or EPYC share gains repeatedly disappoint, Data Center growth or profitability deteriorates structurally, ROCm adoption fails to support competitive deployments, customer concentration increases without offsetting diversification, or the valuation requires implausible sustained FCF growth even after updating reasonable scenarios.",
+      "monitoring_kpi": "Data Center revenue and segment operating income; Instinct/Helios shipment and customer deployment progress; EPYC server CPU adoption/share; company gross margin and operating margin; ROCm/software readiness; hyperscaler AI capex; top-customer concentration; inventory, operating cash flow and free cash flow; export-control developments.",
+      "review_date": "2026-11-13",
+      "public_notes": "Analyst-authored public research dated 13 Nov 2026, based on AMD's Q3 2026 earnings release (3 Nov) and Q3 2026 Form 10-Q (4 Nov). Scorecard is a qualitative 1–5 assessment using the same seven criteria as the former NVIDIA thesis. Market multiples and reverse DCF are independently refreshed public-data diagnostics; no expected-return scenario has yet been approved.",
+      "scores": {
+        "business_quality": 4.5,
+        "moat_score": 3.5,
+        "management_capital_allocation": 4.5,
+        "balance_sheet": 4.5,
+        "growth": 5,
+        "valuation": 2.5,
+        "risk_resilience": 3
+      },
+      "composite_score": 3.9285714285714284
+    }
+  ]
+}
