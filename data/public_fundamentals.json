@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-15T02:03:56.986763+00:00",
+  "generated_utc": "2026-11-16T02:20:28.439288+00:00",
   "source_note": "Public market characteristics refreshed independently from the private research pipeline. Forward P/E uses public forward P/E or price/forward-EPS fallback. Reverse DCF uses a simplified 10-year FCF model with 9% WACC and 3% terminal growth.",
   "companies": [
     {
@@ -80,7 +80,7 @@
     {
       "company": "Chevron Corporation",
       "aliases": [],
-      "forward_pe": 13.273068,
+      "forward_pe": 13.3303585,
       "revenue_growth": 0.348,
       "operating_margin": 0.15105,
       "roe": 0.13853,
@@ -110,7 +110,7 @@
     {
       "company": "Universal Health Services, Inc.",
       "aliases": [],
-      "forward_pe": 8.433899,
+      "forward_pe": 8.434604,
       "revenue_growth": 0.053,
       "operating_margin": 0.108500004,
       "roe": 0.1974,
